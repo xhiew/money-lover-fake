@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="AccountBalanceCell" customModule="MoneyLover" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlj-ar-Dcd">
+                        <rect key="frame" x="16" y="16" width="288" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,999,999 ₫" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuc-3p-d7y">
+                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng số dư" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns5-al-iMx">
+                                <rect key="frame" x="0.0" y="28.5" width="58.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OK5-zg-PKn">
+                                <rect key="frame" x="168.5" y="4" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="44f-dV-sDZ"/>
+                                    <constraint firstAttribute="height" constant="20" id="8i8-Ie-cEa"/>
+                                </constraints>
+                                <color key="tintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ic_show_password"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OK5-zg-PKn" firstAttribute="leading" secondItem="kuc-3p-d7y" secondAttribute="trailing" constant="8" id="1sn-Ks-BPT"/>
+                            <constraint firstItem="kuc-3p-d7y" firstAttribute="top" secondItem="vlj-ar-Dcd" secondAttribute="top" id="8Ov-lW-cH6"/>
+                            <constraint firstItem="OK5-zg-PKn" firstAttribute="centerY" secondItem="kuc-3p-d7y" secondAttribute="centerY" id="Pp1-bz-a16"/>
+                            <constraint firstItem="kuc-3p-d7y" firstAttribute="leading" secondItem="vlj-ar-Dcd" secondAttribute="leading" id="fbd-V6-sAT"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ns5-al-iMx" secondAttribute="bottom" id="qjQ-Vq-nYH"/>
+                            <constraint firstItem="Ns5-al-iMx" firstAttribute="top" secondItem="kuc-3p-d7y" secondAttribute="bottom" constant="1" id="r0b-RP-fX0"/>
+                            <constraint firstItem="Ns5-al-iMx" firstAttribute="leading" secondItem="vlj-ar-Dcd" secondAttribute="leading" id="tSE-TE-jVC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="vlj-ar-Dcd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="KVe-OS-y07"/>
+                    <constraint firstAttribute="trailing" secondItem="vlj-ar-Dcd" secondAttribute="trailing" constant="16" id="V5d-Tu-LEO"/>
+                    <constraint firstAttribute="bottom" secondItem="vlj-ar-Dcd" secondAttribute="bottom" constant="16" id="tv7-73-qeF"/>
+                    <constraint firstItem="vlj-ar-Dcd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="zSS-Ja-pyR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="-139.13043478260872" y="84.375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_show_password" width="24" height="24"/>
+    </resources>
+</document>
