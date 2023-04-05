@@ -42,12 +42,15 @@
 		522C19B129C0552E00BD7168 /* Demension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B029C0552E00BD7168 /* Demension.swift */; };
 		522C19B329C0582200BD7168 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B229C0582200BD7168 /* Category.swift */; };
 		522C19B729C152D600BD7168 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B629C152D600BD7168 /* Banner.swift */; };
+		52A8C2EB29DD3B470079627E /* TransactionHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */; };
+		52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */; };
 		52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0129D153E30001DDD8 /* HomeManager.swift */; };
 		52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */; };
 		52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */; };
 		52BDDD0829D56B220001DDD8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0729D56B220001DDD8 /* BaseViewController.swift */; };
 		52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */; };
 		52BDDD0D29D586A60001DDD8 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0C29D586A60001DDD8 /* Transaction.swift */; };
+		52BDDD0F29D707760001DDD8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0E29D707760001DDD8 /* RealmManager.swift */; };
 		52DC3DBA29B1DD1D00D6C5D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC3DB929B1DD1D00D6C5D0 /* AppDelegate.swift */; };
 		52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DC3DC429B1DD2100D6C5D0 /* LaunchScreen.storyboard */; };
 		52DC3DD029B1E50F00D6C5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DC3DCF29B1E50F00D6C5D0 /* Assets.xcassets */; };
@@ -90,12 +93,15 @@
 		522C19B029C0552E00BD7168 /* Demension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demension.swift; sourceTree = "<group>"; };
 		522C19B229C0582200BD7168 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		522C19B629C152D600BD7168 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryController.swift; sourceTree = "<group>"; };
+		52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryController.xib; sourceTree = "<group>"; };
 		52BDDD0129D153E30001DDD8 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 		52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabelViewCell.swift; sourceTree = "<group>"; };
 		52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
 		52BDDD0729D56B220001DDD8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionGroup.swift; sourceTree = "<group>"; };
 		52BDDD0C29D586A60001DDD8 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		52BDDD0E29D707760001DDD8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		52DC3DB629B1DD1D00D6C5D0 /* MoneyLover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyLover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DC3DB929B1DD1D00D6C5D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52DC3DC529B1DD2100D6C5D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 				5222F43229C4516700A51A8F /* TabViewController.swift */,
 				522C198C29BEF65F00BD7168 /* Introduction */,
 				522C198429BEF56100BD7168 /* Home */,
+				52A8C2E529DD3A9F0079627E /* Transaction History */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -293,11 +300,45 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		52A8C2E529DD3A9F0079627E /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2E829DD3B120079627E /* Model */,
+				52A8C2E729DD3B060079627E /* View */,
+				52A8C2E629DD3AFC0079627E /* Controller */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		52A8C2E629DD3AFC0079627E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52A8C2E729DD3B060079627E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52A8C2E829DD3B120079627E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		52BDDD0929D57ED30001DDD8 /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */,
 				52BDDD0C29D586A60001DDD8 /* Transaction.swift */,
+				52BDDD0E29D707760001DDD8 /* RealmManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -419,6 +460,7 @@
 				52DC3DD029B1E50F00D6C5D0 /* Assets.xcassets in Resources */,
 				522C198B29BEF5D200BD7168 /* HomeViewController.xib in Resources */,
 				52078DEE29C95CAD001B56CD /* PromotionCell.xib in Resources */,
+				52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */,
 				52078DF229C993F8001B56CD /* PersonalPlanCell.xib in Resources */,
 				522C19A029C00A1E00BD7168 /* ImageViewCell.xib in Resources */,
 				522C199B29C009D500BD7168 /* LabelViewCell.xib in Resources */,
@@ -493,6 +535,7 @@
 				52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */,
 				522C199429C0063700BD7168 /* UIView+Extension.swift in Sources */,
 				52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */,
+				52BDDD0F29D707760001DDD8 /* RealmManager.swift in Sources */,
 				522C19B129C0552E00BD7168 /* Demension.swift in Sources */,
 				522C199F29C00A1E00BD7168 /* ImageViewCell.swift in Sources */,
 				52078DF429C99EB6001B56CD /* Commons.swift in Sources */,
@@ -504,6 +547,7 @@
 				52078DED29C95CAD001B56CD /* PromotionCell.swift in Sources */,
 				52BDDD0D29D586A60001DDD8 /* Transaction.swift in Sources */,
 				52078DE929C959EC001B56CD /* HeaderCell.swift in Sources */,
+				52A8C2EB29DD3B470079627E /* TransactionHistoryController.swift in Sources */,
 				522C19B329C0582200BD7168 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

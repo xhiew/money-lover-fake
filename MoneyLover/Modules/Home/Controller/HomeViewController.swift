@@ -47,7 +47,7 @@ extension HomeViewController: UITableViewDataSource {
     case .accBalance:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: AccountBalanceCell.identifier, for: indexPath) as? AccountBalanceCell
       guard let cell = cell else { return AccountBalanceCell() }
-
+      cell.accountBalance = "999,999,999"
       return cell
     case .myWallet:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: MyWalletCell.identifier, for: indexPath) as? MyWalletCell
@@ -72,11 +72,15 @@ extension HomeViewController: UITableViewDataSource {
     case .expenseReport:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: ExpenseReportCell.identifier, for: indexPath) as? ExpenseReportCell
       guard let cell = cell else { return ExpenseReportCell() }
+      cell.maxMonthlyExpenses = homeManager.expenses
       cell.performChart()
+      cell.showMaxExpenses(maxExpenses: homeManager.expenses)
+
       return cell
     case .recentTransaction:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: RecentTransactionCell.identifier, for: indexPath) as? RecentTransactionCell
       guard let cell = cell else { return RecentTransactionCell() }
+      cell.showItems(transactions: homeManager.expenses)
 
       return cell
     }

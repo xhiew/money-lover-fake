@@ -8,15 +8,14 @@
 import RealmSwift
 
 class Transaction: Object {
-
-  @Persisted var id: String
+  @Persisted(primaryKey: true) var id = 0
   @Persisted var amount: Double?
   @Persisted var group: TransactionGroup?
   @Persisted var note: String?
   @Persisted var date: Date?
 
-  init(amount: Double?, group: TransactionGroup?, note: String?, date: Date?) {
-    id = UUID().uuidString
+  convenience init(amount: Double?, group: TransactionGroup?, note: String?, date: Date?) {
+    self.init()
     self.amount = amount
     self.group = group
     self.note = note

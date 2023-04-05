@@ -14,17 +14,14 @@ class LabelViewCell: UICollectionViewCell {
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var stackHeightConstraint: NSLayoutConstraint!
 
-  var categories: [Category]?
-
   override func awakeFromNib() {
     super.awakeFromNib()
     mainLabel.text = Resource.Title.Onboarding.mainTitlePage1
-    addCategory()
   }
 
-  func addCategory() {
+  func addCategory(categories: [Category]?) {
     guard let categories = categories else { return }
-    clearStackView()
+    guard stackView.arrangedSubviews.isEmpty else { return }
     for category in categories {
       let view = OnBoardingCustomView()
       view.setupUI(image: category.image, title: category.title)
@@ -35,9 +32,5 @@ class LabelViewCell: UICollectionViewCell {
     }
     stackHeightConstraint.constant = Demension.shared.heightForCategory * CGFloat(categories.count) + Demension.shared.stackSpacing * CGFloat(categories.count - 1)
   }
-
-  func clearStackView() {
-    stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-  }
-
+  
 }

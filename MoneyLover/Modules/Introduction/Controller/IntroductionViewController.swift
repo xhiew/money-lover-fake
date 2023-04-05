@@ -82,8 +82,7 @@ extension IntroductionViewController: UICollectionViewDataSource {
     case .category:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LabelViewCell.identifier, for: indexPath) as? LabelViewCell
       guard let cell = cell else { return LabelViewCell() }
-      cell.categories = categoryData
-      cell.addCategory()
+      cell.addCategory(categories: categoryData)
       return cell
     case .bannerPage:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.identifier, for: indexPath) as? ImageViewCell

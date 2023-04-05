@@ -10,5 +10,6 @@ target 'MoneyLover' do
 	pod 'PTCardTabBar'
 	pod 'Charts'
 	pod 'RealmSwift'
+	pod 'SwifterSwift/Foundation'
 
 end

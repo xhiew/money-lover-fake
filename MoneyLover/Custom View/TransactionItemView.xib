@@ -8,23 +8,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionItemView" customModule="MoneyLover" customModuleProvider="target">
+            <connections>
+                <outlet property="imageItem" destination="1Hy-Bo-1n2" id="Ehe-nG-1HB"/>
+                <outlet property="rightTitle" destination="WXL-0r-CTP" id="6Wm-bw-fz6"/>
+                <outlet property="subTitle" destination="xiS-GB-NFU" id="1wN-Qx-Le8"/>
+                <outlet property="titleItem" destination="SnY-Sx-6H3" id="UmJ-4z-iAX"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TransactionItemView" customModule="MoneyLover" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="291" height="52"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-Hv-ksZ">
-                    <rect key="frame" x="0.0" y="0.0" width="291" height="52"/>
+                    <rect key="frame" x="0.0" y="0.0" width="291" height="56"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-80-IKS" userLabel="img view">
-                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_education" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-Bo-1n2">
-                                    <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="LmV-T3-oyg"/>
-                                        <constraint firstAttribute="width" constant="35" id="pBh-nS-hmM"/>
+                                        <constraint firstAttribute="width" secondItem="1Hy-Bo-1n2" secondAttribute="height" multiplier="1:1" id="vrc-3N-YOq"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -36,7 +42,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwh-Wi-0m3" userLabel="des view">
-                            <rect key="frame" x="35" y="0.0" width="256" height="35"/>
+                            <rect key="frame" x="44" y="0.0" width="247" height="44"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giáo dục" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnY-Sx-6H3">
                                     <rect key="frame" x="16" y="0.0" width="55" height="16"/>
@@ -45,13 +51,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,000,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiS-GB-NFU">
-                                    <rect key="frame" x="16" y="21.5" width="54" height="13.5"/>
+                                    <rect key="frame" x="16" y="30.5" width="54" height="13.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXL-0r-CTP">
-                                    <rect key="frame" x="227.5" y="9.5" width="28.5" height="16"/>
+                                    <rect key="frame" x="218.5" y="14" width="28.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                     <color key="textColor" red="1" green="0.046772837529804212" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -71,10 +77,10 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Hwh-Wi-0m3" secondAttribute="trailing" id="MoM-Ti-fpM"/>
                         <constraint firstItem="SnY-Sx-6H3" firstAttribute="top" secondItem="1Hy-Bo-1n2" secondAttribute="top" id="Psa-96-iQW"/>
+                        <constraint firstItem="xiS-GB-NFU" firstAttribute="bottom" secondItem="1Hy-Bo-1n2" secondAttribute="bottom" priority="700" id="SWP-Te-tJm"/>
                         <constraint firstItem="Hwh-Wi-0m3" firstAttribute="top" secondItem="6oY-Hv-ksZ" secondAttribute="top" id="TYz-Ad-jX9"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3EI-80-IKS" secondAttribute="bottom" id="WRb-fH-1xe"/>
                         <constraint firstItem="WXL-0r-CTP" firstAttribute="centerY" secondItem="1Hy-Bo-1n2" secondAttribute="centerY" id="XG8-15-yXj"/>
-                        <constraint firstItem="xiS-GB-NFU" firstAttribute="bottom" secondItem="1Hy-Bo-1n2" secondAttribute="bottom" priority="700" id="dfW-my-1eI"/>
                         <constraint firstItem="3EI-80-IKS" firstAttribute="top" secondItem="6oY-Hv-ksZ" secondAttribute="top" id="jE7-uB-A3C"/>
                         <constraint firstItem="Hwh-Wi-0m3" firstAttribute="height" secondItem="3EI-80-IKS" secondAttribute="height" id="ozT-xW-JtX"/>
                         <constraint firstItem="3EI-80-IKS" firstAttribute="leading" secondItem="6oY-Hv-ksZ" secondAttribute="leading" id="vc5-Wj-b1z"/>
@@ -91,13 +97,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6oY-Hv-ksZ" secondAttribute="trailing" id="zki-ER-3i1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="imageItem" destination="1Hy-Bo-1n2" id="SUC-e3-rMx"/>
-                <outlet property="rightTitle" destination="WXL-0r-CTP" id="T5U-sX-DxD"/>
-                <outlet property="subTitle" destination="xiS-GB-NFU" id="WMC-t1-NLp"/>
-                <outlet property="titleItem" destination="SnY-Sx-6H3" id="IqN-9n-hJ1"/>
-            </connections>
-            <point key="canvasLocation" x="-457.24637681159425" y="130.58035714285714"/>
+            <point key="canvasLocation" x="-457.24637681159425" y="129.91071428571428"/>
         </view>
     </objects>
     <resources>

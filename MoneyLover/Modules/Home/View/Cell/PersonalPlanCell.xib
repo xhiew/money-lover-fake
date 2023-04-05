@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ijH-p3-dhf">
-                                        <rect key="frame" x="51" y="47" width="228" height="4"/>
+                                        <rect key="frame" x="51" y="45.5" width="228" height="4"/>
                                         <color key="tintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="XSc-YQ-b3S"/>
@@ -54,10 +54,10 @@
                                 <constraints>
                                     <constraint firstItem="pdO-sl-q0E" firstAttribute="centerY" secondItem="doy-hq-vb9" secondAttribute="centerY" id="0pk-wc-bQn"/>
                                     <constraint firstItem="yV0-4l-eLa" firstAttribute="leading" secondItem="pdO-sl-q0E" secondAttribute="trailing" constant="16" id="3JT-ln-2i1"/>
+                                    <constraint firstItem="ijH-p3-dhf" firstAttribute="top" secondItem="yV0-4l-eLa" secondAttribute="bottom" id="BaF-SM-8Mq"/>
                                     <constraint firstItem="kjB-Oz-kjN" firstAttribute="top" secondItem="pdO-sl-q0E" secondAttribute="top" id="ICx-Qm-Jqu"/>
                                     <constraint firstItem="pdO-sl-q0E" firstAttribute="top" secondItem="doy-hq-vb9" secondAttribute="top" constant="16" id="If9-QF-jnf"/>
                                     <constraint firstItem="pdO-sl-q0E" firstAttribute="leading" secondItem="doy-hq-vb9" secondAttribute="leading" id="M84-vg-Ai5"/>
-                                    <constraint firstItem="ijH-p3-dhf" firstAttribute="bottom" secondItem="pdO-sl-q0E" secondAttribute="bottom" id="QQk-ol-hxm"/>
                                     <constraint firstItem="kjB-Oz-kjN" firstAttribute="leading" secondItem="pdO-sl-q0E" secondAttribute="trailing" constant="16" id="iBs-zY-2WL"/>
                                     <constraint firstItem="yV0-4l-eLa" firstAttribute="top" secondItem="kjB-Oz-kjN" secondAttribute="bottom" id="mUi-MF-Wq0"/>
                                     <constraint firstAttribute="bottom" secondItem="pdO-sl-q0E" secondAttribute="bottom" constant="16" id="n80-qn-v7a"/>

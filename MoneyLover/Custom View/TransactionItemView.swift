@@ -34,8 +34,8 @@ class TransactionItemView: UIView {
     }
   }
 
-  func setupUI(image: UIImage?, title: String?, subTitle: String?, rightTitle: String?) {
-    imageItem.image = image
+  func setupUI(image: String?, title: String?, subTitle: String?, rightTitle: String?) {
+    imageItem.image = UIImage(named: image ?? "")
     titleItem.text = title
     self.subTitle.text = subTitle
     self.rightTitle.text = rightTitle

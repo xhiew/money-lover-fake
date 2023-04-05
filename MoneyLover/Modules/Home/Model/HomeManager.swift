@@ -7,7 +7,21 @@
 
 import UIKit
 
+protocol HomeManagerDelegate: AnyObject {
+
+}
+
 class HomeManager {
+  weak var delegate: HomeManagerDelegate?
+
+  init() {
+
+  }
+
+  func attachView(delegate: HomeManagerDelegate) {
+    self.delegate = delegate
+  }
+
   let homeItem: [HomeItem] = [.accBalance,
                               .myWallet,
                               .header(title: Resource.Title.Home.expenseReport),
@@ -20,6 +34,28 @@ class HomeManager {
                               .personalPlan
   ]
 
+  let expenses: [Transaction] = [Transaction(amount: 200000,
+                                                group: TransactionGroup(image: "ic_home",
+                                                                        name: "Sửa & trang trí nhà",
+                                                                        isExpense: true,
+                                                                        groupType: .essentialExpenses),
+                                                note: "",
+                                                date: Date()),
+                                    Transaction(amount: 200000,
+                                                group: TransactionGroup(image: "ic_home",
+                                                                        name: "Học tập",
+                                                                        isExpense: true,
+                                                                        groupType: .essentialExpenses),
+                                                note: "",
+                                                date: Date()),
+                                    Transaction(amount: 200000,
+                                                group: TransactionGroup(image: "ic_home",
+                                                                        name: "Tiền điện",
+                                                                        isExpense: true,
+                                                                        groupType: .essentialExpenses),
+                                                note: "",
+                                                date: Date()),
+  ]
 
 }
 

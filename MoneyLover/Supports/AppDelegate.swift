@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func playApp() {
     if true {
-      window?.rootViewController = TabViewController()
+      window?.rootViewController = IntroductionViewController()
     } else {
       window?.rootViewController = IntroductionViewController()
     }

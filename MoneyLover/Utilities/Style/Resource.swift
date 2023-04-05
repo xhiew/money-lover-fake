@@ -20,6 +20,9 @@ public class Resource {
 
   public class Image {
 
+    public static let openEyes = UIImage(named: "ic_show_password")
+    public static let closeEyes = UIImage(named: "ic_hide_password")
+
     public class OnBoarding {
       public static let paymentSuccessImg: UIImage? = UIImage(named: "img_introduce3")
       public static let waveBackgroundImg: UIImage? = UIImage(named: "Wave")
@@ -46,6 +49,7 @@ public class Resource {
     }
 
     public static let vnd = "₫"
+    public static let passwordText = "********"
 
     class Onboarding {
       public static let appName = "MoneyLover"

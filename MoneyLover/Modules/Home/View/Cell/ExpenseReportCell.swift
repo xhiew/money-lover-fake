@@ -14,6 +14,13 @@ class ExpenseReportCell: BaseTableViewCell {
   @IBOutlet weak var totalExpenses: UILabel!
   @IBOutlet weak var barChart: BarChartView!
   @IBOutlet weak var stackExpenses: UIStackView!
+  @IBOutlet weak var heightForStackView: NSLayoutConstraint!
+  @IBOutlet weak var stateLabel: UILabel!
+
+  var maxWeeklyExpenses: [Transaction]?
+  var maxMonthlyExpenses: [Transaction]?
+  var totalWeeklyExpenses: Double?
+  var totalMonthlyExpenses: Double?
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -64,6 +71,24 @@ class ExpenseReportCell: BaseTableViewCell {
     data.barWidth = 0.5
     barChart.data = data
     barChart.animate(yAxisDuration: 0.5)
+  }
+
+  func showMaxExpenses(maxExpenses: [Transaction]?) {
+    guard let maxExpense = maxExpenses else {
+      return
+    }
+    guard stackExpenses.arrangedSubviews.isEmpty else { return }
+    stateLabel.isHidden = true
+    for maxExpense in maxExpense {
+      let view = TransactionItemView()
+      view.setupUI(image: maxExpense.group?.image, title: maxExpense.group?.name, subTitle: "200,000", rightTitle: "21%")
+      stackExpenses.addArrangedSubview(view)
+      view.snp.makeConstraints { make in
+        make.width.equalTo(stackExpenses)
+      }
+    }
+    let numberOfItem = maxExpenses?.count ?? 0
+    heightForStackView.constant = Demension.shared.heightForItemTransaction * CGFloat(numberOfItem) + Demension.shared.stackSpacing * CGFloat(numberOfItem - 1)
   }
 
 }

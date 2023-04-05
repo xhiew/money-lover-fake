@@ -10,27 +10,35 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="134" id="KGk-i7-Jjw" customClass="RecentTransactionCell" customModule="MoneyLover" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="KGk-i7-Jjw" customClass="RecentTransactionCell" customModule="MoneyLover" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="278" height="81"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="278" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n92-mW-QEG">
-                        <rect key="frame" x="16" y="0.0" width="288" height="118"/>
+                        <rect key="frame" x="16" y="0.0" width="246" height="70"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XvG-ph-VlO">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="118"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XvG-ph-VlO">
+                                <rect key="frame" x="16" y="16" width="214" height="38"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có giao dịch nào được tạo 🎯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJA-aN-jRs">
+                                <rect key="frame" x="16" y="27" width="214.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XvG-ph-VlO" firstAttribute="top" secondItem="n92-mW-QEG" secondAttribute="top" id="7di-Ug-PCR"/>
-                            <constraint firstAttribute="bottom" secondItem="XvG-ph-VlO" secondAttribute="bottom" id="80J-sJ-1E3"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="csj-Jt-RLT"/>
-                            <constraint firstAttribute="trailing" secondItem="XvG-ph-VlO" secondAttribute="trailing" id="oDQ-cE-36K"/>
-                            <constraint firstItem="XvG-ph-VlO" firstAttribute="leading" secondItem="n92-mW-QEG" secondAttribute="leading" id="pO2-eM-fNi"/>
+                            <constraint firstItem="XvG-ph-VlO" firstAttribute="top" secondItem="n92-mW-QEG" secondAttribute="top" constant="16" id="7di-Ug-PCR"/>
+                            <constraint firstAttribute="bottom" secondItem="XvG-ph-VlO" secondAttribute="bottom" constant="16" id="80J-sJ-1E3"/>
+                            <constraint firstItem="XJA-aN-jRs" firstAttribute="centerX" secondItem="n92-mW-QEG" secondAttribute="centerX" id="JA2-M1-FCI"/>
+                            <constraint firstItem="XJA-aN-jRs" firstAttribute="centerY" secondItem="n92-mW-QEG" secondAttribute="centerY" id="VHx-JM-7Kv"/>
+                            <constraint firstAttribute="height" constant="70" id="csj-Jt-RLT"/>
+                            <constraint firstAttribute="trailing" secondItem="XvG-ph-VlO" secondAttribute="trailing" constant="16" id="oDQ-cE-36K"/>
+                            <constraint firstItem="XvG-ph-VlO" firstAttribute="leading" secondItem="n92-mW-QEG" secondAttribute="leading" constant="16" id="pO2-eM-fNi"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -48,7 +56,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="-146.37681159420291" y="62.946428571428569"/>
+            <connections>
+                <outlet property="heightConstraint" destination="csj-Jt-RLT" id="xzb-4y-jy7"/>
+                <outlet property="stackView" destination="XvG-ph-VlO" id="63C-Ss-YYO"/>
+                <outlet property="stateLabel" destination="XJA-aN-jRs" id="hxJ-0S-fzf"/>
+            </connections>
+            <point key="canvasLocation" x="-175.36231884057972" y="58.59375"/>
         </tableViewCell>
     </objects>
     <resources>
