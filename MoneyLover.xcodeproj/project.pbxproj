@@ -44,6 +44,8 @@
 		522C19B729C152D600BD7168 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B629C152D600BD7168 /* Banner.swift */; };
 		52A8C2EB29DD3B470079627E /* TransactionHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */; };
 		52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */; };
+		52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2F329DD49F10079627E /* CreateTransactionController.swift */; };
+		52A8C2F629DD49F10079627E /* CreateTransactionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2F429DD49F10079627E /* CreateTransactionController.xib */; };
 		52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0129D153E30001DDD8 /* HomeManager.swift */; };
 		52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */; };
 		52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */; };
@@ -95,6 +97,8 @@
 		522C19B629C152D600BD7168 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryController.swift; sourceTree = "<group>"; };
 		52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryController.xib; sourceTree = "<group>"; };
+		52A8C2F329DD49F10079627E /* CreateTransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionController.swift; sourceTree = "<group>"; };
+		52A8C2F429DD49F10079627E /* CreateTransactionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTransactionController.xib; sourceTree = "<group>"; };
 		52BDDD0129D153E30001DDD8 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 		52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabelViewCell.swift; sourceTree = "<group>"; };
 		52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				522C198C29BEF65F00BD7168 /* Introduction */,
 				522C198429BEF56100BD7168 /* Home */,
 				52A8C2E529DD3A9F0079627E /* Transaction History */,
+				52A8C2ED29DD493D0079627E /* CreateTransaction */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -333,6 +338,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		52A8C2ED29DD493D0079627E /* CreateTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2F229DD49C80079627E /* Model */,
+				52A8C2EF29DD49640079627E /* View */,
+				52A8C2EE29DD49560079627E /* Controller */,
+			);
+			path = CreateTransaction;
+			sourceTree = "<group>";
+		};
+		52A8C2EE29DD49560079627E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2F329DD49F10079627E /* CreateTransactionController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52A8C2EF29DD49640079627E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2F429DD49F10079627E /* CreateTransactionController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52A8C2F229DD49C80079627E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		52BDDD0929D57ED30001DDD8 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +492,7 @@
 				52078DF629C9ABAC001B56CD /* TransactionItemView.xib in Resources */,
 				522C199029BEF6B200BD7168 /* IntroductionViewController.xib in Resources */,
 				52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */,
+				52A8C2F629DD49F10079627E /* CreateTransactionController.xib in Resources */,
 				52078DFC29C9C6EC001B56CD /* ExpenseReportCell.xib in Resources */,
 				5222F43D29C45DA000A51A8F /* MyWalletCell.xib in Resources */,
 				5222F43929C45ADB00A51A8F /* AccountBalanceCell.xib in Resources */,
@@ -532,6 +571,7 @@
 				522C199A29C009D500BD7168 /* LabelViewCell.swift in Sources */,
 				52078DFF29C9C728001B56CD /* RecentTransactionCell.swift in Sources */,
 				52078DF829C9ABDB001B56CD /* TransactionItemView.swift in Sources */,
+				52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */,
 				52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */,
 				522C199429C0063700BD7168 /* UIView+Extension.swift in Sources */,
 				52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */,

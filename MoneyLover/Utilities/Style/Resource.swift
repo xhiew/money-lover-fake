@@ -62,6 +62,12 @@ public class Resource {
       public static let mainTitlePage3 = "Đảm bảo thông tin của bạn luôn được bảo mật"
     }
 
+    class TabBarTitle {
+      static let home = "Tổng quan"
+      static let create = "Tạo giao dịch"
+      static let history = "Sổ giao dịch"
+    }
+
     class Home {
       public static let notiButton1 = "Nhận thông báo"
       public static let notiButton2 = "Đã bật nhận thông báo"

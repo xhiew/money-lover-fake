@@ -1,5 +1,5 @@
 //
-//  TransactionHistoryController.swift
+//  CreateTransactionController.swift
 //  MoneyLover
 //
 //  Created by xhieu21 on 05/04/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransactionHistoryController: BaseViewController {
+class CreateTransactionController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -62,7 +62,6 @@ class IntroductionViewController: UIViewController {
 
   @IBAction func startButtonAction(_ sender: UIButton) {
     timer?.invalidate()
-    Commons.shared.animateButton(viewToAnimate: sender)
     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
       appDelegate.window?.rootViewController = TabViewController()
     }

@@ -3,7 +3,6 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
-  - PTCardTabBar (1.0.2)
   - Realm (10.28.5):
     - Realm/Headers (= 10.28.5)
   - Realm/Headers (10.28.5)
@@ -15,7 +14,6 @@ PODS:
 
 DEPENDENCIES:
   - Charts
-  - PTCardTabBar
   - RealmSwift
   - SnapKit (~> 5.6.0)
   - SwifterSwift/Foundation
@@ -23,7 +21,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Charts
-    - PTCardTabBar
     - Realm
     - RealmSwift
     - SnapKit
@@ -32,13 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
-  PTCardTabBar: 9f94e31b447629aead75cd21cdaa6ae1f2c8bac6
   Realm: eb7f6a7a8395906822e6fab71eb8496d6d52b318
   RealmSwift: 6b54904d4a236de143f3411a757641fd74e9cb3d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: b6cd9c3382dbd031067e155d62a25027e90f52ab
+PODFILE CHECKSUM: 5261604bbf8862efd9a5d498962ae7f691488dbb
 
 COCOAPODS: 1.11.3

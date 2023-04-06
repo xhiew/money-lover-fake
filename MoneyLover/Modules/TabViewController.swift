@@ -8,59 +8,39 @@
 import UIKit
 import PTCardTabBar
 
-class TabViewController: PTCardTabBarController {
-
-  //MARK: - Properties
-  var timer: Timer?
-  var isHidden = false
-  let timeAutoHidden = 4.0
+class TabViewController: UITabBarController {
 
   //MARK: - LifeCycle
   override func viewDidLoad() {
 
     let overview = HomeViewController()
-    overview.tabBarItem = UITabBarItem(title: nil, image: Resource.Image.TabBarIcon.homeItemImg, tag: 1)
+    overview.tabBarItem = UITabBarItem(title: Resource.Title.TabBarTitle.home, image: Resource.Image.TabBarIcon.homeItemImg, tag: 1)
 
-    let createTransaction = BaseViewController()
-    createTransaction.tabBarItem = UITabBarItem(title: nil, image: Resource.Image.TabBarIcon.addImg, tag: 2)
+    let createTransaction = CreateTransactionController()
+    createTransaction.tabBarItem = UITabBarItem(title: Resource.Title.TabBarTitle.create, image: Resource.Image.TabBarIcon.addImg, tag: 2)
 
-    let transactionHistory = BaseViewController()
-    transactionHistory.tabBarItem = UITabBarItem(title: nil, image: Resource.Image.TabBarIcon.walletImg, tag: 3)
+    let transactionHistory = TransactionHistoryController()
+    transactionHistory.tabBarItem = UITabBarItem(title: Resource.Title.TabBarTitle.history, image: Resource.Image.TabBarIcon.walletImg, tag: 3)
 
     self.viewControllers = [overview, createTransaction, transactionHistory]
     super.viewDidLoad()
-    configUITabBar()
-    NotificationCenter.default.addObserver(self, selector: #selector(handleHiddenTabBar), name: .tapOnView, object: nil)
-    autoHiddenTabBar()
+    self.delegate = self
+    configTabBar()
   }
 
   //MARK: - Methods
-  func hiddenTabBar(isHidden: Bool) {
-    setTabBarHidden(isHidden, animated: true)
-    /// cập nhật trạng thái của tabBar (isHidden != isHidden)
-    self.isHidden = !self.isHidden
+  func configTabBar() {
+    tabBar.tintColor = Theme.shared.primaryColor
   }
+}
 
-  @objc func handleHiddenTabBar() {
-    if isHidden {
-      hiddenTabBar(isHidden: false)
-      autoHiddenTabBar()
-    } else {
-      timer?.invalidate()
-      hiddenTabBar(isHidden: true)
+extension TabViewController: UITabBarControllerDelegate {
+  func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    if viewController is CreateTransactionController {
+      let navVC = UINavigationController(rootViewController: CreateTransactionController())
+      present(navVC, animated: true, completion: nil)
+      return false
     }
+    return true
   }
-
-  func autoHiddenTabBar() {
-    timer?.invalidate()
-    timer = Timer.scheduledTimer(withTimeInterval: timeAutoHidden, repeats: false, block: { [weak self] _ in
-      guard let self = self else { return }
-      self.hiddenTabBar(isHidden: true)
-    })
-  }
-
-  func configUITabBar() {
-    tintColor = Theme.shared.primaryColor
-  }
-  
 }

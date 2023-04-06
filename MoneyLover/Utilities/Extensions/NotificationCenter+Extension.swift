@@ -8,5 +8,5 @@
 import UIKit
 
 extension Notification.Name {
-  static let tapOnView = Notification.Name("userInteraction")
+  static let tapOnView = Notification.Name("tapOnView")
 }

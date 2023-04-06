@@ -7,9 +7,7 @@ target 'MoneyLover' do
 
   # Pods for MoneyLover
 	pod 'SnapKit', '~> 5.6.0'
-	pod 'PTCardTabBar'
 	pod 'Charts'
 	pod 'RealmSwift'
 	pod 'SwifterSwift/Foundation'
-
 end
