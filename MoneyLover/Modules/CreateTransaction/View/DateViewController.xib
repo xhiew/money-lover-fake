@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateViewController" customModule="MoneyLover" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="mTr-wr-fPA" id="IVh-9g-qS2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I97-Sd-eTq">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-wr-fPA">
+                            <rect key="frame" x="0.0" y="24" width="414" height="200"/>
+                            <color key="tintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="Raa-e8-9aJ"/>
+                            </constraints>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="347112000">
+                                <!--2012-01-01 12:00:00 +0000-->
+                            </date>
+                            <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                <!--2037-12-31 11:00:00 +0000-->
+                            </date>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="mTr-wr-fPA" firstAttribute="leading" secondItem="I97-Sd-eTq" secondAttribute="leading" id="G86-tt-CRQ"/>
+                        <constraint firstAttribute="trailing" secondItem="mTr-wr-fPA" secondAttribute="trailing" id="NHg-hv-uyK"/>
+                        <constraint firstItem="mTr-wr-fPA" firstAttribute="top" secondItem="I97-Sd-eTq" secondAttribute="top" constant="24" id="jjb-1C-y61"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mTr-wr-fPA" secondAttribute="bottom" id="yHl-tp-1jC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="I97-Sd-eTq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1fr-U9-4q6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I97-Sd-eTq" secondAttribute="trailing" id="4VK-gu-OoQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="I97-Sd-eTq" secondAttribute="bottom" id="T9P-tw-PSC"/>
+                <constraint firstItem="I97-Sd-eTq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VqF-g7-7ti"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

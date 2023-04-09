@@ -10,4 +10,7 @@ target 'MoneyLover' do
 	pod 'Charts'
 	pod 'RealmSwift'
 	pod 'SwifterSwift/Foundation'
+	pod 'AIFlatSwitch'
+	pod 'PanModal'
+	pod 'JDStatusBarNotification'
 end

@@ -19,9 +19,12 @@ public class Resource {
   }
 
   public class Image {
-
     public static let openEyes = UIImage(named: "ic_show_password")
     public static let closeEyes = UIImage(named: "ic_hide_password")
+		public static let systemNote = UIImage(systemName: "terminal")
+		public static let systemCalendar = UIImage(systemName: "calendar")
+		public static let systemError = UIImage(systemName: "exclamationmark.triangle.fill")?.withTintColor(Theme.shared.warningColor, renderingMode: .alwaysOriginal)
+		public static let systemSuccess = UIImage(systemName: "checkmark.seal.fill")?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal)
 
     public class OnBoarding {
       public static let paymentSuccessImg: UIImage? = UIImage(named: "img_introduce3")
@@ -49,7 +52,10 @@ public class Resource {
     }
 
     public static let vnd = "₫"
-    public static let passwordText = "********"
+    public static let privateAmount = "********"
+		public static let note = "Ghi chú"
+		public static let descriptionIgnoreReport = "Giao dịch của bạn sẽ không nằm trong số liệu phân tích và báo cáo. Bạn vẫn có thể theo dõi giao dịch bị bỏ qua trong lịch sử giao dịch."
+		public static let titleIgnoreReport = "Điều gì sẽ xảy ra?"
 
     class Onboarding {
       public static let appName = "MoneyLover"
@@ -71,11 +77,18 @@ public class Resource {
     class Home {
       public static let notiButton1 = "Nhận thông báo"
       public static let notiButton2 = "Đã bật nhận thông báo"
-      public static let expenseReport = "Báo cáo chi tiêu"
-      public static let recentTransaction = "Giao dịch gần đây"
-      public static let personalPlan = "Kế hoạch cá nhân"
-      public static let sales = "Khuyến mãi"
+      public static let expenseReport = "BÁO CÁO CHI TIÊU"
+      public static let recentTransaction = "GIAO DỊCH GẦN ĐÂY"
+      public static let personalPlan = "KẾ HOẠCH CÁ NHÂN"
+      public static let sales = "KHUYẾN MÃI"
     }
+
+		class CreateTransactionTitle {
+			public static let warningTitle = "Oops!"
+			public static let warningSubtitle = "Thiếu thông tin"
+			public static let successTitle = "Yes!"
+			public static let successSubtitle = "Tạo thành công"
+		}
 
   }
 

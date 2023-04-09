@@ -16,6 +16,7 @@ class ExpenseReportCell: BaseTableViewCell {
   @IBOutlet weak var stackExpenses: UIStackView!
   @IBOutlet weak var heightForStackView: NSLayoutConstraint!
   @IBOutlet weak var stateLabel: UILabel!
+	@IBOutlet weak var subTitle: UILabel!
 
   var maxWeeklyExpenses: [Transaction]?
   var maxMonthlyExpenses: [Transaction]?

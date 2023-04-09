@@ -8,5 +8,5 @@
 import UIKit
 
 extension Notification.Name {
-  static let tapOnView = Notification.Name("tapOnView")
+	static let blink = Notification.Name("blink")
 }

@@ -21,13 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
-  func playApp() {
-    if true {
-      window?.rootViewController = IntroductionViewController()
-    } else {
-      window?.rootViewController = IntroductionViewController()
-    }
+  private func playApp() {
+		if UserDefaults.standard.isNotFirstLaunch {
+			window?.rootViewController = TabViewController()
+		} else {
+			window?.rootViewController = IntroductionViewController()
+			prepareForFirstLaunch()
+		}
   }
+
+	private func prepareForFirstLaunch() {
+
+	}
 
 }
 

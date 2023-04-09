@@ -33,8 +33,11 @@ class IntroductionViewController: UIViewController {
 
   @objc func nextPage() {
     if slideView.contentOffset.x < slideView.contentSize.width - slideView.frame.width {
-      slideView.contentOffset.x += slideView.frame.width
-      updatePageIndex(index: Int(slideView.contentOffset.x / slideView.frame.width))
+			var currentContentOffsetX = slideView.contentOffset.x
+			currentContentOffsetX += slideView.frame.width
+			// thay vì slideView.contentOffset.x += slideView.frame.width thì setContentOffset để animation scroll
+			slideView.setContentOffset(CGPoint(x: currentContentOffsetX, y: 0), animated: true)
+      updatePageIndex(index: Int(currentContentOffsetX / slideView.frame.width))
     } else {
       slideView.contentOffset.x = 0
       updatePageIndex(index: 0)
@@ -61,6 +64,7 @@ class IntroductionViewController: UIViewController {
   }
 
   @IBAction func startButtonAction(_ sender: UIButton) {
+		UserDefaults.standard.isNotFirstLaunch = true
     timer?.invalidate()
     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
       appDelegate.window?.rootViewController = TabViewController()
@@ -80,12 +84,12 @@ extension IntroductionViewController: UICollectionViewDataSource {
     switch bannerManager.itemInSection[indexPath.row] {
     case .category:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LabelViewCell.identifier, for: indexPath) as? LabelViewCell
-      guard let cell = cell else { return LabelViewCell() }
+      guard let cell = cell else { return UICollectionViewCell() }
       cell.addCategory(categories: categoryData)
       return cell
     case .bannerPage:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.identifier, for: indexPath) as? ImageViewCell
-      guard let cell = cell else { return ImageViewCell() }
+      guard let cell = cell else { return UICollectionViewCell() }
       cell.setupUI(background: bannerManager.bannerData[indexPath.row - 1].backgroundImg, image: bannerManager.bannerData[indexPath.row - 1].mainImg, title: bannerManager.bannerData[indexPath.row - 1].title)
       return cell
     }

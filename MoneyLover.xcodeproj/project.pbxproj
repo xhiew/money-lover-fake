@@ -46,6 +46,33 @@
 		52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */; };
 		52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2F329DD49F10079627E /* CreateTransactionController.swift */; };
 		52A8C2F629DD49F10079627E /* CreateTransactionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2F429DD49F10079627E /* CreateTransactionController.xib */; };
+		52A8C2FA29DE68700079627E /* AmountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2F829DE68700079627E /* AmountViewCell.swift */; };
+		52A8C2FB29DE68700079627E /* AmountViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2F929DE68700079627E /* AmountViewCell.xib */; };
+		52A8C2FE29DE68850079627E /* GroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2FC29DE68850079627E /* GroupViewCell.swift */; };
+		52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2FD29DE68850079627E /* GroupViewCell.xib */; };
+		52A8C30229DE6A0C0079627E /* MiscViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C30029DE6A0C0079627E /* MiscViewCell.swift */; };
+		52A8C30329DE6A0C0079627E /* MiscViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C30129DE6A0C0079627E /* MiscViewCell.xib */; };
+		52A8C30629DE6A200079627E /* IgnoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C30429DE6A200079627E /* IgnoreViewCell.swift */; };
+		52A8C30729DE6A200079627E /* IgnoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C30529DE6A200079627E /* IgnoreViewCell.xib */; };
+		52A8C30929DF1E010079627E /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C30829DF1E010079627E /* Double+Extension.swift */; };
+		52A8C30B29DF21800079627E /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C30A29DF21800079627E /* NumberFormatter+Extension.swift */; };
+		52A8C30D29DF26E50079627E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C30C29DF26E50079627E /* String+Extension.swift */; };
+		52A8C30F29DFACFA0079627E /* CreateTransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C30E29DFACFA0079627E /* CreateTransactionManager.swift */; };
+		52A8C31329DFD8BF0079627E /* PopUpInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C31129DFD8BF0079627E /* PopUpInfoController.swift */; };
+		52A8C31429DFD8BF0079627E /* PopUpInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C31229DFD8BF0079627E /* PopUpInfoController.xib */; };
+		52A8C31729E02FB80079627E /* TheEndCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C31529E02FB80079627E /* TheEndCell.swift */; };
+		52A8C31829E02FB80079627E /* TheEndCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C31629E02FB80079627E /* TheEndCell.xib */; };
+		52A8C31A29E045A60079627E /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C31929E045A60079627E /* UserDefaults+Extension.swift */; };
+		52A8C31D29E127730079627E /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C31B29E127730079627E /* NoteViewController.swift */; };
+		52A8C31E29E127730079627E /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C31C29E127730079627E /* NoteViewController.xib */; };
+		52A8C32129E127900079627E /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C31F29E127900079627E /* DateViewController.swift */; };
+		52A8C32229E127900079627E /* DateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32029E127900079627E /* DateViewController.xib */; };
+		52A8C32529E1283B0079627E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C32329E1283B0079627E /* GroupViewController.swift */; };
+		52A8C32629E1283B0079627E /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32429E1283B0079627E /* GroupViewController.xib */; };
+		52A8C32929E263FB0079627E /* HeaderGroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C32729E263FB0079627E /* HeaderGroupViewCell.swift */; };
+		52A8C32A29E263FB0079627E /* HeaderGroupViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32829E263FB0079627E /* HeaderGroupViewCell.xib */; };
+		52A8C32D29E264160079627E /* GroupItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C32B29E264160079627E /* GroupItemViewCell.swift */; };
+		52A8C32E29E264160079627E /* GroupItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32C29E264160079627E /* GroupItemViewCell.xib */; };
 		52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0129D153E30001DDD8 /* HomeManager.swift */; };
 		52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */; };
 		52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */; };
@@ -99,6 +126,33 @@
 		52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryController.xib; sourceTree = "<group>"; };
 		52A8C2F329DD49F10079627E /* CreateTransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionController.swift; sourceTree = "<group>"; };
 		52A8C2F429DD49F10079627E /* CreateTransactionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTransactionController.xib; sourceTree = "<group>"; };
+		52A8C2F829DE68700079627E /* AmountViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewCell.swift; sourceTree = "<group>"; };
+		52A8C2F929DE68700079627E /* AmountViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountViewCell.xib; sourceTree = "<group>"; };
+		52A8C2FC29DE68850079627E /* GroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewCell.swift; sourceTree = "<group>"; };
+		52A8C2FD29DE68850079627E /* GroupViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupViewCell.xib; sourceTree = "<group>"; };
+		52A8C30029DE6A0C0079627E /* MiscViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscViewCell.swift; sourceTree = "<group>"; };
+		52A8C30129DE6A0C0079627E /* MiscViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiscViewCell.xib; sourceTree = "<group>"; };
+		52A8C30429DE6A200079627E /* IgnoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreViewCell.swift; sourceTree = "<group>"; };
+		52A8C30529DE6A200079627E /* IgnoreViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IgnoreViewCell.xib; sourceTree = "<group>"; };
+		52A8C30829DF1E010079627E /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		52A8C30A29DF21800079627E /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
+		52A8C30C29DF26E50079627E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		52A8C30E29DFACFA0079627E /* CreateTransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionManager.swift; sourceTree = "<group>"; };
+		52A8C31129DFD8BF0079627E /* PopUpInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpInfoController.swift; sourceTree = "<group>"; };
+		52A8C31229DFD8BF0079627E /* PopUpInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpInfoController.xib; sourceTree = "<group>"; };
+		52A8C31529E02FB80079627E /* TheEndCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheEndCell.swift; sourceTree = "<group>"; };
+		52A8C31629E02FB80079627E /* TheEndCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TheEndCell.xib; sourceTree = "<group>"; };
+		52A8C31929E045A60079627E /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		52A8C31B29E127730079627E /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		52A8C31C29E127730079627E /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		52A8C31F29E127900079627E /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		52A8C32029E127900079627E /* DateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateViewController.xib; sourceTree = "<group>"; };
+		52A8C32329E1283B0079627E /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		52A8C32429E1283B0079627E /* GroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
+		52A8C32729E263FB0079627E /* HeaderGroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGroupViewCell.swift; sourceTree = "<group>"; };
+		52A8C32829E263FB0079627E /* HeaderGroupViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderGroupViewCell.xib; sourceTree = "<group>"; };
+		52A8C32B29E264160079627E /* GroupItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemViewCell.swift; sourceTree = "<group>"; };
+		52A8C32C29E264160079627E /* GroupItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupItemViewCell.xib; sourceTree = "<group>"; };
 		52BDDD0129D153E30001DDD8 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 		52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabelViewCell.swift; sourceTree = "<group>"; };
 		52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
@@ -145,6 +199,8 @@
 				52078DFA29C9C6EC001B56CD /* ExpenseReportCell.xib */,
 				52078DFD29C9C728001B56CD /* RecentTransactionCell.swift */,
 				52078DFE29C9C728001B56CD /* RecentTransactionCell.xib */,
+				52A8C31529E02FB80079627E /* TheEndCell.swift */,
+				52A8C31629E02FB80079627E /* TheEndCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -163,11 +219,11 @@
 		522C198329BEF53200BD7168 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				5222F43229C4516700A51A8F /* TabViewController.swift */,
+				52A8C31029DFCC520079627E /* TabBar */,
 				522C198C29BEF65F00BD7168 /* Introduction */,
 				522C198429BEF56100BD7168 /* Home */,
-				52A8C2E529DD3A9F0079627E /* Transaction History */,
 				52A8C2ED29DD493D0079627E /* CreateTransaction */,
+				52A8C2E529DD3A9F0079627E /* Transaction History */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -234,6 +290,10 @@
 				522C199329C0063700BD7168 /* UIView+Extension.swift */,
 				522C19AB29C0434E00BD7168 /* UIColor+Extension.swift */,
 				52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */,
+				52A8C30829DF1E010079627E /* Double+Extension.swift */,
+				52A8C30A29DF21800079627E /* NumberFormatter+Extension.swift */,
+				52A8C30C29DF26E50079627E /* String+Extension.swift */,
+				52A8C31929E045A60079627E /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +342,8 @@
 				522C19A429C019DF00BD7168 /* OnBoardingCustomView.xib */,
 				52078DF729C9ABDB001B56CD /* TransactionItemView.swift */,
 				52078DF529C9ABAC001B56CD /* TransactionItemView.xib */,
+				52A8C31129DFD8BF0079627E /* PopUpInfoController.swift */,
+				52A8C31229DFD8BF0079627E /* PopUpInfoController.xib */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -352,6 +414,9 @@
 			isa = PBXGroup;
 			children = (
 				52A8C2F329DD49F10079627E /* CreateTransactionController.swift */,
+				52A8C32329E1283B0079627E /* GroupViewController.swift */,
+				52A8C31B29E127730079627E /* NoteViewController.swift */,
+				52A8C31F29E127900079627E /* DateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,7 +424,11 @@
 		52A8C2EF29DD49640079627E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52A8C2F729DE68440079627E /* Cell */,
 				52A8C2F429DD49F10079627E /* CreateTransactionController.xib */,
+				52A8C32429E1283B0079627E /* GroupViewController.xib */,
+				52A8C31C29E127730079627E /* NoteViewController.xib */,
+				52A8C32029E127900079627E /* DateViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,8 +436,36 @@
 		52A8C2F229DD49C80079627E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52A8C30E29DFACFA0079627E /* CreateTransactionManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		52A8C2F729DE68440079627E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				52A8C2F829DE68700079627E /* AmountViewCell.swift */,
+				52A8C2F929DE68700079627E /* AmountViewCell.xib */,
+				52A8C2FC29DE68850079627E /* GroupViewCell.swift */,
+				52A8C2FD29DE68850079627E /* GroupViewCell.xib */,
+				52A8C30029DE6A0C0079627E /* MiscViewCell.swift */,
+				52A8C30129DE6A0C0079627E /* MiscViewCell.xib */,
+				52A8C30429DE6A200079627E /* IgnoreViewCell.swift */,
+				52A8C30529DE6A200079627E /* IgnoreViewCell.xib */,
+				52A8C32729E263FB0079627E /* HeaderGroupViewCell.swift */,
+				52A8C32829E263FB0079627E /* HeaderGroupViewCell.xib */,
+				52A8C32B29E264160079627E /* GroupItemViewCell.swift */,
+				52A8C32C29E264160079627E /* GroupItemViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		52A8C31029DFCC520079627E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5222F43229C4516700A51A8F /* TabViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		52BDDD0929D57ED30001DDD8 /* Database */ = {
@@ -488,23 +585,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A8C32629E1283B0079627E /* GroupViewController.xib in Resources */,
 				52078DEA29C959EC001B56CD /* HeaderCell.xib in Resources */,
 				52078DF629C9ABAC001B56CD /* TransactionItemView.xib in Resources */,
+				52A8C31429DFD8BF0079627E /* PopUpInfoController.xib in Resources */,
+				52A8C2FB29DE68700079627E /* AmountViewCell.xib in Resources */,
+				52A8C31E29E127730079627E /* NoteViewController.xib in Resources */,
 				522C199029BEF6B200BD7168 /* IntroductionViewController.xib in Resources */,
 				52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */,
 				52A8C2F629DD49F10079627E /* CreateTransactionController.xib in Resources */,
 				52078DFC29C9C6EC001B56CD /* ExpenseReportCell.xib in Resources */,
 				5222F43D29C45DA000A51A8F /* MyWalletCell.xib in Resources */,
+				52A8C30729DE6A200079627E /* IgnoreViewCell.xib in Resources */,
 				5222F43929C45ADB00A51A8F /* AccountBalanceCell.xib in Resources */,
 				52DC3DD029B1E50F00D6C5D0 /* Assets.xcassets in Resources */,
 				522C198B29BEF5D200BD7168 /* HomeViewController.xib in Resources */,
 				52078DEE29C95CAD001B56CD /* PromotionCell.xib in Resources */,
+				52A8C30329DE6A0C0079627E /* MiscViewCell.xib in Resources */,
+				52A8C32E29E264160079627E /* GroupItemViewCell.xib in Resources */,
 				52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */,
+				52A8C32A29E263FB0079627E /* HeaderGroupViewCell.xib in Resources */,
 				52078DF229C993F8001B56CD /* PersonalPlanCell.xib in Resources */,
+				52A8C31829E02FB80079627E /* TheEndCell.xib in Resources */,
+				52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */,
 				522C19A029C00A1E00BD7168 /* ImageViewCell.xib in Resources */,
 				522C199B29C009D500BD7168 /* LabelViewCell.xib in Resources */,
 				522C19A529C019DF00BD7168 /* OnBoardingCustomView.xib in Resources */,
 				52078E0029C9C728001B56CD /* RecentTransactionCell.xib in Resources */,
+				52A8C32229E127900079627E /* DateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,11 +665,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A8C31A29E045A60079627E /* UserDefaults+Extension.swift in Sources */,
 				522C19AA29C0420800BD7168 /* Theme.swift in Sources */,
 				52DC3DBA29B1DD1D00D6C5D0 /* AppDelegate.swift in Sources */,
 				52078DF129C993F8001B56CD /* PersonalPlanCell.swift in Sources */,
 				522C198F29BEF6B200BD7168 /* IntroductionViewController.swift in Sources */,
 				52078DFB29C9C6EC001B56CD /* ExpenseReportCell.swift in Sources */,
+				52A8C32529E1283B0079627E /* GroupViewController.swift in Sources */,
+				52A8C30929DF1E010079627E /* Double+Extension.swift in Sources */,
 				52BDDD0829D56B220001DDD8 /* BaseViewController.swift in Sources */,
 				52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */,
 				522C19AE29C045AB00BD7168 /* Resource.swift in Sources */,
@@ -570,24 +681,37 @@
 				5222F43829C45ADB00A51A8F /* AccountBalanceCell.swift in Sources */,
 				522C199A29C009D500BD7168 /* LabelViewCell.swift in Sources */,
 				52078DFF29C9C728001B56CD /* RecentTransactionCell.swift in Sources */,
+				52A8C30B29DF21800079627E /* NumberFormatter+Extension.swift in Sources */,
 				52078DF829C9ABDB001B56CD /* TransactionItemView.swift in Sources */,
 				52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */,
 				52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */,
+				52A8C32929E263FB0079627E /* HeaderGroupViewCell.swift in Sources */,
 				522C199429C0063700BD7168 /* UIView+Extension.swift in Sources */,
+				52A8C30D29DF26E50079627E /* String+Extension.swift in Sources */,
 				52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */,
+				52A8C30629DE6A200079627E /* IgnoreViewCell.swift in Sources */,
+				52A8C32D29E264160079627E /* GroupItemViewCell.swift in Sources */,
 				52BDDD0F29D707760001DDD8 /* RealmManager.swift in Sources */,
+				52A8C30229DE6A0C0079627E /* MiscViewCell.swift in Sources */,
+				52A8C32129E127900079627E /* DateViewController.swift in Sources */,
 				522C19B129C0552E00BD7168 /* Demension.swift in Sources */,
 				522C199F29C00A1E00BD7168 /* ImageViewCell.swift in Sources */,
 				52078DF429C99EB6001B56CD /* Commons.swift in Sources */,
 				52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */,
 				522C19A329C0191700BD7168 /* OnBoardingCustomView.swift in Sources */,
+				52A8C31729E02FB80079627E /* TheEndCell.swift in Sources */,
 				5222F43C29C45DA000A51A8F /* MyWalletCell.swift in Sources */,
 				522C198A29BEF5D200BD7168 /* HomeViewController.swift in Sources */,
 				5222F43329C4516700A51A8F /* TabViewController.swift in Sources */,
 				52078DED29C95CAD001B56CD /* PromotionCell.swift in Sources */,
+				52A8C2FE29DE68850079627E /* GroupViewCell.swift in Sources */,
+				52A8C31D29E127730079627E /* NoteViewController.swift in Sources */,
 				52BDDD0D29D586A60001DDD8 /* Transaction.swift in Sources */,
 				52078DE929C959EC001B56CD /* HeaderCell.swift in Sources */,
+				52A8C2FA29DE68700079627E /* AmountViewCell.swift in Sources */,
 				52A8C2EB29DD3B470079627E /* TransactionHistoryController.swift in Sources */,
+				52A8C30F29DFACFA0079627E /* CreateTransactionManager.swift in Sources */,
+				52A8C31329DFD8BF0079627E /* PopUpInfoController.swift in Sources */,
 				522C19B329C0582200BD7168 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

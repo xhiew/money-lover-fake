@@ -127,6 +127,7 @@
                 <outlet property="segmentedControl" destination="hXq-zo-1BO" id="UpI-di-t4q"/>
                 <outlet property="stackExpenses" destination="pfh-qI-iem" id="Xdx-5k-eWO"/>
                 <outlet property="stateLabel" destination="J3P-zW-9iO" id="mhh-eb-bG4"/>
+                <outlet property="subTitle" destination="gRb-Uw-z0Q" id="3NX-dA-eap"/>
                 <outlet property="totalExpenses" destination="4E3-0a-EhA" id="60d-dC-rhX"/>
             </connections>
             <point key="canvasLocation" x="86.231884057971016" y="224.66517857142856"/>

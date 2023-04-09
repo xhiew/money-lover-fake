@@ -41,6 +41,7 @@ class PromotionCell: BaseTableViewCell {
 
   @IBAction func upgradeButtonAction(_ sender: UIButton) {
     Commons.shared.animateButton(viewToAnimate: sender)
+		Commons.shared.showToast(image: UIImage(systemName: "infinity")?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: "Đã nâng cấp", subtitle: "Just a simulation")
   }
 
 }

@@ -1,8 +1,11 @@
 PODS:
+  - AIFlatSwitch (1.0.7)
   - Charts (4.1.0):
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - JDStatusBarNotification (2.0.7)
+  - PanModal (1.2.7)
   - Realm (10.28.5):
     - Realm/Headers (= 10.28.5)
   - Realm/Headers (10.28.5)
@@ -13,14 +16,20 @@ PODS:
   - SwifterSwift/Foundation (5.2.0)
 
 DEPENDENCIES:
+  - AIFlatSwitch
   - Charts
+  - JDStatusBarNotification
+  - PanModal
   - RealmSwift
   - SnapKit (~> 5.6.0)
   - SwifterSwift/Foundation
 
 SPEC REPOS:
   trunk:
+    - AIFlatSwitch
     - Charts
+    - JDStatusBarNotification
+    - PanModal
     - Realm
     - RealmSwift
     - SnapKit
@@ -28,13 +37,16 @@ SPEC REPOS:
     - SwifterSwift
 
 SPEC CHECKSUMS:
+  AIFlatSwitch: fd56a5e6ab8769f0b52cef815c4f071e83050352
   Charts: 354f86803d11d9c35de280587fef50d1af063978
+  JDStatusBarNotification: 92e7ebdc628db36e1e8e96f0f77c8ce6d1627ec3
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   Realm: eb7f6a7a8395906822e6fab71eb8496d6d52b318
   RealmSwift: 6b54904d4a236de143f3411a757641fd74e9cb3d
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: 5261604bbf8862efd9a5d498962ae7f691488dbb
+PODFILE CHECKSUM: 21b59ad4adf4850d97eadc4369ba9431cff7b76c
 
 COCOAPODS: 1.11.3

@@ -14,6 +14,7 @@ class PersonalPlanCell: BaseTableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+		handlePerformButton()
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,17 +28,34 @@ class PersonalPlanCell: BaseTableViewCell {
     notiButton.roundCorners()
     notiButton.layer.borderColor = Theme.shared.primaryColor.cgColor
     notiButton.layer.borderWidth = 2
-    notiButton.backgroundColor = Theme.shared.primaryColor
-    notiButton.setTitleColor(.white, for: .normal)
-    notiButton.setTitle(Resource.Title.Home.notiButton1, for: .normal)
   }
 
   @IBAction func notiButtonAction(_ sender: UIButton) {
     Commons.shared.animateButton(viewToAnimate: sender)
-    notiButton.backgroundColor = .white
-    notiButton.setTitleColor(Theme.shared.primaryColor, for: .normal)
-    notiButton.setTitle(Resource.Title.Home.notiButton2, for: .normal)
-    sender.isUserInteractionEnabled = false
+		UserDefaults.standard.isSubscribed = true
+		disableButton()
   }
+
+	private func disableButton() {
+		notiButton.backgroundColor = .white
+		notiButton.setTitleColor(Theme.shared.primaryColor, for: .normal)
+		notiButton.setTitle(Resource.Title.Home.notiButton2, for: .normal)
+		notiButton.isUserInteractionEnabled = false
+	}
+
+	private func enableButton() {
+		notiButton.backgroundColor = Theme.shared.primaryColor
+		notiButton.setTitleColor(.white, for: .normal)
+		notiButton.setTitle(Resource.Title.Home.notiButton1, for: .normal)
+	}
+
+	private func handlePerformButton() {
+		if UserDefaults.standard.isSubscribed {
+			UserDefaults.standard.isSubscribed = true
+			disableButton()
+		} else {
+			enableButton()
+		}
+	}
 
 }

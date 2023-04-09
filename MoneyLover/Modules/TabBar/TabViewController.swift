@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PTCardTabBar
 
 class TabViewController: UITabBarController {
 
@@ -38,6 +37,7 @@ extension TabViewController: UITabBarControllerDelegate {
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
     if viewController is CreateTransactionController {
       let navVC = UINavigationController(rootViewController: CreateTransactionController())
+      navVC.isNavigationBarHidden = true
       present(navVC, animated: true, completion: nil)
       return false
     }

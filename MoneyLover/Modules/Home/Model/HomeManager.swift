@@ -31,7 +31,8 @@ class HomeManager {
                               .header(title: Resource.Title.Home.recentTransaction),
                               .recentTransaction,
                               .header(title: Resource.Title.Home.personalPlan),
-                              .personalPlan
+                              .personalPlan,
+															.theEnd
   ]
 
   let expenses: [Transaction] = [Transaction(amount: 200000,
@@ -67,4 +68,5 @@ enum HomeItem {
   case personalPlan
   case expenseReport
   case recentTransaction
+	case theEnd
 }

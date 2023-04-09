@@ -11,16 +11,15 @@ class BaseViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    addTapGesture()
+		addTapGesture()
   }
 
-  private func addTapGesture() {
-    let tap = UITapGestureRecognizer(target: self, action: #selector(didTapView))
-    view.addGestureRecognizer(tap)
-  }
+	private func addTapGesture() {
+		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapGesture)))
+	}
 
-  @objc private func didTapView() {
-      NotificationCenter.default.post(name: .tapOnView, object: nil)
-  }
+	@objc private func handleTapGesture() {
+		view.endEditing(true)
+	}
 
 }

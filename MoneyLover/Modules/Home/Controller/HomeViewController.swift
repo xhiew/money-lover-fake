@@ -28,6 +28,7 @@ class HomeViewController: BaseViewController {
     homeTableView.register(PersonalPlanCell.nib(), forCellReuseIdentifier: PersonalPlanCell.identifier)
     homeTableView.register(ExpenseReportCell.nib(), forCellReuseIdentifier: ExpenseReportCell.identifier)
     homeTableView.register(RecentTransactionCell.nib(), forCellReuseIdentifier: RecentTransactionCell.identifier)
+		homeTableView.register(TheEndCell.nib(), forCellReuseIdentifier: TheEndCell.identifier)
   }
 
 }
@@ -46,32 +47,30 @@ extension HomeViewController: UITableViewDataSource {
     switch homeManager.homeItem[indexPath.section] {
     case .accBalance:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: AccountBalanceCell.identifier, for: indexPath) as? AccountBalanceCell
-      guard let cell = cell else { return AccountBalanceCell() }
-      cell.accountBalance = "999,999,999"
+      guard let cell = cell else { return UITableViewCell() }
       return cell
     case .myWallet:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: MyWalletCell.identifier, for: indexPath) as? MyWalletCell
-      guard let cell = cell else { return MyWalletCell() }
-
+      guard let cell = cell else { return UITableViewCell() }
       return cell
     case .header(title: let title):
       let cell = homeTableView.dequeueReusableCell(withIdentifier: HeaderCell.identifier, for: indexPath) as? HeaderCell
-      guard let cell = cell else { return HeaderCell() }
+      guard let cell = cell else { return UITableViewCell() }
       cell.setTitle(title: title)
       return cell
     case .promo:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: PromotionCell.identifier, for: indexPath) as? PromotionCell
-      guard let cell = cell else { return PromotionCell() }
+      guard let cell = cell else { return UITableViewCell() }
 
       return cell
     case .personalPlan:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: PersonalPlanCell.identifier, for: indexPath) as? PersonalPlanCell
-      guard let cell = cell else { return PersonalPlanCell() }
+      guard let cell = cell else { return UITableViewCell() }
 
       return cell
     case .expenseReport:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: ExpenseReportCell.identifier, for: indexPath) as? ExpenseReportCell
-      guard let cell = cell else { return ExpenseReportCell() }
+      guard let cell = cell else { return UITableViewCell() }
       cell.maxMonthlyExpenses = homeManager.expenses
       cell.performChart()
       cell.showMaxExpenses(maxExpenses: homeManager.expenses)
@@ -79,10 +78,14 @@ extension HomeViewController: UITableViewDataSource {
       return cell
     case .recentTransaction:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: RecentTransactionCell.identifier, for: indexPath) as? RecentTransactionCell
-      guard let cell = cell else { return RecentTransactionCell() }
+      guard let cell = cell else { return UITableViewCell() }
       cell.showItems(transactions: homeManager.expenses)
 
       return cell
+		case .theEnd:
+			let cell = homeTableView.dequeueReusableCell(withIdentifier: TheEndCell.identifier, for: indexPath) as? TheEndCell
+			guard let cell = cell else { return UITableViewCell() }
+			return cell
     }
   }
 }
