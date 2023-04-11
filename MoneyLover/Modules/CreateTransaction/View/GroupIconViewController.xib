@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupIconViewController" customModule="MoneyLover" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="FGv-ES-ubg" id="ksP-Rs-Qrn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXD-ao-RmJ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-P2-7AO">
+                            <rect key="frame" x="16" y="10" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Lba-X1-nPj"/>
+                                <constraint firstAttribute="width" constant="40" id="Om8-3C-Rj0"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="ic_back"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="4Bj-lL-t0Z"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn biểu tượng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe0-cX-kx3">
+                            <rect key="frame" x="141.5" y="19.5" width="131" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="41r-5w-BiI"/>
+                        <constraint firstItem="pe0-cX-kx3" firstAttribute="centerY" secondItem="gXD-ao-RmJ" secondAttribute="centerY" id="ACd-lw-DaV"/>
+                        <constraint firstItem="pe0-cX-kx3" firstAttribute="centerX" secondItem="gXD-ao-RmJ" secondAttribute="centerX" id="Mij-mP-Sh4"/>
+                        <constraint firstItem="2bW-P2-7AO" firstAttribute="leading" secondItem="gXD-ao-RmJ" secondAttribute="leading" constant="16" id="Zdh-Vj-zaK"/>
+                        <constraint firstItem="2bW-P2-7AO" firstAttribute="centerY" secondItem="gXD-ao-RmJ" secondAttribute="centerY" id="grm-Mk-yd3"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FGv-ES-ubg">
+                    <rect key="frame" x="0.0" y="105" width="414" height="791"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s0L-3n-h1R">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9T-FE-Uwx">
+                    <rect key="frame" x="0.0" y="104" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="EVU-WQ-cIq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gXD-ao-RmJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1sR-cM-YS1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gXD-ao-RmJ" secondAttribute="trailing" id="Bm1-AB-fOd"/>
+                <constraint firstItem="FGv-ES-ubg" firstAttribute="top" secondItem="p9T-FE-Uwx" secondAttribute="bottom" id="P7p-I8-7BM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p9T-FE-Uwx" secondAttribute="trailing" id="UNI-IY-gWE"/>
+                <constraint firstItem="gXD-ao-RmJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aeF-bK-6Ib"/>
+                <constraint firstItem="FGv-ES-ubg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="b9h-p0-cLF"/>
+                <constraint firstItem="p9T-FE-Uwx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jPR-Sv-GOS"/>
+                <constraint firstAttribute="bottom" secondItem="FGv-ES-ubg" secondAttribute="bottom" id="udP-2U-eAP"/>
+                <constraint firstItem="p9T-FE-Uwx" firstAttribute="top" secondItem="gXD-ao-RmJ" secondAttribute="bottom" id="wNH-4f-ZMW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FGv-ES-ubg" secondAttribute="trailing" id="zxK-3L-fKE"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back" width="7.5" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -28,7 +28,7 @@
                                     <segment title="Tuần"/>
                                     <segment title="Tháng"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZH-LS-13B">
                                 <rect key="frame" x="0.0" y="69" width="351" height="44.5"/>

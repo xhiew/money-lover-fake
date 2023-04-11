@@ -22,6 +22,7 @@ class GroupViewController: BaseViewController {
 	var selectedGroupIndexPath: IndexPath?
 	var filterGroup: [[TransactionGroup]]? = [[]]
 	var isSearching = false
+	@IBOutlet weak var notificationLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,7 +43,8 @@ class GroupViewController: BaseViewController {
 	}
 
 	@IBAction func addButtonAction(_ sender: Any) {
-		print("Tạo group mới")
+		let createGroupVC = CreateGroupViewController()
+		navigationController?.pushViewController(createGroupVC, animated: true)
 	}
 
 }
@@ -104,7 +106,12 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 				header.headerTitle.text = filterGroup[section][0].groupType?.toString()
 			}
 		} else {
-			header.headerTitle.text = groupViewManager.groupItems[section][0].groupType?.toString()
+			if groupViewManager.groupItems[section].isEmpty {
+				return nil
+			} else {
+				header.headerTitle.text = groupViewManager.groupItems[section][0].groupType?.toString()
+			}
+
 		}
 		return header
 	}
@@ -124,6 +131,7 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 extension GroupViewController: UISearchBarDelegate {
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		if searchText == "" {
+			notificationLabel.isHidden = true
 			isSearching = false
 			tableView.reloadData()
 		} else {
@@ -133,7 +141,12 @@ extension GroupViewController: UISearchBarDelegate {
 					$0.name?.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces)) ?? false
 				})
 			})
+			notificationLabel.isHidden = !(filterGroup?.allSatisfy({$0.isEmpty}) ?? true)
 			tableView.reloadData()
 		}
+	}
+
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.endEditing(true)
 	}
 }

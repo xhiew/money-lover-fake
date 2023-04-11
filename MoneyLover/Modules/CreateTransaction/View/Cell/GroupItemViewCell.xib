@@ -55,6 +55,7 @@
                             <constraint firstItem="Ajh-TN-TkZ" firstAttribute="centerY" secondItem="A52-8i-twT" secondAttribute="centerY" id="3m6-wL-7sr"/>
                             <constraint firstItem="A52-8i-twT" firstAttribute="leading" secondItem="bIy-8a-jmx" secondAttribute="leading" id="8Ko-T9-vrz"/>
                             <constraint firstAttribute="trailing" secondItem="Ajh-TN-TkZ" secondAttribute="trailing" constant="16" id="FIN-rS-Yn9"/>
+                            <constraint firstItem="Ajh-TN-TkZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="A52-8i-twT" secondAttribute="trailing" constant="16" id="cOG-d4-odt"/>
                             <constraint firstItem="A52-8i-twT" firstAttribute="centerY" secondItem="bIy-8a-jmx" secondAttribute="centerY" id="gQ4-yo-QX6"/>
                         </constraints>
                     </view>

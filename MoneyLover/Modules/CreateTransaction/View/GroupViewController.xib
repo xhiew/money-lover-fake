@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupViewController" customModule="MoneyLover" customModuleProvider="target">
             <connections>
+                <outlet property="notificationLabel" destination="hD8-QR-sfX" id="Ser-hV-QvY"/>
                 <outlet property="searchBar" destination="FDj-TW-ncB" id="LzC-Er-tNq"/>
                 <outlet property="tableView" destination="qUR-gV-4Br" id="axE-RE-9SN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -87,6 +88,12 @@
                     <rect key="frame" x="0.0" y="156" width="414" height="740"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không thấy nhóm giao dịch cần tìm. Hãy ấn vào biểu tượng ➕ ở góc phải màn hình để tạo nhóm giao dịch mới" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-QR-sfX">
+                    <rect key="frame" x="16" y="172" width="382" height="61"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -94,10 +101,13 @@
                 <constraint firstItem="qUR-gV-4Br" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2rY-hC-xza"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qUR-gV-4Br" secondAttribute="trailing" id="9FS-Nk-ZTw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mws-NA-ZJ5" secondAttribute="trailing" id="Iyq-T9-KSR"/>
+                <constraint firstItem="hD8-QR-sfX" firstAttribute="top" secondItem="FDj-TW-ncB" secondAttribute="bottom" constant="16" id="Nzo-Xn-tPR"/>
+                <constraint firstItem="hD8-QR-sfX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OS9-lV-kGd"/>
                 <constraint firstItem="Mws-NA-ZJ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OSw-Ya-1Gg"/>
                 <constraint firstItem="FDj-TW-ncB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PrF-QL-GR2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fZw-Az-cII" secondAttribute="trailing" id="QmO-DS-UkB"/>
                 <constraint firstItem="fZw-Az-cII" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Re4-OF-3kf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hD8-QR-sfX" secondAttribute="trailing" constant="16" id="VbL-xT-Lgt"/>
                 <constraint firstItem="fZw-Az-cII" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XWC-Oh-ErW"/>
                 <constraint firstAttribute="bottom" secondItem="qUR-gV-4Br" secondAttribute="bottom" id="h9R-vI-RXS"/>
                 <constraint firstItem="FDj-TW-ncB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jDf-Hy-wNz"/>

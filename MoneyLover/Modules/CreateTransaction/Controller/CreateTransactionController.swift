@@ -74,10 +74,7 @@ class CreateTransactionController: BaseViewController {
 
   @IBAction func didTapGreenButton(_ sender: Any) {
 		if isEnableGreenButton {
-			Commons.shared.showToast(image: Resource.Image.systemSuccess,
-															 title: Resource.Title.CreateTransactionTitle.successTitle,
-															 subtitle: Resource.Title.CreateTransactionTitle.successSubtitle)
-			// lưu giao dịch , nhớ check xem có ignore report ko
+			// lưu giao dịch bên manager, nhớ check xem có ignore report ko , nếu thành công trả về true rồi showToast thành công
 		} else {
 			Commons.shared.showToast(image: Resource.Image.systemError,
 															 title: Resource.Title.CreateTransactionTitle.warningTitle,

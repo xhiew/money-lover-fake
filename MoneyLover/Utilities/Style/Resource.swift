@@ -96,10 +96,11 @@ public class Resource {
 		}
 
 		class GroupTypeTitle {
-			public static let monthlyExpenses = "CHI TIÊU HÀNG THÁNG"
-			public static let essentialExpenses = "CHI TIÊU CẦN THIẾT"
-			public static let entertainment = "VUI - CHƠI"
-			public static let revenue = "KHOẢN THU"
+			public static let monthlyExpenses = "Chi tiêu hàng tháng"
+			public static let essentialExpenses = "Chi tiêu cần thiết"
+			public static let entertainment = "Vui - chơi"
+			public static let revenue = "Khoản thu"
+			public static let groupType = "Phân loại nhóm"
 		}
 
   }
