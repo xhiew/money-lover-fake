@@ -15,7 +15,6 @@ class AmountViewCell: BaseTableViewCell {
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		inputTextField.delegate = self
 		inputTextField.becomeFirstResponder()
 	}
 
@@ -29,11 +28,6 @@ class AmountViewCell: BaseTableViewCell {
 			inputTextField.text?.removeLast()
 		}
 		inputTextField.text = inputTextField.text?.currency.formatMoneyNumber()
-	}
-}
-
-extension AmountViewCell: UITextFieldDelegate {
-	func textFieldDidEndEditing(_ textField: UITextField) {
 		getAmount?(inputTextField.text?.currency)
 	}
 }

@@ -69,10 +69,11 @@
 		52A8C32229E127900079627E /* DateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32029E127900079627E /* DateViewController.xib */; };
 		52A8C32529E1283B0079627E /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C32329E1283B0079627E /* GroupViewController.swift */; };
 		52A8C32629E1283B0079627E /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32429E1283B0079627E /* GroupViewController.xib */; };
-		52A8C32929E263FB0079627E /* HeaderGroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C32729E263FB0079627E /* HeaderGroupViewCell.swift */; };
-		52A8C32A29E263FB0079627E /* HeaderGroupViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32829E263FB0079627E /* HeaderGroupViewCell.xib */; };
 		52A8C32D29E264160079627E /* GroupItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C32B29E264160079627E /* GroupItemViewCell.swift */; };
 		52A8C32E29E264160079627E /* GroupItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C32C29E264160079627E /* GroupItemViewCell.xib */; };
+		52A8C33929E3CAF60079627E /* HeaderGroupViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C33829E3CAF60079627E /* HeaderGroupViewCell.swift */; };
+		52A8C33B29E3CB150079627E /* HeaderGroupViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C33A29E3CB150079627E /* HeaderGroupViewCell.xib */; };
+		52A8C34129E3EEF10079627E /* GroupViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C34029E3EEF10079627E /* GroupViewManager.swift */; };
 		52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0129D153E30001DDD8 /* HomeManager.swift */; };
 		52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */; };
 		52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */; };
@@ -149,10 +150,11 @@
 		52A8C32029E127900079627E /* DateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateViewController.xib; sourceTree = "<group>"; };
 		52A8C32329E1283B0079627E /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		52A8C32429E1283B0079627E /* GroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
-		52A8C32729E263FB0079627E /* HeaderGroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGroupViewCell.swift; sourceTree = "<group>"; };
-		52A8C32829E263FB0079627E /* HeaderGroupViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderGroupViewCell.xib; sourceTree = "<group>"; };
 		52A8C32B29E264160079627E /* GroupItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemViewCell.swift; sourceTree = "<group>"; };
 		52A8C32C29E264160079627E /* GroupItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupItemViewCell.xib; sourceTree = "<group>"; };
+		52A8C33829E3CAF60079627E /* HeaderGroupViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderGroupViewCell.swift; sourceTree = "<group>"; };
+		52A8C33A29E3CB150079627E /* HeaderGroupViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderGroupViewCell.xib; sourceTree = "<group>"; };
+		52A8C34029E3EEF10079627E /* GroupViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewManager.swift; sourceTree = "<group>"; };
 		52BDDD0129D153E30001DDD8 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
 		52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabelViewCell.swift; sourceTree = "<group>"; };
 		52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				52A8C30E29DFACFA0079627E /* CreateTransactionManager.swift */,
+				52A8C34029E3EEF10079627E /* GroupViewManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -452,10 +455,10 @@
 				52A8C30129DE6A0C0079627E /* MiscViewCell.xib */,
 				52A8C30429DE6A200079627E /* IgnoreViewCell.swift */,
 				52A8C30529DE6A200079627E /* IgnoreViewCell.xib */,
-				52A8C32729E263FB0079627E /* HeaderGroupViewCell.swift */,
-				52A8C32829E263FB0079627E /* HeaderGroupViewCell.xib */,
 				52A8C32B29E264160079627E /* GroupItemViewCell.swift */,
 				52A8C32C29E264160079627E /* GroupItemViewCell.xib */,
+				52A8C33829E3CAF60079627E /* HeaderGroupViewCell.swift */,
+				52A8C33A29E3CB150079627E /* HeaderGroupViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				52078DF629C9ABAC001B56CD /* TransactionItemView.xib in Resources */,
 				52A8C31429DFD8BF0079627E /* PopUpInfoController.xib in Resources */,
 				52A8C2FB29DE68700079627E /* AmountViewCell.xib in Resources */,
+				52A8C33B29E3CB150079627E /* HeaderGroupViewCell.xib in Resources */,
 				52A8C31E29E127730079627E /* NoteViewController.xib in Resources */,
 				522C199029BEF6B200BD7168 /* IntroductionViewController.xib in Resources */,
 				52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */,
@@ -604,7 +608,6 @@
 				52A8C30329DE6A0C0079627E /* MiscViewCell.xib in Resources */,
 				52A8C32E29E264160079627E /* GroupItemViewCell.xib in Resources */,
 				52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */,
-				52A8C32A29E263FB0079627E /* HeaderGroupViewCell.xib in Resources */,
 				52078DF229C993F8001B56CD /* PersonalPlanCell.xib in Resources */,
 				52A8C31829E02FB80079627E /* TheEndCell.xib in Resources */,
 				52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */,
@@ -674,6 +677,7 @@
 				52A8C32529E1283B0079627E /* GroupViewController.swift in Sources */,
 				52A8C30929DF1E010079627E /* Double+Extension.swift in Sources */,
 				52BDDD0829D56B220001DDD8 /* BaseViewController.swift in Sources */,
+				52A8C34129E3EEF10079627E /* GroupViewManager.swift in Sources */,
 				52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */,
 				522C19AE29C045AB00BD7168 /* Resource.swift in Sources */,
 				522C19AC29C0434E00BD7168 /* UIColor+Extension.swift in Sources */,
@@ -685,8 +689,8 @@
 				52078DF829C9ABDB001B56CD /* TransactionItemView.swift in Sources */,
 				52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */,
 				52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */,
-				52A8C32929E263FB0079627E /* HeaderGroupViewCell.swift in Sources */,
 				522C199429C0063700BD7168 /* UIView+Extension.swift in Sources */,
+				52A8C33929E3CAF60079627E /* HeaderGroupViewCell.swift in Sources */,
 				52A8C30D29DF26E50079627E /* String+Extension.swift in Sources */,
 				52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */,
 				52A8C30629DE6A200079627E /* IgnoreViewCell.swift in Sources */,

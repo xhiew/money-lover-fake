@@ -12,6 +12,31 @@ enum GroupType: String, PersistableEnum {
   case monthlyExpenses
   case essentialExpenses
   case entertainment
+	case revenue
+
+	func description() -> String? {
+		switch self {
+		case .monthlyExpenses:
+			return Resource.Title.GroupTypeDescription.monthlyExpenses
+		case .essentialExpenses:
+			return Resource.Title.GroupTypeDescription.essentialExpenses
+		default:
+			return nil
+		}
+	}
+
+	func toString() -> String {
+		switch self {
+		case .monthlyExpenses:
+			return Resource.Title.GroupTypeTitle.monthlyExpenses
+		case .essentialExpenses:
+			return Resource.Title.GroupTypeTitle.essentialExpenses
+		case .entertainment:
+			return Resource.Title.GroupTypeTitle.entertainment
+		case .revenue:
+			return Resource.Title.GroupTypeTitle.revenue
+		}
+	}
 }
 
 class TransactionGroup: Object {

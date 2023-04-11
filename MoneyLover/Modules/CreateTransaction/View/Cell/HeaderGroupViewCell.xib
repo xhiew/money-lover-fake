@@ -4,35 +4,51 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="HeaderGroupViewCell" customModule="MoneyLover" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHI TIÊU HÀNG THÁNG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnI-Gs-HuF">
-                        <rect key="frame" x="16" y="29.5" width="186" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <constraints>
-                    <constraint firstItem="fnI-Gs-HuF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IGT-9q-1UA"/>
-                    <constraint firstItem="fnI-Gs-HuF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="SoE-zZ-4JX"/>
-                    <constraint firstItem="fnI-Gs-HuF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="v3h-52-RlN"/>
-                </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="131.8840579710145" y="167.74553571428569"/>
-        </tableViewCell>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderGroupViewCell" customModule="MoneyLover" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbi-Hi-Dy5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHI TIÊU HÀNG THÁNG" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyN-gw-h3l">
+                            <rect key="frame" x="16" y="30" width="167" height="18"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstItem="QyN-gw-h3l" firstAttribute="centerY" secondItem="Nbi-Hi-Dy5" secondAttribute="centerY" id="Twn-Oe-6LR"/>
+                        <constraint firstItem="QyN-gw-h3l" firstAttribute="leading" secondItem="Nbi-Hi-Dy5" secondAttribute="leading" constant="16" id="qnh-l9-gbh"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QyN-gw-h3l" secondAttribute="trailing" constant="16" id="yse-jL-qYv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ABS-LO-eZA"/>
+            <constraints>
+                <constraint firstItem="Nbi-Hi-Dy5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="504-fr-nvB"/>
+                <constraint firstItem="Nbi-Hi-Dy5" firstAttribute="bottom" secondItem="ABS-LO-eZA" secondAttribute="bottom" id="Uda-W1-OLi"/>
+                <constraint firstItem="ABS-LO-eZA" firstAttribute="trailing" secondItem="Nbi-Hi-Dy5" secondAttribute="trailing" id="VSh-j9-VE5"/>
+                <constraint firstItem="Nbi-Hi-Dy5" firstAttribute="leading" secondItem="ABS-LO-eZA" secondAttribute="leading" id="s4X-Sw-8MG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerTitle" destination="QyN-gw-h3l" id="fJd-Sn-Yl6"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="92.410714285714278"/>
+        </view>
     </objects>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

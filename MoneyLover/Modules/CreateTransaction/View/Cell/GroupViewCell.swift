@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol GroupViewDelegate: AnyObject {
+protocol GroupViewCellDelegate: AnyObject {
 	func selectGroup(_ cell: GroupViewCell, group: TransactionGroup?)
 }
 
@@ -15,7 +15,7 @@ class GroupViewCell: BaseTableViewCell {
 	@IBOutlet weak var groupImage: UIImageView!
 	@IBOutlet weak var groupName: UILabel!
 
-	weak var delegate: GroupViewDelegate?
+	weak var delegate: GroupViewCellDelegate?
 	var group: TransactionGroup?
 
 	override func awakeFromNib() {
@@ -29,9 +29,10 @@ class GroupViewCell: BaseTableViewCell {
 		// Configure the view for the selected state
 	}
 
-	func setupUI(imageName: String, title: String) {
-		groupImage.image = UIImage(named: imageName)
+	func setupUI(imageName: String?, title: String?, titleColor: UIColor = .black) {
+		groupImage.image = UIImage(named: imageName ?? "")
 		groupName.text = title
+		groupName.textColor = titleColor
 	}
 
 	@IBAction func didTapSelectGroup(_ sender: Any) {

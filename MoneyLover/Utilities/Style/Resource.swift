@@ -90,6 +90,18 @@ public class Resource {
 			public static let successSubtitle = "Tạo thành công"
 		}
 
+		class GroupTypeDescription {
+			public static let monthlyExpenses = "Các khoản chi tiêu ưu tiên và đều đặn mỗi tháng."
+			public static let essentialExpenses = "Các khoản chi tiêu không thường xuyên nhưng cần thiết."
+		}
+
+		class GroupTypeTitle {
+			public static let monthlyExpenses = "CHI TIÊU HÀNG THÁNG"
+			public static let essentialExpenses = "CHI TIÊU CẦN THIẾT"
+			public static let entertainment = "VUI - CHƠI"
+			public static let revenue = "KHOẢN THU"
+		}
+
   }
 
 }

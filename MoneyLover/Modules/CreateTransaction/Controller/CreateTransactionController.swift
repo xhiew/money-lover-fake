@@ -14,11 +14,26 @@ class CreateTransactionController: BaseViewController {
   @IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var greenButtonOutlet: UIButton!
 
+	var selectedGroupIndexPath: IndexPath?
+
 	var isEnableGreenButton: Bool = false {
 		didSet {
 			configGreenButton()
 		}
 	}
+
+	var isNotEmptyAmount: Bool = false {
+		didSet {
+			checkConditions()
+		}
+	}
+
+	var isNotEmptyGroup: Bool = false {
+		didSet {
+			checkConditions()
+		}
+	}
+
 	let createTransactionManager = CreateTransactionManager()
 
 	//MARK: - LifeCycle
@@ -39,11 +54,17 @@ class CreateTransactionController: BaseViewController {
 		tableView.register(IgnoreViewCell.nib(), forCellReuseIdentifier: IgnoreViewCell.identifier)
 	}
 
-	func configGreenButton() {
+	private func configGreenButton() {
 		if isEnableGreenButton {
 			greenButtonOutlet.backgroundColor = Theme.shared.greenButtonColor
 		} else {
 			greenButtonOutlet.backgroundColor = Theme.shared.disableColor
+		}
+	}
+
+	private func checkConditions() {
+		if isNotEmptyAmount, isNotEmptyGroup {
+			isEnableGreenButton = true
 		}
 	}
 
@@ -81,7 +102,15 @@ extension CreateTransactionController: UITableViewDataSource {
 			let cell = tableView.dequeueReusableCell(withIdentifier: AmountViewCell.identifier, for: indexPath) as? AmountViewCell
 			guard let cell = cell else { return UITableViewCell() }
 			cell.getAmount = { [weak self] amount in
-				self?.createTransactionManager.newTransaction.amount = amount
+				if let self = self, let amount = amount {
+					if amount > 0 {
+						self.createTransactionManager.newTransaction.amount = amount
+						self.isNotEmptyAmount = true
+					} else {
+						self.isNotEmptyAmount = false
+						self.isEnableGreenButton = false
+					}
+				}
 			}
 			return cell
 		case .group:
@@ -127,6 +156,7 @@ extension CreateTransactionController: MiscViewDelegate {
 		switch miscType {
 		case .note:
 			let noteVC = NoteViewController()
+			noteVC.isModalInPresentation = true
 			if cell.itemTitle.text != Resource.Title.note {
 				noteVC.currentText = createTransactionManager.newTransaction.note ?? ""
 			}
@@ -157,11 +187,27 @@ extension CreateTransactionController: MiscViewDelegate {
 	}
 }
 
-//MARK: - Conform GroupViewDelegate
-extension CreateTransactionController: GroupViewDelegate {
+//MARK: - Conform GroupViewCellDelegate
+extension CreateTransactionController: GroupViewCellDelegate {
 	func selectGroup(_ cell: GroupViewCell, group: TransactionGroup?) {
 		let groupVC = GroupViewController()
+		groupVC.selectedGroupIndexPath = selectedGroupIndexPath
+		groupVC.delegate = self
+		groupVC.isModalInPresentation = true
 		navigationController?.pushViewController(groupVC, animated: true)
 	}
+}
+
+//MARK: - Conform GroupViewControllerDelegate
+extension CreateTransactionController: GroupViewControllerDelegate {
+	func didSelectGroupItem(_ sender: GroupViewController, indexPath: IndexPath, group: TransactionGroup) {
+		self.selectedGroupIndexPath = indexPath
+		if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? GroupViewCell {
+			self.isNotEmptyGroup = true
+			cell.setupUI(imageName: group.image, title: group.name)
+			self.createTransactionManager.newTransaction.group = group
+		}
+	}
+
 }
 
