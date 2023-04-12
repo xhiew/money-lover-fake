@@ -125,6 +125,18 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 		return tableView.estimatedSectionHeaderHeight
 	}
 
+	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		let deleteItem = UIContextualAction(style: .destructive, title: "Xoá") { [weak self] action, view, completion in
+			guard let self = self else { return }
+			// self.data.remove(at: indexPath.row) xoá dữ liệu trong real
+			self.groupViewManager.groupItems[indexPath.section].remove(at: indexPath.row)
+			self.tableView.deleteRows(at: [indexPath], with: .fade)
+			completion(true)
+		}
+		let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteItem])
+		return swipeConfiguration
+	}
+
 }
 
 //MARK: - Conform UISearchBarDelegate
