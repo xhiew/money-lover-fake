@@ -37,7 +37,7 @@ public class Theme {
 	}
 
 	public var lightBlue: UIColor {
-		return UIColor(hexString: "4276FF")
+		return UIColor(hexString: "4169E1")
 	}
 
 }

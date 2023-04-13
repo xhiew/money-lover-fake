@@ -23,4 +23,6 @@ public class Demension {
   public var heightForCategory: CGFloat = 60.0
   public var stackSpacing: CGFloat = 16.0
   public var heightForItemTransaction: CGFloat = 40.0
+	public var heightForDayHeader: CGFloat = 70.0
+	public var sectionSpacing: CGFloat = 44.0
 }

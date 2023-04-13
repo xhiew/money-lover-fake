@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,7 +37,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="lHN-UM-fu4" firstAttribute="leading" secondItem="h4r-h9-uQR" secondAttribute="leading" constant="16" id="AeC-Hu-IX7"/>
                         <constraint firstAttribute="trailing" secondItem="u96-Nl-cd6" secondAttribute="trailing" constant="16" id="GRa-ju-uvr"/>
@@ -49,7 +48,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="h4r-h9-uQR" secondAttribute="trailing" id="Hab-cq-FJB"/>
                 <constraint firstItem="h4r-h9-uQR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="X1y-jX-Ifc"/>
@@ -60,9 +58,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="302.67857142857139"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
