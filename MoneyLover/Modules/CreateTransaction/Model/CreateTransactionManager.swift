@@ -7,6 +7,8 @@
 
 import UIKit
 
+// nơi để tạo giao dịch mới
+
 protocol CreateTransactionManagerDelegate: AnyObject {
 
 }

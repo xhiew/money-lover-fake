@@ -42,7 +42,6 @@
 		522C19B129C0552E00BD7168 /* Demension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B029C0552E00BD7168 /* Demension.swift */; };
 		522C19B329C0582200BD7168 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B229C0582200BD7168 /* Category.swift */; };
 		522C19B729C152D600BD7168 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B629C152D600BD7168 /* Banner.swift */; };
-		52A8C2EB29DD3B470079627E /* TransactionHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */; };
 		52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */; };
 		52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2F329DD49F10079627E /* CreateTransactionController.swift */; };
 		52A8C2F629DD49F10079627E /* CreateTransactionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2F429DD49F10079627E /* CreateTransactionController.xib */; };
@@ -96,6 +95,16 @@
 		52F55F6129E5544500E06633 /* GroupIconViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F5F29E5544500E06633 /* GroupIconViewCell.xib */; };
 		52F55F6429E5877700E06633 /* GroupTypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F6229E5877700E06633 /* GroupTypeViewCell.swift */; };
 		52F55F6529E5877700E06633 /* GroupTypeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F6329E5877700E06633 /* GroupTypeViewCell.xib */; };
+		52F55F6729E7B7CD00E06633 /* TransactionHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F6629E7B7CD00E06633 /* TransactionHistoryController.swift */; };
+		52F55F6929E7D3DD00E06633 /* TransactionHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F6829E7D3DD00E06633 /* TransactionHistoryManager.swift */; };
+		52F55F6B29E7F3D200E06633 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F6A29E7F3D200E06633 /* Date+Extension.swift */; };
+		52F55F6E29E80DBB00E06633 /* TransactionsInMonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F6C29E80DBB00E06633 /* TransactionsInMonthVC.swift */; };
+		52F55F6F29E80DBB00E06633 /* TransactionsInMonthVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F6D29E80DBB00E06633 /* TransactionsInMonthVC.xib */; };
+		52F55F7829E80F4F00E06633 /* DayTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F7629E80F4F00E06633 /* DayTransactionCell.swift */; };
+		52F55F7929E80F4F00E06633 /* DayTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F7729E80F4F00E06633 /* DayTransactionCell.xib */; };
+		52F55F7B29E86CAF00E06633 /* TransactionsInMonthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F7A29E86CAF00E06633 /* TransactionsInMonthManager.swift */; };
+		52F55F7D29E8728100E06633 /* DayHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F7C29E8728100E06633 /* DayHeaderCell.swift */; };
+		52F55F7F29E872F100E06633 /* DayHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F7E29E872F100E06633 /* DayHeaderCell.xib */; };
 		9B9374A9517A443473007477 /* Pods_MoneyLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C41E77C36036B4C8AD7159 /* Pods_MoneyLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,7 +144,6 @@
 		522C19B029C0552E00BD7168 /* Demension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demension.swift; sourceTree = "<group>"; };
 		522C19B229C0582200BD7168 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		522C19B629C152D600BD7168 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
-		52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryController.swift; sourceTree = "<group>"; };
 		52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryController.xib; sourceTree = "<group>"; };
 		52A8C2F329DD49F10079627E /* CreateTransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionController.swift; sourceTree = "<group>"; };
 		52A8C2F429DD49F10079627E /* CreateTransactionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTransactionController.xib; sourceTree = "<group>"; };
@@ -191,6 +199,16 @@
 		52F55F5F29E5544500E06633 /* GroupIconViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupIconViewCell.xib; sourceTree = "<group>"; };
 		52F55F6229E5877700E06633 /* GroupTypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTypeViewCell.swift; sourceTree = "<group>"; };
 		52F55F6329E5877700E06633 /* GroupTypeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupTypeViewCell.xib; sourceTree = "<group>"; };
+		52F55F6629E7B7CD00E06633 /* TransactionHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryController.swift; sourceTree = "<group>"; };
+		52F55F6829E7D3DD00E06633 /* TransactionHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryManager.swift; sourceTree = "<group>"; };
+		52F55F6A29E7F3D200E06633 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		52F55F6C29E80DBB00E06633 /* TransactionsInMonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsInMonthVC.swift; sourceTree = "<group>"; };
+		52F55F6D29E80DBB00E06633 /* TransactionsInMonthVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsInMonthVC.xib; sourceTree = "<group>"; };
+		52F55F7629E80F4F00E06633 /* DayTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTransactionCell.swift; sourceTree = "<group>"; };
+		52F55F7729E80F4F00E06633 /* DayTransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayTransactionCell.xib; sourceTree = "<group>"; };
+		52F55F7A29E86CAF00E06633 /* TransactionsInMonthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsInMonthManager.swift; sourceTree = "<group>"; };
+		52F55F7C29E8728100E06633 /* DayHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHeaderCell.swift; sourceTree = "<group>"; };
+		52F55F7E29E872F100E06633 /* DayHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayHeaderCell.xib; sourceTree = "<group>"; };
 		7A2AD726709181463EEC46F4 /* Pods-MoneyLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.release.xcconfig"; path = "Target Support Files/Pods-MoneyLover/Pods-MoneyLover.release.xcconfig"; sourceTree = "<group>"; };
 		B558A0FAA5C9E0E1782DC688 /* Pods-MoneyLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLover/Pods-MoneyLover.debug.xcconfig"; sourceTree = "<group>"; };
 		E6C41E77C36036B4C8AD7159 /* Pods_MoneyLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,7 +263,7 @@
 		522C198329BEF53200BD7168 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				52A8C31029DFCC520079627E /* TabBar */,
+				52A8C31029DFCC520079627E /* Tab */,
 				522C198C29BEF65F00BD7168 /* Introduction */,
 				522C198429BEF56100BD7168 /* Home */,
 				52A8C2ED29DD493D0079627E /* CreateTransaction */,
@@ -320,6 +338,7 @@
 				52A8C30A29DF21800079627E /* NumberFormatter+Extension.swift */,
 				52A8C30C29DF26E50079627E /* String+Extension.swift */,
 				52A8C31929E045A60079627E /* UserDefaults+Extension.swift */,
+				52F55F6A29E7F3D200E06633 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,7 +425,8 @@
 		52A8C2E629DD3AFC0079627E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52A8C2E929DD3B470079627E /* TransactionHistoryController.swift */,
+				52F55F6629E7B7CD00E06633 /* TransactionHistoryController.swift */,
+				52F55F6C29E80DBB00E06633 /* TransactionsInMonthVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -414,7 +434,9 @@
 		52A8C2E729DD3B060079627E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52F55F7029E80EB200E06633 /* Cell */,
 				52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */,
+				52F55F6D29E80DBB00E06633 /* TransactionsInMonthVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -422,6 +444,8 @@
 		52A8C2E829DD3B120079627E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52F55F6829E7D3DD00E06633 /* TransactionHistoryManager.swift */,
+				52F55F7A29E86CAF00E06633 /* TransactionsInMonthManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,12 +522,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		52A8C31029DFCC520079627E /* TabBar */ = {
+		52A8C31029DFCC520079627E /* Tab */ = {
 			isa = PBXGroup;
 			children = (
 				5222F43229C4516700A51A8F /* TabViewController.swift */,
 			);
-			path = TabBar;
+			path = Tab;
 			sourceTree = "<group>";
 		};
 		52BDDD0929D57ED30001DDD8 /* Database */ = {
@@ -545,6 +569,17 @@
 				522C198329BEF53200BD7168 /* Modules */,
 			);
 			path = MoneyLover;
+			sourceTree = "<group>";
+		};
+		52F55F7029E80EB200E06633 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				52F55F7629E80F4F00E06633 /* DayTransactionCell.swift */,
+				52F55F7729E80F4F00E06633 /* DayTransactionCell.xib */,
+				52F55F7C29E8728100E06633 /* DayHeaderCell.swift */,
+				52F55F7E29E872F100E06633 /* DayHeaderCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8CDB2B4A220B047CC6291AEB /* Pods */ = {
@@ -625,6 +660,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52A8C32629E1283B0079627E /* GroupViewController.xib in Resources */,
+				52F55F6F29E80DBB00E06633 /* TransactionsInMonthVC.xib in Resources */,
 				52F55F5929E5504200E06633 /* GroupIconViewController.xib in Resources */,
 				52078DEA29C959EC001B56CD /* HeaderCell.xib in Resources */,
 				52078DF629C9ABAC001B56CD /* TransactionItemView.xib in Resources */,
@@ -652,11 +688,13 @@
 				52A8C31829E02FB80079627E /* TheEndCell.xib in Resources */,
 				52F55F5129E5371900E06633 /* CreateGroupViewController.xib in Resources */,
 				52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */,
+				52F55F7F29E872F100E06633 /* DayHeaderCell.xib in Resources */,
 				522C19A029C00A1E00BD7168 /* ImageViewCell.xib in Resources */,
 				522C199B29C009D500BD7168 /* LabelViewCell.xib in Resources */,
 				522C19A529C019DF00BD7168 /* OnBoardingCustomView.xib in Resources */,
 				52078E0029C9C728001B56CD /* RecentTransactionCell.xib in Resources */,
 				52A8C32229E127900079627E /* DateViewController.xib in Resources */,
+				52F55F7929E80F4F00E06633 /* DayTransactionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,11 +766,15 @@
 				522C199A29C009D500BD7168 /* LabelViewCell.swift in Sources */,
 				52078DFF29C9C728001B56CD /* RecentTransactionCell.swift in Sources */,
 				52A8C30B29DF21800079627E /* NumberFormatter+Extension.swift in Sources */,
+				52F55F6E29E80DBB00E06633 /* TransactionsInMonthVC.swift in Sources */,
 				52078DF829C9ABDB001B56CD /* TransactionItemView.swift in Sources */,
 				52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */,
 				52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */,
 				52F55F6029E5544500E06633 /* GroupIconViewCell.swift in Sources */,
+				52F55F6729E7B7CD00E06633 /* TransactionHistoryController.swift in Sources */,
+				52F55F7D29E8728100E06633 /* DayHeaderCell.swift in Sources */,
 				522C199429C0063700BD7168 /* UIView+Extension.swift in Sources */,
+				52F55F7B29E86CAF00E06633 /* TransactionsInMonthManager.swift in Sources */,
 				52A8C33929E3CAF60079627E /* HeaderGroupViewCell.swift in Sources */,
 				52F55F5C29E5508900E06633 /* GroupTypeViewController.swift in Sources */,
 				52A8C30D29DF26E50079627E /* String+Extension.swift in Sources */,
@@ -753,17 +795,19 @@
 				5222F43C29C45DA000A51A8F /* MyWalletCell.swift in Sources */,
 				522C198A29BEF5D200BD7168 /* HomeViewController.swift in Sources */,
 				5222F43329C4516700A51A8F /* TabViewController.swift in Sources */,
+				52F55F6B29E7F3D200E06633 /* Date+Extension.swift in Sources */,
 				52078DED29C95CAD001B56CD /* PromotionCell.swift in Sources */,
 				52A8C2FE29DE68850079627E /* GroupViewCell.swift in Sources */,
 				52A8C31D29E127730079627E /* NoteViewController.swift in Sources */,
+				52F55F7829E80F4F00E06633 /* DayTransactionCell.swift in Sources */,
 				52BDDD0D29D586A60001DDD8 /* Transaction.swift in Sources */,
 				52F55F5829E5504200E06633 /* GroupIconViewController.swift in Sources */,
 				52078DE929C959EC001B56CD /* HeaderCell.swift in Sources */,
 				52A8C2FA29DE68700079627E /* AmountViewCell.swift in Sources */,
-				52A8C2EB29DD3B470079627E /* TransactionHistoryController.swift in Sources */,
 				52F55F6429E5877700E06633 /* GroupTypeViewCell.swift in Sources */,
 				52A8C30F29DFACFA0079627E /* CreateTransactionManager.swift in Sources */,
 				52A8C31329DFD8BF0079627E /* PopUpInfoController.swift in Sources */,
+				52F55F6929E7D3DD00E06633 /* TransactionHistoryManager.swift in Sources */,
 				522C19B329C0582200BD7168 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

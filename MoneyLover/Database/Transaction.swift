@@ -14,7 +14,7 @@ class Transaction: Object {
   @Persisted var note: String?
   @Persisted var date: Date?
 
-  convenience init(amount: Double?, group: TransactionGroup?, note: String?, date: Date?) {
+  convenience init(amount: Double?, group: TransactionGroup?, note: String?, date: Date? = Date()) {
     self.init()
     self.amount = amount
     self.group = group

@@ -16,6 +16,7 @@ public class Resource {
     public static let nextWeek = "Tuần sau"
     public static let lastWeek = "Tuần trước"
     public static let thisWeek = "Tuần này"
+		public static let future = "Tương lai"
   }
 
   public class Image {

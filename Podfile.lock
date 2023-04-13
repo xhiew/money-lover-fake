@@ -14,6 +14,7 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
   - SwifterSwift/Foundation (5.2.0)
+  - TYPagerController (2.1.2)
 
 DEPENDENCIES:
   - AIFlatSwitch
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RealmSwift
   - SnapKit (~> 5.6.0)
   - SwifterSwift/Foundation
+  - TYPagerController
 
 SPEC REPOS:
   trunk:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftAlgorithms
     - SwifterSwift
+    - TYPagerController
 
 SPEC CHECKSUMS:
   AIFlatSwitch: fd56a5e6ab8769f0b52cef815c4f071e83050352
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  TYPagerController: 262556ecef99986d26ed77fb1288a198ed42f4af
 
-PODFILE CHECKSUM: 21b59ad4adf4850d97eadc4369ba9431cff7b76c
+PODFILE CHECKSUM: 74acf0cfe1e0af0533258c0999e9d399e0780e7a
 
 COCOAPODS: 1.11.3

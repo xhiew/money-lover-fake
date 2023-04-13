@@ -59,7 +59,7 @@ class ExpenseReportCell: BaseTableViewCell {
   }
 
   func configSegmentedControl() {
-    segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], for: .normal)
+		segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], for: .normal)
   }
 
   func performChart() {

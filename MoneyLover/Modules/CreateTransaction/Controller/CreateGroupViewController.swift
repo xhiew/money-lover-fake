@@ -113,7 +113,6 @@ class CreateGroupViewController: BaseViewController {
 			let groupType = self.createGroupManager.groupTypes[indexPath.row]
 			self.groupTypeLabel.text = groupType.toString()
 			self.groupTypeLabel.textColor = .black
-			self.groupTypeArrowDown.isHidden = true
 			self.createGroupManager.newGroup.groupType = groupType
 			self.checkConditions()
 		}

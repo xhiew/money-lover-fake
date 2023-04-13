@@ -13,4 +13,5 @@ target 'MoneyLover' do
 	pod 'AIFlatSwitch'
 	pod 'PanModal'
 	pod 'JDStatusBarNotification'
+	pod 'TYPagerController'
 end
