@@ -87,8 +87,8 @@ class CreateGroupViewController: BaseViewController {
 			print("tạo mới bên manager nếu ok thì show toast")
 		} else {
 			Commons.shared.showToast(image: Resource.Image.systemError,
-															 title: Resource.Title.CreateTransactionTitle.warningTitle,
-															 subtitle: Resource.Title.CreateTransactionTitle.warningSubtitle)
+															 title: Resource.NotiTitle.warningTitle,
+															 subtitle: Resource.NotiTitle.warningSubtitle)
 		}
 	}
 
@@ -136,7 +136,7 @@ class CreateGroupViewController: BaseViewController {
 	}
 
 	@IBAction func textFieldValueChanged(_ sender: UITextField) {
-		if sender.text?.count ?? 0 > 30 {
+		if sender.text?.count ?? 0 > 35 {
 			sender.text?.removeLast()
 		}
 		if sender.text?.isEmpty ?? false {

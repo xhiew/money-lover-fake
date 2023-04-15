@@ -74,7 +74,7 @@
                         <constraint firstAttribute="height" constant="1" id="qda-jY-jyS"/>
                     </constraints>
                 </view>
-                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Tìm theo tên nhóm" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDj-TW-ncB">
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Tìm theo tên nhóm" translatesAutoresizingMaskIntoConstraints="NO" id="FDj-TW-ncB">
                     <rect key="frame" x="0.0" y="105" width="414" height="51"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <color key="tintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,6 +15,8 @@ class MyWalletCell: BaseTableViewCell {
 		return UserDefaults.standard.accountBalance
 	}
 
+	var changeAmount: (() -> Void)?
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		checkEyes()
@@ -36,5 +38,10 @@ class MyWalletCell: BaseTableViewCell {
 			amountLabel.text = accountBalance.formatMoneyNumber() + " " + Resource.Title.vnd
 		}
 	}
+
+	@IBAction func changeAccountBalance(_ sender: Any) {
+		changeAmount?()
+	}
+
 
 }

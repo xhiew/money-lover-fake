@@ -9,6 +9,22 @@ import UIKit
 
 public class Resource {
 
+	class ActionTitle {
+		public static let confirmChangingAmount = "Xác nhận điều chỉnh số dư"
+		public static let fineTuneAmount = "Điều chỉnh số dư"
+		public static let agree = "Đồng ý"
+		public static let cancel = "Huỷ"
+		public static let fineTuneWallet = "Sửa ví"
+	}
+
+	class NotiTitle {
+		public static let subTitleChangeAmount = "Đã cập nhật"
+		public static let warningTitle = "Oops!"
+		public static let warningSubtitle = "Thiếu thông tin"
+		public static let successTitle = "Yes!"
+		public static let successSubtitle = "Tạo thành công"
+	}
+
   public class DateTitle {
     public static let nextMonth = "Tháng sau"
     public static let lastMonth = "Tháng trước"
@@ -83,13 +99,6 @@ public class Resource {
       public static let personalPlan = "KẾ HOẠCH CÁ NHÂN"
       public static let sales = "KHUYẾN MÃI"
     }
-
-		class CreateTransactionTitle {
-			public static let warningTitle = "Oops!"
-			public static let warningSubtitle = "Thiếu thông tin"
-			public static let successTitle = "Yes!"
-			public static let successSubtitle = "Tạo thành công"
-		}
 
 		class GroupTypeDescription {
 			public static let monthlyExpenses = "Các khoản chi tiêu ưu tiên và đều đặn mỗi tháng."

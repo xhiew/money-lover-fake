@@ -52,6 +52,16 @@ extension HomeViewController: UITableViewDataSource {
     case .myWallet:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: MyWalletCell.identifier, for: indexPath) as? MyWalletCell
       guard let cell = cell else { return UITableViewCell() }
+			cell.changeAmount = { [weak self] in
+				let alert = UIAlertController(title: Resource.ActionTitle.fineTuneWallet, message: nil, preferredStyle: .actionSheet)
+				let changeAccBalance = UIAlertAction(title: Resource.ActionTitle.fineTuneAmount, style: .default) { [weak self] _ in
+					let vc = PopUpInputController()
+					self?.present(vc, animated: true, completion: nil)
+				}
+				alert.addAction(changeAccBalance)
+				alert.addAction(UIAlertAction(title: Resource.ActionTitle.cancel, style: .cancel, handler: nil))
+				self?.present(alert, animated: true, completion: nil)
+			}
       return cell
     case .header(title: let title):
       let cell = homeTableView.dequeueReusableCell(withIdentifier: HeaderCell.identifier, for: indexPath) as? HeaderCell

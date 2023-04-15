@@ -77,8 +77,8 @@ class CreateTransactionController: BaseViewController {
 			// lưu giao dịch bên manager, nhớ check xem có ignore report ko , nếu thành công trả về true rồi showToast thành công
 		} else {
 			Commons.shared.showToast(image: Resource.Image.systemError,
-															 title: Resource.Title.CreateTransactionTitle.warningTitle,
-															 subtitle: Resource.Title.CreateTransactionTitle.warningSubtitle)
+															 title: Resource.NotiTitle.warningTitle,
+															 subtitle: Resource.NotiTitle.warningSubtitle)
 		}
   }
 }

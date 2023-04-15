@@ -56,7 +56,8 @@ class TransactionHistoryController: UIViewController {
 	}
 
 	@IBAction func buttonSearchAction(_ sender: Any) {
-		print("PresentPanModal VC tìm kiếm")
+		let searchVC = SearchTransactionHistoryVC()
+		present(searchVC, animated: true, completion: nil)
 	}
 }
 

@@ -105,6 +105,10 @@
 		52F55F7B29E86CAF00E06633 /* TransactionsInMonthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F7A29E86CAF00E06633 /* TransactionsInMonthManager.swift */; };
 		52F55F7D29E8728100E06633 /* DayHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F7C29E8728100E06633 /* DayHeaderCell.swift */; };
 		52F55F7F29E872F100E06633 /* DayHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F7E29E872F100E06633 /* DayHeaderCell.xib */; };
+		52F55F8229E9265400E06633 /* SearchTransactionHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F8029E9265400E06633 /* SearchTransactionHistoryVC.swift */; };
+		52F55F8329E9265400E06633 /* SearchTransactionHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F8129E9265400E06633 /* SearchTransactionHistoryVC.xib */; };
+		52F55F8629E97A5C00E06633 /* PopUpInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F55F8429E97A5C00E06633 /* PopUpInputController.swift */; };
+		52F55F8729E97A5C00E06633 /* PopUpInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F55F8529E97A5C00E06633 /* PopUpInputController.xib */; };
 		9B9374A9517A443473007477 /* Pods_MoneyLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C41E77C36036B4C8AD7159 /* Pods_MoneyLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +213,10 @@
 		52F55F7A29E86CAF00E06633 /* TransactionsInMonthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsInMonthManager.swift; sourceTree = "<group>"; };
 		52F55F7C29E8728100E06633 /* DayHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHeaderCell.swift; sourceTree = "<group>"; };
 		52F55F7E29E872F100E06633 /* DayHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayHeaderCell.xib; sourceTree = "<group>"; };
+		52F55F8029E9265400E06633 /* SearchTransactionHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionHistoryVC.swift; sourceTree = "<group>"; };
+		52F55F8129E9265400E06633 /* SearchTransactionHistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTransactionHistoryVC.xib; sourceTree = "<group>"; };
+		52F55F8429E97A5C00E06633 /* PopUpInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpInputController.swift; sourceTree = "<group>"; };
+		52F55F8529E97A5C00E06633 /* PopUpInputController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpInputController.xib; sourceTree = "<group>"; };
 		7A2AD726709181463EEC46F4 /* Pods-MoneyLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.release.xcconfig"; path = "Target Support Files/Pods-MoneyLover/Pods-MoneyLover.release.xcconfig"; sourceTree = "<group>"; };
 		B558A0FAA5C9E0E1782DC688 /* Pods-MoneyLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.debug.xcconfig"; path = "Target Support Files/Pods-MoneyLover/Pods-MoneyLover.debug.xcconfig"; sourceTree = "<group>"; };
 		E6C41E77C36036B4C8AD7159 /* Pods_MoneyLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -389,6 +397,8 @@
 				52078DF529C9ABAC001B56CD /* TransactionItemView.xib */,
 				52A8C31129DFD8BF0079627E /* PopUpInfoController.swift */,
 				52A8C31229DFD8BF0079627E /* PopUpInfoController.xib */,
+				52F55F8429E97A5C00E06633 /* PopUpInputController.swift */,
+				52F55F8529E97A5C00E06633 /* PopUpInputController.xib */,
 			);
 			path = "Custom View";
 			sourceTree = "<group>";
@@ -427,6 +437,7 @@
 			children = (
 				52F55F6629E7B7CD00E06633 /* TransactionHistoryController.swift */,
 				52F55F6C29E80DBB00E06633 /* TransactionsInMonthVC.swift */,
+				52F55F8029E9265400E06633 /* SearchTransactionHistoryVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,6 +448,7 @@
 				52F55F7029E80EB200E06633 /* Cell */,
 				52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */,
 				52F55F6D29E80DBB00E06633 /* TransactionsInMonthVC.xib */,
+				52F55F8129E9265400E06633 /* SearchTransactionHistoryVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,6 +680,7 @@
 				52A8C2FB29DE68700079627E /* AmountViewCell.xib in Resources */,
 				52F55F6529E5877700E06633 /* GroupTypeViewCell.xib in Resources */,
 				52A8C33B29E3CB150079627E /* HeaderGroupViewCell.xib in Resources */,
+				52F55F8729E97A5C00E06633 /* PopUpInputController.xib in Resources */,
 				52A8C31E29E127730079627E /* NoteViewController.xib in Resources */,
 				522C199029BEF6B200BD7168 /* IntroductionViewController.xib in Resources */,
 				52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */,
@@ -677,6 +690,7 @@
 				52A8C30729DE6A200079627E /* IgnoreViewCell.xib in Resources */,
 				5222F43929C45ADB00A51A8F /* AccountBalanceCell.xib in Resources */,
 				52DC3DD029B1E50F00D6C5D0 /* Assets.xcassets in Resources */,
+				52F55F8329E9265400E06633 /* SearchTransactionHistoryVC.xib in Resources */,
 				52F55F5D29E5508900E06633 /* GroupTypeViewController.xib in Resources */,
 				522C198B29BEF5D200BD7168 /* HomeViewController.xib in Resources */,
 				52078DEE29C95CAD001B56CD /* PromotionCell.xib in Resources */,
@@ -776,9 +790,11 @@
 				522C199429C0063700BD7168 /* UIView+Extension.swift in Sources */,
 				52F55F7B29E86CAF00E06633 /* TransactionsInMonthManager.swift in Sources */,
 				52A8C33929E3CAF60079627E /* HeaderGroupViewCell.swift in Sources */,
+				52F55F8629E97A5C00E06633 /* PopUpInputController.swift in Sources */,
 				52F55F5C29E5508900E06633 /* GroupTypeViewController.swift in Sources */,
 				52A8C30D29DF26E50079627E /* String+Extension.swift in Sources */,
 				52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */,
+				52F55F8229E9265400E06633 /* SearchTransactionHistoryVC.swift in Sources */,
 				52F55F5529E54EE300E06633 /* ExistingData.swift in Sources */,
 				52A8C30629DE6A200079627E /* IgnoreViewCell.swift in Sources */,
 				52A8C32D29E264160079627E /* GroupItemViewCell.swift in Sources */,
