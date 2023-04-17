@@ -19,6 +19,10 @@ class TransactionsInMonthManager {
 		}
 	}
 
+	var isFuture: Bool {
+		return month ?? Date() > Date()
+	}
+
 	var transactionsInMonth: [[Transaction]?] = []
 	private weak var delegate: TransactionsInMonthManagerDelegate?
 
@@ -74,9 +78,8 @@ extension TransactionsInMonthManager {
 			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: newMonth))
 			delegate?.reloadView(self)
 		}
-		/// không dùng else, nếu dùng else thì lại refresh tất cả các tháng
-		/// vì self.month (tươn lai) chỉ hơn "Tháng này" 1 tháng nên nếu tạo giao dịch cách 2 tháng trở lên thì màn tương lai sẽ không được refresh nên so sánh với Date() 'hiện tại' để refresh màn tương lai
-		if month ?? Date() > Date() {
+		/// không dùng else, nếu dùng else thì lại thành refresh tất cả các tháng
+		else if newMonth > Date(), isFuture {
 			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
 			delegate?.reloadView(self)
 		}

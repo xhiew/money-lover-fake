@@ -26,6 +26,7 @@ class RecentTransactionCell: BaseTableViewCell {
 
   func showItems(transactions: [Transaction]?) {
     guard let transactions = transactions else { return }
+		if transactions.isEmpty { return }
     guard stackView.arrangedSubviews.isEmpty else { return }
     stateLabel.isHidden = true
     for transaction in transactions {
