@@ -26,7 +26,7 @@ class HomeManager {
 	var currentAmount: Double {
 		return UserDefaults.standard.accountBalance
 	}
-	weak var delegate: HomeManagerDelegate?
+	private weak var delegate: HomeManagerDelegate?
 	let homeItem: [HomeItem] =
 	[
 		.accBalance,
@@ -41,15 +41,42 @@ class HomeManager {
 	 .personalPlan,
 	 .theEnd
 	]
+	var recentTransactions: [Transaction]?
+	var reportTransactionsInThisMonth: [Transaction]?
+	var reportTransactionsInThisWeek: [Transaction]?
+	var reportTransactionsInLastMonth: [Transaction]?
+	var reportTransactionsInLastWeek: [Transaction]?
 
 	init() {
+		fetchRecentTransactions()
+		fetchReportTransactions()
 	}
 
 	func attachView(delegate: HomeManagerDelegate) {
 		self.delegate = delegate
 	}
 
-	func reloadData() {
+	private func fetchRecentTransactions() {
+		recentTransactions = RealmManager.getThreeRecentTransaction()
+	}
+
+	private func fetchReportTransactions() {
+		reportTransactionsInThisMonth = RealmManager.getAllExpenseTransactionsInMonth()
+		reportTransactionsInThisWeek = RealmManager.getAllExpenseTransactionsInWeek()
+		reportTransactionsInLastMonth = RealmManager.getAllExpenseTransactionsInMonth(date: Date().adding(.month, value: -1))
+		reportTransactionsInLastWeek = RealmManager.getAllExpenseTransactionsInWeek(date: Date().adding(.weekOfMonth, value: -1))
+	}
+
+	func reloadHomeViewIfNeed() {
+		fetchRecentTransactions()
+		delegate?.reloadData(self)
+	}
+
+	func reloadHomeViewWhenCreatedNewTransaction(newTransaction: Transaction) {
+		if !(newTransaction.isIgnore ?? false) {
+			fetchReportTransactions()
+		}
+		fetchRecentTransactions()
 		delegate?.reloadData(self)
 	}
 	

@@ -25,14 +25,12 @@ class RecentTransactionCell: BaseTableViewCell {
   }
 
   func showItems(transactions: [Transaction]?) {
-    guard let transactions = transactions else {
-      return
-    }
+    guard let transactions = transactions else { return }
     guard stackView.arrangedSubviews.isEmpty else { return }
     stateLabel.isHidden = true
     for transaction in transactions {
       let itemView = TransactionItemView()
-      itemView.setupUI(image: transaction.group?.image, title: transaction.group?.name, subTitle: transaction.date?.dateString(ofStyle: .full), rightTitle: "100000")
+			itemView.setupRecentTransactionUI(transaction: transaction)
       stackView.addArrangedSubview(itemView)
       itemView.snp.makeConstraints { make in
         make.width.equalTo(stackView)

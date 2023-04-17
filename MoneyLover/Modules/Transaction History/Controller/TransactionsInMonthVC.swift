@@ -10,20 +10,42 @@ import UIKit
 class TransactionsInMonthVC: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var iconLabel: UILabel!
+	@IBOutlet weak var warningLabel: UILabel!
+	@IBOutlet weak var constraintBot: NSLayoutConstraint!
 
 	let transactionsInMonthManager = TransactionsInMonthManager()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configTableView()
+		transactionsInMonthManager.attachView(view: self)
+		constraintBot.constant = Demension.shared.heightOfTabBar * Demension.shared.heightScale
+		NotificationCenter.default.addObserver(self, selector: #selector(updateTransactionInThisMonth), name: .changedAmount, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateViewWhenCreateNewTransaction(_:)), name: .createdNewTransaction, object: nil)
+	}
+
+	@objc private func updateTransactionInThisMonth() {
+		transactionsInMonthManager.reloadThisMonthTransactions()
+	}
+
+	@objc private func updateViewWhenCreateNewTransaction(_ notification: Notification) {
+		if let transaction = notification.object as? Transaction {
+			transactionsInMonthManager.refetchTransactionIfNeed(newTransaction: transaction)
+		}
 	}
 
 	private func configTableView() {
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.separatorStyle = .none
-		tableView.contentInset = UIEdgeInsets(horizontal: 0.0, vertical: -(Demension.shared.sectionSpacing - 1))
 		tableView.register(DayHeaderCell.nib(), forHeaderFooterViewReuseIdentifier: DayHeaderCell.identifier)
 		tableView.register(DayTransactionCell.nib(), forCellReuseIdentifier: DayTransactionCell.identifier)
+	}
+
+	private func showWarningIfNeed() {
+		iconLabel.isHidden = !(transactionsInMonthManager.transactionsInMonth.count == 0)
+		warningLabel.isHidden = !(transactionsInMonthManager.transactionsInMonth.count == 0)
 	}
 
 }
@@ -31,6 +53,7 @@ class TransactionsInMonthVC: UIViewController {
 //MARK: - Conform UITableViewDelegate, UITableViewDataSource
 extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
+		showWarningIfNeed()
 		return transactionsInMonthManager.transactionsInMonth.count
 	}
 
@@ -63,11 +86,22 @@ extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 		guard let transactions = transactionsInMonthManager.transactionsInMonth[section] else { return nil }
 		var totalAmount = 0.0
 		for transaction in transactions {
-			totalAmount += transaction.amount ?? 0.0
+			if transaction.group?.isExpense ?? false {
+				totalAmount -= transaction.amount ?? 0.0
+			} else {
+				totalAmount += transaction.amount ?? 0.0
+			}
 		}
 		let transaction = transactions.first
 		header.setupUI(day: transaction?.date?.day ?? 0, fullDate: transaction?.date?.IgnoreDay(), totalAmount: totalAmount)
 		return header
+	}
+}
+
+//MARK: - Conform TransactionsInMonthManagerDelegate
+extension TransactionsInMonthVC: TransactionsInMonthManagerDelegate {
+	func reloadView(_ transactionsInMonthManager: TransactionsInMonthManager) {
+		tableView.reloadData()
 	}
 
 }

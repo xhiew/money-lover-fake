@@ -155,4 +155,9 @@ extension Date {
 		}
 	}
 
+	// 2 date bằng nhau -> true
+	func compareMonth(date: Date = Date()) -> Bool {
+		return calendar.isDate(self, equalTo: date, toGranularity: .month)
+	}
+
 }

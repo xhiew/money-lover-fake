@@ -7,21 +7,6 @@
 
 import UIKit
 
-// nơi để tạo giao dịch mới
-
-protocol CreateTransactionManagerDelegate: AnyObject {
-
-}
-
-class CreateTransactionManager {
-	weak var delegate: CreateTransactionManagerDelegate?
-	let createViewItem: [CreateViewItem] = [.amount, .group, .note, .date, .ignore]
-	var isIgnoreReport = false
-	let today = Date().dateString(ofStyle: .full)
-	let newTransaction = Transaction()
-
-}
-
 enum CreateViewItem {
 	case amount
 	case group
@@ -29,3 +14,41 @@ enum CreateViewItem {
 	case date
 	case ignore
 }
+
+protocol CreateTransactionManagerDelegate: AnyObject {
+	func handleSuccessCreateTransaction(_ createTransactionManager: CreateTransactionManager, newTransaction: Transaction)
+}
+
+extension CreateTransactionManagerDelegate {
+	func	handleFailedCreateTransaction(_ createTransactionManager: CreateTransactionManager) {}
+}
+
+class CreateTransactionManager {
+	weak var delegate: CreateTransactionManagerDelegate?
+	let createViewItem: [CreateViewItem] = [.amount, .group, .note, .date, .ignore]
+	let today = Date().dateString(ofStyle: .full)
+	let newTransaction = Transaction()
+
+	init() {
+		setDefaultDate()
+	}
+
+	private func setDefaultDate() {
+		newTransaction.date = Date()
+	}
+	
+}
+
+//MARK: - Methods
+extension CreateTransactionManager {
+	func createNewTransaction() {
+		let result = RealmManager.create(object: newTransaction)
+		if result {
+			delegate?.handleSuccessCreateTransaction(self, newTransaction: newTransaction)
+		} else {
+			delegate?.handleFailedCreateTransaction(self)
+		}
+	}
+
+}
+

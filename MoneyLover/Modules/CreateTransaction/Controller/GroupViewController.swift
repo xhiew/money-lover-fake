@@ -129,7 +129,12 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 		let deleteItem = UIContextualAction(style: .destructive, title: Resource.ActionTitle.delete) { [weak self] action, view, completion in
 			guard let self = self else { return }
 
-			let deletedGroup = self.groupViewManager.groupItems[indexPath.section]?[indexPath.row]
+			let deletedGroup: TransactionGroup?
+			if self.isSearching {
+				deletedGroup = self.filterGroup?[indexPath.section]?[indexPath.row]
+			} else {
+				deletedGroup = self.groupViewManager.groupItems[indexPath.section]?[indexPath.row]
+			}
 			let result = self.groupViewManager.handleDeleteTransactionGroup(group: deletedGroup ?? TransactionGroup())
 			if result {
 				self.tableView.deleteRows(at: [indexPath], with: .fade)

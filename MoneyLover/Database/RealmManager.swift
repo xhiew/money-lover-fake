@@ -72,15 +72,15 @@ class RealmManager {
 
 //MARK: - Filter Transactions
 extension RealmManager {
-	static func getAllExpenseTransactionsInMonth(date: Date) -> [Transaction]? {
-		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND date BETWEEN {%@,%@}", date.customStart(of: .month) ?? Date(), date.customEnd(of: .month) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
+	static func getAllExpenseTransactionsInMonth(date: Date = Date()) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}", date.customStart(of: .month) ?? Date(), date.customEnd(of: .month) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
 		guard let response = response else { return nil }
 		let result = Array(response)
 		return result
 	}
 
-	static func getAllExpenseTransactionsInWeek(date: Date) -> [Transaction]? {
-		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND date BETWEEN {%@,%@}", date.customStart(of: .weekOfMonth) ?? Date(), date.customEnd(of: .weekOfMonth) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
+	static func getAllExpenseTransactionsInWeek(date: Date = Date()) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}", date.customStart(of: .weekOfMonth) ?? Date(), date.customEnd(of: .weekOfMonth) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
 		guard let response = response else { return nil }
 		let result = Array(response)
 		return result
@@ -94,8 +94,14 @@ extension RealmManager {
 	}
 
 	static func getAllTransactionInFuture() -> [Transaction]? {
-		let response = realm.objects(Transaction.self).filter("date > %@", Date()).sorted(byKeyPath: TransactionKeyPath.date.rawValue, ascending: false).optional
+		let response = realm.objects(Transaction.self).filter("date > %@", Date()).sorted(byKeyPath: TransactionKeyPath.date.rawValue, ascending: true).optional
 		guard let response = response else { return nil }
+		let result = Array(response)
+		return result
+	}
+
+	static func getThreeRecentTransaction() -> [Transaction]? {
+		let response = realm.objects(Transaction.self).prefix(3)
 		let result = Array(response)
 		return result
 	}

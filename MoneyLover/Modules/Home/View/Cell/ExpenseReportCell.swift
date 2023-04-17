@@ -25,8 +25,6 @@ class ExpenseReportCell: BaseTableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
-
   }
 
   override func configUI() {
@@ -38,8 +36,6 @@ class ExpenseReportCell: BaseTableViewCell {
 
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
   }
 
   func configChart() {
@@ -82,7 +78,7 @@ class ExpenseReportCell: BaseTableViewCell {
     stateLabel.isHidden = true
     for maxExpense in maxExpense {
       let view = TransactionItemView()
-      view.setupUI(image: maxExpense.group?.image, title: maxExpense.group?.name, subTitle: "200,000", rightTitle: "21%")
+			view.setupReportTransactionUI(transaction: maxExpense)
       stackExpenses.addArrangedSubview(view)
       view.snp.makeConstraints { make in
         make.width.equalTo(stackExpenses)

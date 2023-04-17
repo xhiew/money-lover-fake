@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: BaseViewController {
 
   @IBOutlet weak var homeTableView: UITableView!
+	
 	var homeManager = HomeManager()
 
   override func viewDidLoad() {
@@ -17,10 +18,17 @@ class HomeViewController: BaseViewController {
     configTableView()
 		homeManager.attachView(delegate: self)
 		NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .changedAmount, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(refetchTransactionInRealm(_:)), name: .createdNewTransaction, object: nil)
   }
 
-	@objc func updateUI() {
-		homeManager.reloadData()
+	@objc private func updateUI() {
+		homeManager.reloadHomeViewIfNeed()
+	}
+
+	@objc private func refetchTransactionInRealm(_ notification: Notification) {
+		if let transaction = notification.object as? Transaction {
+			homeManager.reloadHomeViewWhenCreatedNewTransaction(newTransaction: transaction)
+		}
 	}
 
   func configTableView() {
@@ -91,14 +99,14 @@ extension HomeViewController: UITableViewDataSource {
       let cell = homeTableView.dequeueReusableCell(withIdentifier: ExpenseReportCell.identifier, for: indexPath) as? ExpenseReportCell
       guard let cell = cell else { return UITableViewCell() }
       cell.maxMonthlyExpenses = nil //
-      cell.performChart()
+      cell.performChart() //
       cell.showMaxExpenses(maxExpenses: nil) //
 
       return cell
     case .recentTransaction:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: RecentTransactionCell.identifier, for: indexPath) as? RecentTransactionCell
       guard let cell = cell else { return UITableViewCell() }
-      cell.showItems(transactions: nil) //
+			cell.showItems(transactions: homeManager.recentTransactions)
 
       return cell
 		case .theEnd:
@@ -114,5 +122,5 @@ extension HomeViewController: HomeManagerDelegate {
 	func reloadData(_ homeManager: HomeManager) {
 		homeTableView.reloadData()
 	}
-
+	
 }

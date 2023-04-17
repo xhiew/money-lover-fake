@@ -51,6 +51,6 @@ struct ExistingData {
 		TransactionGroup(image: "ic_money", name: "Thu lãi", isExpense: false, canDelete: false, groupType: .revenue),
 		TransactionGroup(image: "ic_money", name: "Tiền trợ cấp", isExpense: false, canDelete: false, groupType: .revenue),
 		TransactionGroup(image: "ic_wallet3", name: "Lương hưu", isExpense: false, canDelete: false, groupType: .revenue),
-		TransactionGroup(image: "ic_upgrade", name: "Giao dịch khác", isExpense: nil, canDelete: false, groupType: nil)
+		TransactionGroup(image: "ic_upgrade", name: "Thu nhập khác", isExpense: nil, canDelete: false, groupType: nil)
 	]
 }

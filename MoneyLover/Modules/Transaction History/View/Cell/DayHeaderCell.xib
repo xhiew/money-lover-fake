@@ -22,9 +22,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thứ Năm tháng 4 2023" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAb-eq-34N">
-                            <rect key="frame" x="73.5" y="32.5" width="95" height="31.5"/>
+                            <rect key="frame" x="73.5" y="32.5" width="85" height="31.5"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="95" id="qYn-Ri-t1V"/>
+                                <constraint firstAttribute="width" constant="85" id="qYn-Ri-t1V"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,13 +13,15 @@ class Transaction: Object {
   @Persisted var group: TransactionGroup?
   @Persisted var note: String?
   @Persisted var date: Date?
+	@Persisted var isIgnore: Bool?
 
-  convenience init(amount: Double?, group: TransactionGroup?, note: String?, date: Date? = Date()) {
+	convenience init(amount: Double?, group: TransactionGroup?, note: String?, date: Date? = Date(), isIgnore: Bool? = false) {
     self.init()
     self.amount = amount
     self.group = group
     self.note = note
     self.date = date
+		self.isIgnore = isIgnore
   }
 
 }

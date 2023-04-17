@@ -38,9 +38,9 @@ class PopUpInputController: BaseViewController {
 			guard let self = self else { return }
 			let result = self.createChangeAmountTransaction(newAmount: self.textField.text?.currency ?? 0)
 			if result {
-				NotificationCenter.default.post(name: .changedAmount, object: nil)
-				self.dismiss(animated: true)
 				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.subTitleChangeAmount)
+				self.dismiss(animated: true)
+				NotificationCenter.default.post(name: .changedAmount, object: nil)
 			}
 		}
 		alert.addAction(UIAlertAction(title: Resource.ActionTitle.cancel, style: .destructive, handler: nil))

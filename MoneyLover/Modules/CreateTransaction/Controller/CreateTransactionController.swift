@@ -41,6 +41,7 @@ class CreateTransactionController: BaseViewController {
     super.viewDidLoad()
 		configTableView()
 		configGreenButton()
+		createTransactionManager.delegate = self
   }
 
 	//MARK: - Methods
@@ -74,7 +75,7 @@ class CreateTransactionController: BaseViewController {
 
   @IBAction func didTapGreenButton(_ sender: Any) {
 		if isEnableGreenButton {
-			// lưu giao dịch bên manager, nhớ check xem có ignore report ko , nếu thành công trả về true rồi showToast thành công
+			createTransactionManager.createNewTransaction()
 		} else {
 			Commons.shared.showToast(image: Resource.Image.systemError,
 															 title: Resource.NotiTitle.warningTitle,
@@ -133,7 +134,7 @@ extension CreateTransactionController: UITableViewDataSource {
 			let cell = tableView.dequeueReusableCell(withIdentifier: IgnoreViewCell.identifier, for: indexPath) as? IgnoreViewCell
 			guard let cell = cell else { return UITableViewCell() }
 			cell.switchValueChange = { [weak self] isIgnore in
-				self?.createTransactionManager.isIgnoreReport = isIgnore
+				self?.createTransactionManager.newTransaction.isIgnore = isIgnore
 			}
 			cell.showPopUp = { [weak self] in
 				guard let self = self else { return }
@@ -204,6 +205,20 @@ extension CreateTransactionController: GroupViewControllerDelegate {
 			cell.setupUI(imageName: group.image, title: group.name)
 			self.createTransactionManager.newTransaction.group = group
 		}
+	}
+}
+
+//MARK: - Conform CreateTransactionManagerDelegate
+extension CreateTransactionController: CreateTransactionManagerDelegate {
+	func handleSuccessCreateTransaction(_ createTransactionManager: CreateTransactionManager, newTransaction: Transaction) {
+		dismiss(animated: true, completion: nil)
+		Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successSubtitle)
+		if newTransaction.group?.isExpense ?? true {
+			UserDefaults.standard.accountBalance -= newTransaction.amount ?? 0.0
+		} else {
+			UserDefaults.standard.accountBalance += newTransaction.amount ?? 0.0
+		}
+		NotificationCenter.default.post(name: .createdNewTransaction, object: newTransaction)
 	}
 
 }

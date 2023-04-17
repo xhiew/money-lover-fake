@@ -24,7 +24,7 @@ class DayTransactionCell: BaseTableViewCell {
 
 	func setupUI(transaction: Transaction) {
 		guard let group = transaction.group else { return }
-		if group.id == Resource.Title.idChangeAmount {
+		if group.groupType?.rawValue == nil {
 			itemAmount.textColor = Theme.shared.primaryColor
 		} else {
 			itemAmount.textColor = (group.isExpense ?? false)

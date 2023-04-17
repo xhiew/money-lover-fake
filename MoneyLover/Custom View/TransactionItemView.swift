@@ -34,11 +34,22 @@ class TransactionItemView: UIView {
     }
   }
 
-  func setupUI(image: String?, title: String?, subTitle: String?, rightTitle: String?) {
-    imageItem.image = UIImage(named: image ?? "")
-    titleItem.text = title
-    self.subTitle.text = subTitle
-    self.rightTitle.text = rightTitle
+	func setupRecentTransactionUI(transaction: Transaction) {
+		imageItem.image = UIImage(named: transaction.group?.image ?? "")
+		titleItem.text = transaction.group?.name
+		subTitle.text = transaction.date?.dateString(ofStyle: .full)
+		rightTitle.text = transaction.amount?.formatMoneyNumber() ?? "0"
+		if transaction.group?.groupType?.rawValue == nil {
+			rightTitle.textColor = Theme.shared.primaryColor
+		} else {
+			rightTitle.textColor = (transaction.group?.isExpense ?? true)
+			? Theme.shared.lightRed
+			: Theme.shared.lightBlue
+		}
   }
+
+	func setupReportTransactionUI(transaction: Transaction) {
+
+	}
 
 }
