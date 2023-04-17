@@ -7,17 +7,42 @@
 
 import UIKit
 
-
-// nơi lấy group trong realm để hiện thị ra
 class GroupViewManager {
-	var groupItems: [[TransactionGroup]] = [[TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses), TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses), TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses), TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses), TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses), TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses), TransactionGroup(image: "ic_check_border", name: "Ăn uống", isExpense: true, groupType: 																				.monthlyExpenses)],
-																					[TransactionGroup(image: "ic_check_border", name: "Bảo hiểm", isExpense: true, groupType: .essentialExpenses)],
-																					[TransactionGroup(image: "ic_check_border", name: "Làm đẹp", isExpense: true, groupType: .entertainment)],
-																					[TransactionGroup(image: "ic_check_border", name: "Lương", isExpense: false, groupType:
-																																.revenue)]]
-
+	var groupItems: [[TransactionGroup]?] = []
+	
 	init() {
-
+		groupItems = convertTo2DArray(groups: getAllGroup())
 	}
 
+}
+
+//MARK: - Methods
+extension GroupViewManager {
+	private func getAllGroup() -> [TransactionGroup] {
+		let result: [TransactionGroup] = RealmManager.getAllGroupsAndSort()
+		return result
+	}
+
+	private func convertTo2DArray(groups: [TransactionGroup]) -> [[TransactionGroup]?] {
+		var result: [[TransactionGroup]?] = []
+		var subArray: [TransactionGroup] = []
+		var firstGroup: TransactionGroup = groups[0]
+		for group in groups {
+			if group.groupType == firstGroup.groupType {
+				subArray.append(group)
+			} else {
+				result.append(subArray)
+				subArray = [group]
+				firstGroup = group
+			}
+		}
+		result.append(subArray)
+		return result
+	}
+
+	func handleDeleteTransactionGroup(group: TransactionGroup) -> Bool {
+		guard (group.canDelete ?? false) else { return false}
+		let result = RealmManager.delete(object: group)
+		return result
+	}
 }

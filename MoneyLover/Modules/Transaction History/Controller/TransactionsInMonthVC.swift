@@ -12,7 +12,6 @@ class TransactionsInMonthVC: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 
 	let transactionsInMonthManager = TransactionsInMonthManager()
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configTableView()
@@ -32,16 +31,17 @@ class TransactionsInMonthVC: UIViewController {
 //MARK: - Conform UITableViewDelegate, UITableViewDataSource
 extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return transactionsInMonthManager.transactionsDummy.count
+		return transactionsInMonthManager.transactionsInMonth.count
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return transactionsInMonthManager.transactionsDummy[section].count
+		return transactionsInMonthManager.transactionsInMonth[section]?.count ?? 0
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: DayTransactionCell.identifier, for: indexPath) as? DayTransactionCell
 		guard let cell = cell else { return UITableViewCell() }
+		cell.setupUI(transaction: transactionsInMonthManager.transactionsInMonth[indexPath.section]?[indexPath.row] ?? Transaction())
 		return cell
 	}
 
@@ -49,9 +49,24 @@ extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 		return Demension.shared.heightForDayHeader
 	}
 
+	func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+		if transactionsInMonthManager.transactionsInMonth[section]?.isEmpty ?? true {
+			return 0.0
+		}
+		return Demension.shared.heightForDayHeader
+	}
+
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DayHeaderCell.identifier) as? DayHeaderCell
 		guard let header = header else { return UIView() }
+
+		guard let transactions = transactionsInMonthManager.transactionsInMonth[section] else { return nil }
+		var totalAmount = 0.0
+		for transaction in transactions {
+			totalAmount += transaction.amount ?? 0.0
+		}
+		let transaction = transactions.first
+		header.setupUI(day: transaction?.date?.day ?? 0, fullDate: transaction?.date?.IgnoreDay(), totalAmount: totalAmount)
 		return header
 	}
 

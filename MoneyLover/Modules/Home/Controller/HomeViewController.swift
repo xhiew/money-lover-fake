@@ -10,13 +10,18 @@ import UIKit
 class HomeViewController: BaseViewController {
 
   @IBOutlet weak var homeTableView: UITableView!
-  let homeManager = HomeManager()
+	var homeManager = HomeManager()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configTableView()
-    
+		homeManager.attachView(delegate: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .changedAmount, object: nil)
   }
+
+	@objc func updateUI() {
+		homeManager.reloadData()
+	}
 
   func configTableView() {
     homeTableView.dataSource = self
@@ -48,10 +53,12 @@ extension HomeViewController: UITableViewDataSource {
     case .accBalance:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: AccountBalanceCell.identifier, for: indexPath) as? AccountBalanceCell
       guard let cell = cell else { return UITableViewCell() }
+			cell.accountBalance = self.homeManager.currentAmount
       return cell
     case .myWallet:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: MyWalletCell.identifier, for: indexPath) as? MyWalletCell
       guard let cell = cell else { return UITableViewCell() }
+			cell.currentAmount = homeManager.currentAmount
 			cell.changeAmount = { [weak self] in
 				let alert = UIAlertController(title: Resource.ActionTitle.fineTuneWallet, message: nil, preferredStyle: .actionSheet)
 				let changeAccBalance = UIAlertAction(title: Resource.ActionTitle.fineTuneAmount, style: .default) { [weak self] _ in
@@ -76,20 +83,22 @@ extension HomeViewController: UITableViewDataSource {
     case .personalPlan:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: PersonalPlanCell.identifier, for: indexPath) as? PersonalPlanCell
       guard let cell = cell else { return UITableViewCell() }
-
+			cell.registedNotification = {
+				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitleVi, subtitle: Resource.NotiTitle.subscribedNotiSubtitle)
+			}
       return cell
     case .expenseReport:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: ExpenseReportCell.identifier, for: indexPath) as? ExpenseReportCell
       guard let cell = cell else { return UITableViewCell() }
-      cell.maxMonthlyExpenses = homeManager.expenses
+      cell.maxMonthlyExpenses = nil //
       cell.performChart()
-      cell.showMaxExpenses(maxExpenses: homeManager.expenses)
+      cell.showMaxExpenses(maxExpenses: nil) //
 
       return cell
     case .recentTransaction:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: RecentTransactionCell.identifier, for: indexPath) as? RecentTransactionCell
       guard let cell = cell else { return UITableViewCell() }
-      cell.showItems(transactions: homeManager.expenses)
+      cell.showItems(transactions: nil) //
 
       return cell
 		case .theEnd:
@@ -98,4 +107,12 @@ extension HomeViewController: UITableViewDataSource {
 			return cell
     }
   }
+}
+
+//MARK: - Conform HomeManagerDelegate
+extension HomeViewController: HomeManagerDelegate {
+	func reloadData(_ homeManager: HomeManager) {
+		homeTableView.reloadData()
+	}
+
 }

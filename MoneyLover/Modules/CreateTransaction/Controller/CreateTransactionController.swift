@@ -197,8 +197,8 @@ extension CreateTransactionController: GroupViewCellDelegate {
 
 //MARK: - Conform GroupViewControllerDelegate
 extension CreateTransactionController: GroupViewControllerDelegate {
-	func didSelectGroupItem(_ sender: GroupViewController, indexPath: IndexPath, group: TransactionGroup) {
-		self.selectedGroupIndexPath = indexPath
+	func didSelectGroupItem(_ sender: GroupViewController, indexPath: IndexPath?, group: TransactionGroup) {
+		selectedGroupIndexPath = indexPath
 		if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as? GroupViewCell {
 			self.isNotEmptyGroup = true
 			cell.setupUI(imageName: group.image, title: group.name)

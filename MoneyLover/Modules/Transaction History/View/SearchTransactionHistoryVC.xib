@@ -11,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchTransactionHistoryVC" customModule="MoneyLover" customModuleProvider="target">
             <connections>
                 <outlet property="searchBar" destination="ZZc-AE-SLF" id="Cyi-B6-OlK"/>
-                <outlet property="transactionHistoryView" destination="vDB-PP-w1u" id="vDf-WI-2zU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,13 +71,13 @@
                     <color key="tintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDB-PP-w1u">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pLB-Yy-r3H">
                     <rect key="frame" x="0.0" y="156" width="414" height="740"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Không có giao dịch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUi-Nr-EIP">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" red="0.36470588240000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có giao dịch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUi-Nr-EIP">
                     <rect key="frame" x="131.5" y="515.5" width="151" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -88,18 +87,20 @@
             <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstItem="LQG-8u-Erx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="45u-nD-gOi"/>
-                <constraint firstItem="vDB-PP-w1u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DVe-VN-Fag"/>
-                <constraint firstAttribute="bottom" secondItem="vDB-PP-w1u" secondAttribute="bottom" id="FJj-Cw-zbI"/>
+                <constraint firstItem="TUi-Nr-EIP" firstAttribute="centerX" secondItem="pLB-Yy-r3H" secondAttribute="centerX" id="9wR-ck-KrO"/>
                 <constraint firstItem="LOW-AZ-Z8n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Fds-fv-mWY"/>
                 <constraint firstItem="ZZc-AE-SLF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GLE-o0-ZFy"/>
                 <constraint firstItem="ZZc-AE-SLF" firstAttribute="top" secondItem="LOW-AZ-Z8n" secondAttribute="bottom" id="Gt4-Vt-DV5"/>
                 <constraint firstItem="ZZc-AE-SLF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="POc-k3-qwF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pLB-Yy-r3H" secondAttribute="trailing" id="Rda-Su-fd7"/>
+                <constraint firstAttribute="bottom" secondItem="pLB-Yy-r3H" secondAttribute="bottom" id="Tug-qr-G20"/>
+                <constraint firstItem="TUi-Nr-EIP" firstAttribute="centerY" secondItem="pLB-Yy-r3H" secondAttribute="centerY" id="W67-Gw-Um8"/>
                 <constraint firstItem="LQG-8u-Erx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dHc-4Q-0Mq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LQG-8u-Erx" secondAttribute="trailing" id="e3J-uQ-Hqq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vDB-PP-w1u" secondAttribute="trailing" id="ncG-OF-38S"/>
+                <constraint firstItem="pLB-Yy-r3H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mF5-Is-7hP"/>
+                <constraint firstItem="pLB-Yy-r3H" firstAttribute="top" secondItem="ZZc-AE-SLF" secondAttribute="bottom" id="nUF-Tz-YoU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LOW-AZ-Z8n" secondAttribute="trailing" id="nh3-3D-Hw2"/>
                 <constraint firstItem="LOW-AZ-Z8n" firstAttribute="top" secondItem="LQG-8u-Erx" secondAttribute="bottom" id="qNA-Gl-VhB"/>
-                <constraint firstItem="vDB-PP-w1u" firstAttribute="top" secondItem="ZZc-AE-SLF" secondAttribute="bottom" id="r94-8o-dzb"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </view>

@@ -12,20 +12,19 @@ class AccountBalanceCell: BaseTableViewCell {
   @IBOutlet weak var amountLabel: UILabel!
   @IBOutlet weak var eyesButton: UIButton!
 
-	var accountBalance: Double {
-		return UserDefaults.standard.accountBalance
+	var accountBalance: Double = 0 {
+		didSet {
+			handleBlink()
+		}
 	}
 
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
 		handleBlink()
   }
 
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
   }
 
   @IBAction func eyesButtonAction(_ sender: Any) {
@@ -44,7 +43,7 @@ class AccountBalanceCell: BaseTableViewCell {
 		}
 	}
 
-  func performAmount(accountBalance: String) {
+  func performAmount(accountBalance: String?) {
     amountLabel.text = accountBalance
   }
 

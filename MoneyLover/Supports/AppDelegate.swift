@@ -30,7 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
 	private func prepareForFirstLaunch() {
-
+		UserDefaults.standard.isNotFirstLaunch = true
+		UserDefaults.standard.accountBalance = 0
+		UserDefaults.standard.isHiddenAmount = true
+		UserDefaults.standard.isSubscribed = false
+		RealmManager.addDefaultGroups(groups: ExistingData.shared.groupDefaults)
 	}
 
 }

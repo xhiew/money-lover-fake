@@ -10,23 +10,10 @@ import UIKit
 class SearchTransactionHistoryVC: BaseViewController {
 
 	@IBOutlet weak var searchBar: UISearchBar!
-	@IBOutlet weak var transactionHistoryView: UIView!
-
-	let transactionHistory = TransactionsInMonthVC()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		searchBar.delegate = self
-		configTransactionHistoryView()
-	}
-
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		transactionHistory.view.frame = CGRect(x: 0, y: 0, width: transactionHistoryView.frame.width, height: transactionHistoryView.frame.height)
-	}
-
-	func configTransactionHistoryView() {
-		transactionHistoryView.addSubview(transactionHistory.view)
 	}
 
 	@IBAction func dismissButton(_ sender: Any) {

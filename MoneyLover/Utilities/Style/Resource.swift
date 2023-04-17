@@ -14,6 +14,7 @@ public class Resource {
 		public static let fineTuneAmount = "Điều chỉnh số dư"
 		public static let agree = "Đồng ý"
 		public static let cancel = "Huỷ"
+		public static let delete = "Xoá"
 		public static let fineTuneWallet = "Sửa ví"
 	}
 
@@ -22,7 +23,11 @@ public class Resource {
 		public static let warningTitle = "Oops!"
 		public static let warningSubtitle = "Thiếu thông tin"
 		public static let successTitle = "Yes!"
+		public static let successTitleVi = "Thành công!"
 		public static let successSubtitle = "Tạo thành công"
+		public static let successDeletedGroup = "Xoá thành công"
+		public static let defaultGroupSubtitle = "Nhóm mặc định"
+		public static let subscribedNotiSubtitle = "Nhận thông báo"
 	}
 
   public class DateTitle {
@@ -73,6 +78,7 @@ public class Resource {
 		public static let note = "Ghi chú"
 		public static let descriptionIgnoreReport = "Giao dịch của bạn sẽ không nằm trong số liệu phân tích và báo cáo. Bạn vẫn có thể theo dõi giao dịch bị bỏ qua trong lịch sử giao dịch."
 		public static let titleIgnoreReport = "Điều gì sẽ xảy ra?"
+		public static let idChangeAmount = "FD48BC61-4298-4641-A0A4-DC7527B2CF92"
 
     class Onboarding {
       public static let appName = "MoneyLover"

@@ -64,7 +64,6 @@ class IntroductionViewController: UIViewController {
   }
 
   @IBAction func startButtonAction(_ sender: UIButton) {
-		UserDefaults.standard.isNotFirstLaunch = true
     timer?.invalidate()
     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
       appDelegate.window?.rootViewController = TabViewController()

@@ -22,11 +22,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thứ Năm tháng 4 2023" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAb-eq-34N">
-                            <rect key="frame" x="73.5" y="32.5" width="90" height="31.5"/>
+                            <rect key="frame" x="73.5" y="32.5" width="95" height="31.5"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="qYn-Ri-t1V"/>
+                                <constraint firstAttribute="width" constant="95" id="qYn-Ri-t1V"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -55,6 +55,11 @@
                 <constraint firstItem="h4r-h9-uQR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qDU-cb-JMB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dayLabel" destination="lHN-UM-fu4" id="hPr-sP-FJb"/>
+                <outlet property="fullDateLabel" destination="rAb-eq-34N" id="7dD-bh-SyC"/>
+                <outlet property="totalAmount" destination="u96-Nl-cd6" id="HjK-LH-KNZ"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="302.67857142857139"/>
         </view>
     </objects>

@@ -17,9 +17,9 @@ class PopUpInputController: BaseViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		textField.text = currentAmount.formatMoneyNumber()
 		textField.delegate = self
 		textField.becomeFirstResponder()
-		textField.text = currentAmount.formatMoneyNumber()
 	}
 
 	@IBAction func cancelButton(_ sender: Any) {
@@ -36,7 +36,7 @@ class PopUpInputController: BaseViewController {
 		let alert = UIAlertController(title: Resource.ActionTitle.confirmChangingAmount, message: nil, preferredStyle: .alert)
 		let changeAccBalance = UIAlertAction(title: Resource.ActionTitle.agree, style: .default) { [weak self] _ in
 			guard let self = self else { return }
-			let result = self.createChangeAmountTransaction()
+			let result = self.createChangeAmountTransaction(newAmount: self.textField.text?.currency ?? 0)
 			if result {
 				NotificationCenter.default.post(name: .changedAmount, object: nil)
 				self.dismiss(animated: true)
@@ -48,9 +48,13 @@ class PopUpInputController: BaseViewController {
 		present(alert, animated: true, completion: nil)
 	}
 
-	private func createChangeAmountTransaction() -> Bool {
-//		UserDefaults.standard.accountBalance = self.textField.text?.currency ?? 0
-		return true
+	func createChangeAmountTransaction(newAmount: Double) -> Bool {
+		let amountDiff = newAmount - currentAmount
+		let group = RealmManager.getChangeAmountGroup()
+		let newTransaction = Transaction(amount: amountDiff, group: group, note: Resource.ActionTitle.fineTuneAmount)
+		let result = RealmManager.create(object: newTransaction)
+		UserDefaults.standard.accountBalance = newAmount
+		return result
 	}
 
 }

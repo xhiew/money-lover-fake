@@ -8,7 +8,7 @@
 import RealmSwift
 
 class Transaction: Object {
-  @Persisted(primaryKey: true) var id = 0
+	@Persisted var id: String = UUID().uuidString
   @Persisted var amount: Double?
   @Persisted var group: TransactionGroup?
   @Persisted var note: String?

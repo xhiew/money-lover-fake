@@ -11,15 +11,16 @@ class MyWalletCell: BaseTableViewCell {
 
 	@IBOutlet weak var amountLabel: UILabel!
 
-	var accountBalance: Double {
-		return UserDefaults.standard.accountBalance
+	var currentAmount: Double = 0 {
+		didSet {
+			checkEyes()
+		}
 	}
 
 	var changeAmount: (() -> Void)?
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		checkEyes()
 		NotificationCenter.default.addObserver(self, selector: #selector(handlePerformAmount), name: .blink, object: nil)
 	}
 
@@ -35,7 +36,7 @@ class MyWalletCell: BaseTableViewCell {
 		if UserDefaults.standard.isHiddenAmount {
 			amountLabel.text = Resource.Title.privateAmount + " " + Resource.Title.vnd
 		} else {
-			amountLabel.text = accountBalance.formatMoneyNumber() + " " + Resource.Title.vnd
+			amountLabel.text = currentAmount.formatMoneyNumber() + " " + Resource.Title.vnd
 		}
 	}
 

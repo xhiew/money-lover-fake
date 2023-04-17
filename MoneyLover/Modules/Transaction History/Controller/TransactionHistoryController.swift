@@ -21,8 +21,10 @@ class TransactionHistoryController: UIViewController {
 	//MARK: - LifeCycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		accountBalanceLabel.text = transactionHistoryManager.curentAmount.formatMoneyNumber()
 		configTabBar()
 		configPagerController()
+		NotificationCenter.default.addObserver(self, selector: #selector(updateAccountBalance), name: .changedAmount, object: nil)
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -37,6 +39,10 @@ class TransactionHistoryController: UIViewController {
 	}
 
 	//MARK: - Methods
+	@objc func updateAccountBalance() {
+		accountBalanceLabel.text = transactionHistoryManager.curentAmount.formatMoneyNumber()
+	}
+
 	private func configTabBar() {
 		tabBar.delegate = self
 		tabBar.dataSource = self
@@ -64,12 +70,12 @@ class TransactionHistoryController: UIViewController {
 //MARK: - Conform TYTabPagerBarDelegate, TYTabPagerBarDataSource
 extension TransactionHistoryController: TYTabPagerBarDelegate, TYTabPagerBarDataSource {
 	func numberOfItemsInPagerTabBar() -> Int {
-		return transactionHistoryManager.monthNames.count
+		return transactionHistoryManager.months.count
 	}
 
 	func pagerTabBar(_ pagerTabBar: TYTabPagerBar, cellForItemAt index: Int) -> UICollectionViewCell & TYTabPagerBarCellProtocol {
 		let cell = tabBar.dequeueReusableCell(withReuseIdentifier: TYTabPagerBarCell.identifier, for: index)
-		cell.titleLabel.text = transactionHistoryManager.monthNames[index]
+		cell.titleLabel.text = transactionHistoryManager.months[index].nameOfTwentyMonths()
 		return cell
 	}
 
@@ -86,11 +92,12 @@ extension TransactionHistoryController: TYTabPagerBarDelegate, TYTabPagerBarData
 //MARK: - Conform TYPagerControllerDataSource, TYPagerControllerDelegate
 extension TransactionHistoryController: TYPagerControllerDataSource, TYPagerControllerDelegate {
 	func numberOfControllersInPagerController() -> Int {
-		return transactionHistoryManager.monthNames.count
+		return transactionHistoryManager.months.count
 	}
 
 	func pagerController(_ pagerController: TYPagerController, controllerFor index: Int, prefetching: Bool) -> UIViewController {
 		let vc = TransactionsInMonthVC()
+		vc.transactionsInMonthManager.month = transactionHistoryManager.months[index]
 		return vc
 	}
 

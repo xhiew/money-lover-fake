@@ -11,6 +11,8 @@ class PersonalPlanCell: BaseTableViewCell {
 
   @IBOutlet weak var notiButton: UIButton!
 
+	var registedNotification: (() -> Void)?
+
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
@@ -33,6 +35,7 @@ class PersonalPlanCell: BaseTableViewCell {
   @IBAction func notiButtonAction(_ sender: UIButton) {
     Commons.shared.animateButton(viewToAnimate: sender)
 		UserDefaults.standard.isSubscribed = true
+		registedNotification?()
 		disableButton()
   }
 

@@ -9,26 +9,26 @@ import UIKit
 import SwiftUI
 
 protocol GroupViewControllerDelegate: AnyObject {
-	func didSelectGroupItem(_ sender: GroupViewController, indexPath: IndexPath, group: TransactionGroup)
+	func didSelectGroupItem(_ sender: GroupViewController, indexPath: IndexPath?, group: TransactionGroup)
 }
 
 class GroupViewController: BaseViewController {
 
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var notificationLabel: UILabel!
 
 	weak var delegate: GroupViewControllerDelegate?
 	let groupViewManager = GroupViewManager()
 	var selectedGroupIndexPath: IndexPath?
-	var filterGroup: [[TransactionGroup]]? = [[]]
+	var filterGroup: [[TransactionGroup]?]?
 	var isSearching = false
-	@IBOutlet weak var notificationLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		searchBar.delegate = self
 		configTableView()
-		tableView.scrollToRow(at: selectedGroupIndexPath ?? IndexPath(row: 0, section: 0), at: .top, animated: true)
+		tableView.scrollToRow(at: selectedGroupIndexPath ?? IndexPath(row: 0, section: 0), at: .middle, animated: true)
 	}
 
 	func configTableView() {
@@ -60,9 +60,9 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let filterGroup = filterGroup, isSearching {
-			return filterGroup[section].count
+			return filterGroup[section]?.count ?? 0
 		}
-		return groupViewManager.groupItems[section].count
+		return groupViewManager.groupItems[section]?.count  ?? 0
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,20 +74,21 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 		if cell.itemIndexPath == selectedGroupIndexPath {
 			cell.showCheckMark()
 		}
+
 		if let filterGroup = filterGroup, isSearching {
-			cell.setupUI(image: filterGroup[indexPath.section][indexPath.row].image, title: filterGroup[indexPath.section][indexPath.row].name)
+			cell.setupUI(image: filterGroup[indexPath.section]?[indexPath.row].image, title: filterGroup[indexPath.section]?[indexPath.row].name)
 		} else {
-			cell.setupUI(image: groupViewManager.groupItems[indexPath.section][indexPath.row].image, title: groupViewManager.groupItems[indexPath.section][indexPath.row].name)
+			cell.setupUI(image: groupViewManager.groupItems[indexPath.section]?[indexPath.row].image, title: groupViewManager.groupItems[indexPath.section]?[indexPath.row].name)
 		}
 		cell.didSelectGroupItem = { [weak self] indexPath in
 			guard let self = self, let indexPath = indexPath else { return }
 
 			if let filterGroup = self.filterGroup, self.isSearching {
-				let selectedGroup = filterGroup[indexPath.section][indexPath.row]
-				self.delegate?.didSelectGroupItem(self, indexPath: indexPath, group: selectedGroup)
+				let selectedGroup = filterGroup[indexPath.section]?[indexPath.row]
+				self.delegate?.didSelectGroupItem(self, indexPath: indexPath, group: selectedGroup ?? TransactionGroup())
 			} else {
-				let selectedGroup = self.groupViewManager.groupItems[indexPath.section][indexPath.row]
-				self.delegate?.didSelectGroupItem(self, indexPath: indexPath, group: selectedGroup)
+				let selectedGroup = self.groupViewManager.groupItems[indexPath.section]?[indexPath.row]
+				self.delegate?.didSelectGroupItem(self, indexPath: indexPath, group: selectedGroup ?? TransactionGroup())
 			}
 
 			self.navigationController?.popViewController(animated: true)
@@ -100,25 +101,24 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 		guard let header = header else { return UIView() }
 
 		if let filterGroup = filterGroup, isSearching {
-			if filterGroup[section].isEmpty {
+			if filterGroup[section]?.isEmpty ?? true {
 				return nil
 			} else {
-				header.headerTitle.text = filterGroup[section][0].groupType?.toString()
+				header.headerTitle.text = filterGroup[section]?[0].groupType?.toString()
 			}
 		} else {
-			if groupViewManager.groupItems[section].isEmpty {
+			if groupViewManager.groupItems[section]?.isEmpty ?? true {
 				return nil
 			} else {
-				header.headerTitle.text = groupViewManager.groupItems[section][0].groupType?.toString()
+				header.headerTitle.text = groupViewManager.groupItems[section]?[0].groupType?.toString()
 			}
-
 		}
 		return header
 	}
 
 	func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
 		if let filterGroup = filterGroup, isSearching {
-			if filterGroup[section].isEmpty {
+			if filterGroup[section]?.isEmpty ?? true {
 				return 0.0
 			}
 		}
@@ -126,11 +126,18 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-		let deleteItem = UIContextualAction(style: .destructive, title: "Xoá") { [weak self] action, view, completion in
+		let deleteItem = UIContextualAction(style: .destructive, title: Resource.ActionTitle.delete) { [weak self] action, view, completion in
 			guard let self = self else { return }
-			// self.data.remove(at: indexPath.row) xoá dữ liệu trong real
-			self.groupViewManager.groupItems[indexPath.section].remove(at: indexPath.row)
-			self.tableView.deleteRows(at: [indexPath], with: .fade)
+
+			let deletedGroup = self.groupViewManager.groupItems[indexPath.section]?[indexPath.row]
+			let result = self.groupViewManager.handleDeleteTransactionGroup(group: deletedGroup ?? TransactionGroup())
+			if result {
+				self.tableView.deleteRows(at: [indexPath], with: .fade)
+				self.groupViewManager.groupItems[indexPath.section]?.remove(at: indexPath.row)
+				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.warningColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeletedGroup)
+			} else {
+				Commons.shared.showToast(image: Resource.Image.systemError?.withTintColor(Theme.shared.warningColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.warningTitle, subtitle: Resource.NotiTitle.defaultGroupSubtitle)
+			}
 			completion(true)
 		}
 		let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteItem])
@@ -149,11 +156,13 @@ extension GroupViewController: UISearchBarDelegate {
 		} else {
 			isSearching = true
 			filterGroup = groupViewManager.groupItems.map({
-				$0.filter({
+				$0?.filter({
 					$0.name?.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces)) ?? false
 				})
 			})
-			notificationLabel.isHidden = !(filterGroup?.allSatisfy({$0.isEmpty}) ?? true)
+			notificationLabel.isHidden = !(filterGroup?.allSatisfy({
+				$0?.isEmpty ?? true
+			}) ?? true)
 			tableView.reloadData()
 		}
 	}

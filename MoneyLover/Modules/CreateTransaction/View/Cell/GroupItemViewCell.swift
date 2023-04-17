@@ -14,7 +14,6 @@ class GroupItemViewCell: BaseTableViewCell {
 
 	var didSelectGroupItem: ((IndexPath?) -> Void)?
 	var itemIndexPath: IndexPath?
-
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
