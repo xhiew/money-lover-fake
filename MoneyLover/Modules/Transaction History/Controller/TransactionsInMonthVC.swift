@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PanModal
 
 class TransactionsInMonthVC: UIViewController {
 
@@ -96,11 +97,28 @@ extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 		header.setupUI(day: transaction?.date?.day ?? 0, fullDate: transaction?.date?.IgnoreDay(), totalAmount: totalAmount)
 		return header
 	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let vc = DetailTransactionVC()
+		let transaction =	transactionsInMonthManager.transactionsInMonth[indexPath.section]?[indexPath.row]
+		vc.transaction = transaction
+		vc.deleteAction = { [weak self] in
+			self?.transactionsInMonthManager.handleDeleteTransaction(transaction: transaction, at: indexPath)
+		}
+		presentPanModal(vc)
+	}
+
 }
 
 //MARK: - Conform TransactionsInMonthManagerDelegate
 extension TransactionsInMonthVC: TransactionsInMonthManagerDelegate {
 	func reloadView(_ transactionsInMonthManager: TransactionsInMonthManager) {
+		tableView.reloadData()
+	}
+
+	func handleSucessDeleteTransaction(_ transactionsInMonthManager: TransactionsInMonthManager) {
+		Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeleted)
+		NotificationCenter.default.post(name: .deletedTransaction, object: nil)
 		tableView.reloadData()
 	}
 

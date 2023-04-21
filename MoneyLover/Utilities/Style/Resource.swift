@@ -12,6 +12,7 @@ public class Resource {
 	class ActionTitle {
 		public static let confirmChangingAmount = "Xác nhận điều chỉnh số dư"
 		public static let fineTuneAmount = "Điều chỉnh số dư"
+		public static let deleteTransaction = "Xoá giao dịch này?"
 		public static let agree = "Đồng ý"
 		public static let cancel = "Huỷ"
 		public static let delete = "Xoá"
@@ -25,7 +26,7 @@ public class Resource {
 		public static let successTitle = "Yes!"
 		public static let successTitleVi = "Thành công!"
 		public static let successSubtitle = "Tạo thành công"
-		public static let successDeletedGroup = "Xoá thành công"
+		public static let successDeleted = "Xoá thành công"
 		public static let defaultGroupSubtitle = "Nhóm mặc định"
 		public static let subscribedNotiSubtitle = "Nhận thông báo"
 	}

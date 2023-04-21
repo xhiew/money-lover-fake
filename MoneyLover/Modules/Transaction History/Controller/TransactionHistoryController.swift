@@ -25,6 +25,8 @@ class TransactionHistoryController: UIViewController {
 		configTabBar()
 		configPagerController()
 		NotificationCenter.default.addObserver(self, selector: #selector(updateAccountBalance), name: .changedAmount, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateAccountBalance), name: .deletedTransaction, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateAccountBalance), name: .createdNewTransaction, object: nil)
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -39,7 +41,7 @@ class TransactionHistoryController: UIViewController {
 	}
 
 	//MARK: - Methods
-	@objc func updateAccountBalance() {
+	@objc private func updateAccountBalance() {
 		accountBalanceLabel.text = transactionHistoryManager.curentAmount.formatMoneyNumber()
 	}
 

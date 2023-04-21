@@ -19,10 +19,15 @@ class HomeViewController: BaseViewController {
 		homeManager.attachView(delegate: self)
 		NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .changedAmount, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(refetchTransactionInRealm(_:)), name: .createdNewTransaction, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: .deletedTransaction, object: nil)
   }
 
 	@objc private func updateUI() {
-		homeManager.reloadHomeViewIfNeed()
+		homeManager.reloadRecentViewAndWallet()
+	}
+
+	@objc private func reloadView() {
+		homeManager.reloadHomeView()
 	}
 
 	@objc private func refetchTransactionInRealm(_ notification: Notification) {

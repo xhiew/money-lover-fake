@@ -11,4 +11,5 @@ extension Notification.Name {
 	static let blink = Notification.Name("blink")
 	static let changedAmount = Notification.Name("changedAmount")
 	static let createdNewTransaction = Notification.Name("createdNewTransaction")
+	static let deletedTransaction = Notification.Name("deletedTransaction")
 }

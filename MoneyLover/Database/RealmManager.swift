@@ -93,6 +93,13 @@ extension RealmManager {
 		return result
 	}
 
+	static func getAllTransactionsInCurrentMonth(date: Date) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("date BETWEEN {%@,%@}", date.customStart(of: .month) ?? Date(), Date()).sorted(byKeyPath: TransactionKeyPath.date.rawValue, ascending: false).optional
+		guard let response = response else { return nil }
+		let result = Array(response)
+		return result
+	}
+
 	static func getAllTransactionInFuture() -> [Transaction]? {
 		let response = realm.objects(Transaction.self).filter("date > %@", Date()).sorted(byKeyPath: TransactionKeyPath.date.rawValue, ascending: true).optional
 		guard let response = response else { return nil }

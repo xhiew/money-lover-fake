@@ -67,7 +67,7 @@ class HomeManager {
 		reportTransactionsInLastWeek = RealmManager.getAllExpenseTransactionsInWeek(date: Date().adding(.weekOfMonth, value: -1))
 	}
 
-	func reloadHomeViewIfNeed() {
+	func reloadRecentViewAndWallet() {
 		fetchRecentTransactions()
 		delegate?.reloadData(self)
 	}
@@ -77,6 +77,12 @@ class HomeManager {
 			fetchReportTransactions()
 		}
 		fetchRecentTransactions()
+		delegate?.reloadData(self)
+	}
+
+	func reloadHomeView() {
+		fetchRecentTransactions()
+		fetchReportTransactions()
 		delegate?.reloadData(self)
 	}
 	

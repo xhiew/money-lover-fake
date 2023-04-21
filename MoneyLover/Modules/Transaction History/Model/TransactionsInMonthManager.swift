@@ -9,22 +9,23 @@ import UIKit
 
 protocol TransactionsInMonthManagerDelegate: AnyObject {
 	func reloadView(_ transactionsInMonthManager: TransactionsInMonthManager)
+	func handleSucessDeleteTransaction(_ transactionsInMonthManager: TransactionsInMonthManager)
 }
 
 class TransactionsInMonthManager {
 
+	var transactionsInMonth: [[Transaction]?] = []
+	private weak var delegate: TransactionsInMonthManagerDelegate?
+
 	var month: Date? {
 		didSet {
-			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
+			fetchTransaction()
 		}
 	}
 
 	var isFuture: Bool {
 		return month ?? Date() > Date()
 	}
-
-	var transactionsInMonth: [[Transaction]?] = []
-	private weak var delegate: TransactionsInMonthManagerDelegate?
 
 	init() {
 
@@ -41,8 +42,11 @@ extension TransactionsInMonthManager {
 	private func getTransactionsInMonth(date: Date?) -> [Transaction]? {
 		if date ?? Date() > Date() {
 			return RealmManager.getAllTransactionInFuture()
+		} else if date?.isInCurrentMonth ?? false {
+			return RealmManager.getAllTransactionsInCurrentMonth(date: date ?? Date())
+		} else {
+			return RealmManager.getAllTransactionsInMonth(date: date ?? Date())
 		}
-		return RealmManager.getAllTransactionsInMonth(date: date ?? Date())
 	}
 
 	private func convertTo2DArray(transactions: [Transaction]?) -> [[Transaction]?] {
@@ -63,10 +67,14 @@ extension TransactionsInMonthManager {
 		return result
 	}
 
+	private func fetchTransaction() {
+		transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
+	}
+
 	func reloadThisMonthTransactions() {
 		guard let month = month else { return }
 		if month.isInCurrentMonth {
-			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: Date()))
+			transactionsInMonth = convertTo2DArray(transactions: RealmManager.getAllTransactionsInCurrentMonth(date: Date()))
 			delegate?.reloadView(self)
 		}
 	}
@@ -74,14 +82,27 @@ extension TransactionsInMonthManager {
 	/// bởi vì khi nhận thông báo thì các màn đã nhảy vảo viewDidLoad (đã được swipe vào) thì sẽ nhận được thông báo nên phải so sánh month để chỉ update 1 màn trong số đó thay vì update tất cả
 	func refetchTransactionIfNeed(newTransaction: Transaction) {
 		guard let newMonth = newTransaction.date else { return }
-		if month?.compareMonth(date: newMonth) ?? true {
-			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: newMonth))
+		if month?.compareMonth(date: newMonth) ?? false {
+			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
 			delegate?.reloadView(self)
 		}
 		/// không dùng else, nếu dùng else thì lại thành refresh tất cả các tháng
 		else if newMonth > Date(), isFuture {
 			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
 			delegate?.reloadView(self)
+		}
+	}
+
+	func handleDeleteTransaction(transaction: Transaction?, at indexPath: IndexPath) {
+		guard let transaction = transaction else { return }
+		let amount =	transaction.amount ?? 0.0
+		(transaction.group?.isExpense ?? true)
+		? (UserDefaults.standard.accountBalance += amount)
+		:	(UserDefaults.standard.accountBalance -= amount)
+		let result = RealmManager.delete(object: transaction)
+		if result {
+			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
+			delegate?.handleSucessDeleteTransaction(self)
 		}
 	}
 }

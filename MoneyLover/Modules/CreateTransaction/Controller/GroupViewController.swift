@@ -150,7 +150,7 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 					self.groupViewManager.groupItems[indexPath.section]?.remove(at: indexPath.row)
 					self.tableView.deleteRows(at: [indexPath], with: .fade)
 				}
-				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeletedGroup)
+				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeleted)
 			} else {
 				Commons.shared.showToast(image: Resource.Image.systemError?.withTintColor(Theme.shared.warningColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.warningTitle, subtitle: Resource.NotiTitle.defaultGroupSubtitle)
 			}

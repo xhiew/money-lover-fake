@@ -80,6 +80,8 @@
 		52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */; };
 		52BDDD0D29D586A60001DDD8 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0C29D586A60001DDD8 /* Transaction.swift */; };
 		52BDDD0F29D707760001DDD8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0E29D707760001DDD8 /* RealmManager.swift */; };
+		52C6AAB429F2906E00C2C1BE /* DetailTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6AAB229F2906E00C2C1BE /* DetailTransactionVC.swift */; };
+		52C6AAB529F2906E00C2C1BE /* DetailTransactionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C6AAB329F2906E00C2C1BE /* DetailTransactionVC.xib */; };
 		52DC3DBA29B1DD1D00D6C5D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC3DB929B1DD1D00D6C5D0 /* AppDelegate.swift */; };
 		52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DC3DC429B1DD2100D6C5D0 /* LaunchScreen.storyboard */; };
 		52DC3DD029B1E50F00D6C5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DC3DCF29B1E50F00D6C5D0 /* Assets.xcassets */; };
@@ -186,6 +188,8 @@
 		52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionGroup.swift; sourceTree = "<group>"; };
 		52BDDD0C29D586A60001DDD8 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		52BDDD0E29D707760001DDD8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		52C6AAB229F2906E00C2C1BE /* DetailTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionVC.swift; sourceTree = "<group>"; };
+		52C6AAB329F2906E00C2C1BE /* DetailTransactionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionVC.xib; sourceTree = "<group>"; };
 		52DC3DB629B1DD1D00D6C5D0 /* MoneyLover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyLover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DC3DB929B1DD1D00D6C5D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52DC3DC529B1DD2100D6C5D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 				52F55F6629E7B7CD00E06633 /* TransactionHistoryController.swift */,
 				52F55F6C29E80DBB00E06633 /* TransactionsInMonthVC.swift */,
 				52F55F8029E9265400E06633 /* SearchTransactionHistoryVC.swift */,
+				52C6AAB229F2906E00C2C1BE /* DetailTransactionVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */,
 				52F55F6D29E80DBB00E06633 /* TransactionsInMonthVC.xib */,
 				52F55F8129E9265400E06633 /* SearchTransactionHistoryVC.xib */,
+				52C6AAB329F2906E00C2C1BE /* DetailTransactionVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -704,6 +710,7 @@
 				52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */,
 				52F55F7F29E872F100E06633 /* DayHeaderCell.xib in Resources */,
 				522C19A029C00A1E00BD7168 /* ImageViewCell.xib in Resources */,
+				52C6AAB529F2906E00C2C1BE /* DetailTransactionVC.xib in Resources */,
 				522C199B29C009D500BD7168 /* LabelViewCell.xib in Resources */,
 				522C19A529C019DF00BD7168 /* OnBoardingCustomView.xib in Resources */,
 				52078E0029C9C728001B56CD /* RecentTransactionCell.xib in Resources */,
@@ -817,6 +824,7 @@
 				52A8C31D29E127730079627E /* NoteViewController.swift in Sources */,
 				52F55F7829E80F4F00E06633 /* DayTransactionCell.swift in Sources */,
 				52BDDD0D29D586A60001DDD8 /* Transaction.swift in Sources */,
+				52C6AAB429F2906E00C2C1BE /* DetailTransactionVC.swift in Sources */,
 				52F55F5829E5504200E06633 /* GroupIconViewController.swift in Sources */,
 				52078DE929C959EC001B56CD /* HeaderCell.swift in Sources */,
 				52A8C2FA29DE68700079627E /* AmountViewCell.swift in Sources */,
