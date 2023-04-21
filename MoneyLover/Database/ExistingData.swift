@@ -12,7 +12,7 @@ struct ExistingData {
 	private init() {}
 
 	let groupIcons: [String] =
-	["ic_home","ic_upgrade", "ic_money", "ic_bank", "ic_wallet3", "ic_reload", "ic_ab_bank", "ic_bank",
+	["ic_home","ic_upgrade_account", "ic_money", "ic_bank", "ic_wallet3", "ic_reload", "ic_ab_bank", "ic_bank",
 	 "ic_bidv" , "ic_donga_bank", "ic_education", "ic_email", "ic_gift2", "ic_grow", "ic_guide", "ic_interest_rate", "ic_marry",
 	 "ic_policy", "ic_policy2", "ic_policy3", "ic_public_bank", "ic_sea_bank", "ic_shacom_bank", "ic_shb_bank", "ic_shinhan_bank",
 	 "ic_techcombank", "ic_tp_bank", "ic_vib", "ic_vietcom_bank", "ic_vietin_bank", "ic_vp_bank", "ic_vr_bank",
@@ -51,6 +51,6 @@ struct ExistingData {
 		TransactionGroup(image: "ic_money", name: "Thu lãi", isExpense: false, canDelete: false, groupType: .revenue),
 		TransactionGroup(image: "ic_money", name: "Tiền trợ cấp", isExpense: false, canDelete: false, groupType: .revenue),
 		TransactionGroup(image: "ic_wallet3", name: "Lương hưu", isExpense: false, canDelete: false, groupType: .revenue),
-		TransactionGroup(image: "ic_upgrade", name: "Thu nhập khác", isExpense: nil, canDelete: false, groupType: nil)
+		TransactionGroup(image: "ic_upgrade_account", name: "Thu nhập khác", isExpense: nil, canDelete: false, groupType: nil)
 	]
 }

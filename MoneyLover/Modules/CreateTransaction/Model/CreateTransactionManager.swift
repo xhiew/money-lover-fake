@@ -35,6 +35,7 @@ class CreateTransactionManager {
 
 	private func setDefaultDate() {
 		newTransaction.date = Date()
+		newTransaction.isIgnore = false
 	}
 	
 }

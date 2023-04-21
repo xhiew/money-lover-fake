@@ -26,9 +26,13 @@ class RecentTransactionCell: BaseTableViewCell {
 
   func showItems(transactions: [Transaction]?) {
     guard let transactions = transactions else { return }
-		if transactions.isEmpty { return }
-    guard stackView.arrangedSubviews.isEmpty else { return }
-    stateLabel.isHidden = true
+		if transactions.isEmpty {
+			stateLabel.isHidden = false
+			return
+		} else {
+			stateLabel.isHidden = true
+		}
+		clearStack()
     for transaction in transactions {
       let itemView = TransactionItemView()
 			itemView.setupRecentTransactionUI(transaction: transaction)
@@ -41,5 +45,9 @@ class RecentTransactionCell: BaseTableViewCell {
     heightConstraint.constant = Demension.shared.heightForItemTransaction * CGFloat(transactions.count) + Demension.shared
       .stackSpacing * CGFloat(transactions.count - 1) + 32
   }
+
+	private func clearStack() {
+		stackView.arrangedSubviews.forEach({$0.removeFromSuperview()})
+	}
 
 }

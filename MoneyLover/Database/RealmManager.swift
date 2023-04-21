@@ -101,7 +101,7 @@ extension RealmManager {
 	}
 
 	static func getThreeRecentTransaction() -> [Transaction]? {
-		let response = realm.objects(Transaction.self).prefix(3)
+		let response = realm.objects(Transaction.self).filter("date <= %@", Date()).sorted(byKeyPath: TransactionKeyPath.date.rawValue, ascending: false).prefix(3)
 		let result = Array(response)
 		return result
 	}
