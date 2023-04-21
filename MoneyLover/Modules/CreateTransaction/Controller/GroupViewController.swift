@@ -44,6 +44,10 @@ class GroupViewController: BaseViewController {
 
 	@IBAction func addButtonAction(_ sender: Any) {
 		let createGroupVC = CreateGroupViewController()
+		createGroupVC.sucessDeleteGroup = { [weak self] in
+			self?.groupViewManager.updateData()
+			self?.tableView.reloadData()
+		}
 		navigationController?.pushViewController(createGroupVC, animated: true)
 	}
 
@@ -137,9 +141,16 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
 			}
 			let result = self.groupViewManager.handleDeleteTransactionGroup(group: deletedGroup ?? TransactionGroup())
 			if result {
-				self.tableView.deleteRows(at: [indexPath], with: .fade)
-				self.groupViewManager.groupItems[indexPath.section]?.remove(at: indexPath.row)
-				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.warningColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeletedGroup)
+				if self.isSearching {
+					self.filterGroup?[indexPath.section]?.remove(at: indexPath.row)
+					self.tableView.deleteRows(at: [indexPath], with: .fade)
+					self.groupViewManager.updateData()
+					self.tableView.reloadData()
+				} else {
+					self.groupViewManager.groupItems[indexPath.section]?.remove(at: indexPath.row)
+					self.tableView.deleteRows(at: [indexPath], with: .fade)
+				}
+				Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeletedGroup)
 			} else {
 				Commons.shared.showToast(image: Resource.Image.systemError?.withTintColor(Theme.shared.warningColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.warningTitle, subtitle: Resource.NotiTitle.defaultGroupSubtitle)
 			}

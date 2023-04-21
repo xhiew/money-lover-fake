@@ -11,7 +11,7 @@ class GroupViewManager {
 	var groupItems: [[TransactionGroup]?] = []
 	
 	init() {
-		groupItems = convertTo2DArray(groups: getAllGroup())
+		fetchTransactionGroups()
 	}
 
 }
@@ -40,9 +40,17 @@ extension GroupViewManager {
 		return result
 	}
 
+	private func fetchTransactionGroups() {
+		groupItems = convertTo2DArray(groups: getAllGroup())
+	}
+
 	func handleDeleteTransactionGroup(group: TransactionGroup) -> Bool {
 		guard (group.canDelete ?? false) else { return false}
 		let result = RealmManager.delete(object: group)
 		return result
+	}
+
+	func updateData() {
+		fetchTransactionGroups()
 	}
 }

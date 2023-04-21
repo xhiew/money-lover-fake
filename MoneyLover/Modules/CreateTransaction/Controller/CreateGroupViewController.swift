@@ -17,6 +17,7 @@ class CreateGroupViewController: BaseViewController {
 	@IBOutlet weak var groupTypeLabel: UILabel!
 
 	let createGroupManager = CreateGroupManager()
+	var sucessDeleteGroup: (() -> Void)?
 
 	private var isActive: Bool = false {
 		didSet {
@@ -42,6 +43,13 @@ class CreateGroupViewController: BaseViewController {
 		}
 	}
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		checkSaveButton()
+		setDefaultIsExpense()
+		createGroupManager.attachView(view: self)
+	}
+
 	private func checkConditions() {
 		if isNotEmptyName, isNotEmptyImage, groupTypeLabel.text != Resource.Title.GroupTypeTitle.groupType {
 			isActive = true
@@ -63,12 +71,6 @@ class CreateGroupViewController: BaseViewController {
 		}
 	}
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		checkSaveButton()
-		setDefaultIsExpense()
-	}
-
 	private func setDefaultIsExpense() {
 		segmentedOutlet.selectedSegmentIndex = 1
 		createGroupManager.newGroup.isExpense = true
@@ -84,7 +86,7 @@ class CreateGroupViewController: BaseViewController {
 
 	@IBAction func saveButtonAction(_ sender: Any) {
 		if isActive {
-			print("tạo mới bên manager nếu ok thì show toast")
+			createGroupManager.createNewGroup()
 		} else {
 			Commons.shared.showToast(image: Resource.Image.systemError,
 															 title: Resource.NotiTitle.warningTitle,
@@ -147,4 +149,16 @@ class CreateGroupViewController: BaseViewController {
 		}
 	}
 
+}
+
+//MARK: - Conform CreateGroupManagerDelegate
+extension CreateGroupViewController: CreateGroupManagerDelegate {
+	func handleSucessCreateGroup(_ createGroupManager: CreateGroupManager) {
+		navigationController?.popViewController(animated: true)
+		sucessDeleteGroup?()
+	}
+
+	func handleFailedCreateGroup(_ createGroupManager: CreateGroupManager) {
+
+	}
 }
