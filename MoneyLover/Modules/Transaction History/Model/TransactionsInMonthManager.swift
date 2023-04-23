@@ -9,7 +9,6 @@ import UIKit
 
 protocol TransactionsInMonthManagerDelegate: AnyObject {
 	func reloadView(_ transactionsInMonthManager: TransactionsInMonthManager)
-	func handleSucessDeleteTransaction(_ transactionsInMonthManager: TransactionsInMonthManager)
 }
 
 class TransactionsInMonthManager {
@@ -93,16 +92,4 @@ extension TransactionsInMonthManager {
 		}
 	}
 
-	func handleDeleteTransaction(transaction: Transaction?, at indexPath: IndexPath) {
-		guard let transaction = transaction else { return }
-		let amount =	transaction.amount ?? 0.0
-		(transaction.group?.isExpense ?? true)
-		? (UserDefaults.standard.accountBalance += amount)
-		:	(UserDefaults.standard.accountBalance -= amount)
-		let result = RealmManager.delete(object: transaction)
-		if result {
-			transactionsInMonth = convertTo2DArray(transactions: getTransactionsInMonth(date: month))
-			delegate?.handleSucessDeleteTransaction(self)
-		}
-	}
 }

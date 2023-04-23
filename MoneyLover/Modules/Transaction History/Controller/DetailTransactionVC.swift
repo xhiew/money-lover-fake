@@ -17,19 +17,18 @@ class DetailTransactionVC: UIViewController {
 	@IBOutlet weak var noteLabel: UILabel!
 	@IBOutlet weak var amountLabel: UILabel!
 
-	var transaction: Transaction?
-	var deleteAction: (() -> Void)?
+	let detailTransactionManager = DetailTransactionManager()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupUI(transaction: transaction)
+		setupUI(transaction: detailTransactionManager.transaction)
+		detailTransactionManager.delegate = self
 	}
 
 	@IBAction func deleteItemAction(_ sender: Any) {
 		let alert = UIAlertController(title: Resource.ActionTitle.deleteTransaction, message: nil, preferredStyle: .actionSheet)
 		let deleteAction = UIAlertAction(title: Resource.ActionTitle.delete, style: .destructive) { [weak self] _ in
-			self?.deleteAction?()
-			self?.dismiss(animated: true, completion: nil)
+			self?.detailTransactionManager.handleDeleteTransaction()
 		}
 		alert.addAction(deleteAction)
 		alert.addAction(UIAlertAction(title: Resource.ActionTitle.cancel, style: .cancel, handler: nil))
@@ -68,6 +67,15 @@ extension DetailTransactionVC: PanModalPresentable {
 
 	var shortFormHeight: PanModalHeight {
 		return .intrinsicHeight
+	}
+}
+
+//MARK: - ConformDetailTransactionManagerDelegate
+extension DetailTransactionVC: DetailTransactionManagerDelegate {
+	func handleSuccessDeleteTransaction(_ detailTransactionManager: DetailTransactionManager, deletedTransaction: Transaction) {
+		Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeleted)
+		dismiss(animated: true, completion: nil)
+		NotificationCenter.default.post(name: .deletedTransaction, object: deletedTransaction)
 	}
 
 }

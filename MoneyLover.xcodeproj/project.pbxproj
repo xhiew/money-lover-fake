@@ -82,6 +82,8 @@
 		52BDDD0F29D707760001DDD8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0E29D707760001DDD8 /* RealmManager.swift */; };
 		52C6AAB429F2906E00C2C1BE /* DetailTransactionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6AAB229F2906E00C2C1BE /* DetailTransactionVC.swift */; };
 		52C6AAB529F2906E00C2C1BE /* DetailTransactionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52C6AAB329F2906E00C2C1BE /* DetailTransactionVC.xib */; };
+		52C6AAB729F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6AAB629F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift */; };
+		52C6AAB929F4F0F200C2C1BE /* DetailTransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6AAB829F4F0F200C2C1BE /* DetailTransactionManager.swift */; };
 		52DC3DBA29B1DD1D00D6C5D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DC3DB929B1DD1D00D6C5D0 /* AppDelegate.swift */; };
 		52DC3DC629B1DD2100D6C5D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DC3DC429B1DD2100D6C5D0 /* LaunchScreen.storyboard */; };
 		52DC3DD029B1E50F00D6C5D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52DC3DCF29B1E50F00D6C5D0 /* Assets.xcassets */; };
@@ -190,6 +192,8 @@
 		52BDDD0E29D707760001DDD8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		52C6AAB229F2906E00C2C1BE /* DetailTransactionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionVC.swift; sourceTree = "<group>"; };
 		52C6AAB329F2906E00C2C1BE /* DetailTransactionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionVC.xib; sourceTree = "<group>"; };
+		52C6AAB629F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionHistoryManager.swift; sourceTree = "<group>"; };
+		52C6AAB829F4F0F200C2C1BE /* DetailTransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionManager.swift; sourceTree = "<group>"; };
 		52DC3DB629B1DD1D00D6C5D0 /* MoneyLover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyLover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DC3DB929B1DD1D00D6C5D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52DC3DC529B1DD2100D6C5D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -464,6 +468,8 @@
 			children = (
 				52F55F6829E7D3DD00E06633 /* TransactionHistoryManager.swift */,
 				52F55F7A29E86CAF00E06633 /* TransactionsInMonthManager.swift */,
+				52C6AAB629F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift */,
+				52C6AAB829F4F0F200C2C1BE /* DetailTransactionManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -787,6 +793,7 @@
 				522C199A29C009D500BD7168 /* LabelViewCell.swift in Sources */,
 				52078DFF29C9C728001B56CD /* RecentTransactionCell.swift in Sources */,
 				52A8C30B29DF21800079627E /* NumberFormatter+Extension.swift in Sources */,
+				52C6AAB729F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift in Sources */,
 				52F55F6E29E80DBB00E06633 /* TransactionsInMonthVC.swift in Sources */,
 				52078DF829C9ABDB001B56CD /* TransactionItemView.swift in Sources */,
 				52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */,
@@ -801,6 +808,7 @@
 				52F55F5C29E5508900E06633 /* GroupTypeViewController.swift in Sources */,
 				52A8C30D29DF26E50079627E /* String+Extension.swift in Sources */,
 				52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */,
+				52C6AAB929F4F0F200C2C1BE /* DetailTransactionManager.swift in Sources */,
 				52F55F8229E9265400E06633 /* SearchTransactionHistoryVC.swift in Sources */,
 				52F55F5529E54EE300E06633 /* ExistingData.swift in Sources */,
 				52A8C30629DE6A200079627E /* IgnoreViewCell.swift in Sources */,

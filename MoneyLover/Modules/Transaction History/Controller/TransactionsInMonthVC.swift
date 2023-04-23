@@ -24,6 +24,7 @@ class TransactionsInMonthVC: UIViewController {
 		constraintBot.constant = Demension.shared.heightOfTabBar * Demension.shared.heightScale
 		NotificationCenter.default.addObserver(self, selector: #selector(updateTransactionInThisMonth), name: .changedAmount, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(updateViewWhenCreateNewTransaction(_:)), name: .createdNewTransaction, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(updateViewWhenCreateNewTransaction(_:)), name: .deletedTransaction, object: nil)
 	}
 
 	@objc private func updateTransactionInThisMonth() {
@@ -101,10 +102,7 @@ extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let vc = DetailTransactionVC()
 		let transaction =	transactionsInMonthManager.transactionsInMonth[indexPath.section]?[indexPath.row]
-		vc.transaction = transaction
-		vc.deleteAction = { [weak self] in
-			self?.transactionsInMonthManager.handleDeleteTransaction(transaction: transaction, at: indexPath)
-		}
+		vc.detailTransactionManager.transaction = transaction
 		presentPanModal(vc)
 	}
 
@@ -113,12 +111,6 @@ extension TransactionsInMonthVC: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Conform TransactionsInMonthManagerDelegate
 extension TransactionsInMonthVC: TransactionsInMonthManagerDelegate {
 	func reloadView(_ transactionsInMonthManager: TransactionsInMonthManager) {
-		tableView.reloadData()
-	}
-
-	func handleSucessDeleteTransaction(_ transactionsInMonthManager: TransactionsInMonthManager) {
-		Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successDeleted)
-		NotificationCenter.default.post(name: .deletedTransaction, object: nil)
 		tableView.reloadData()
 	}
 

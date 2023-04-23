@@ -72,6 +72,13 @@ class RealmManager {
 
 //MARK: - Filter Transactions
 extension RealmManager {
+	static func getAllTransactionAndSort() -> [Transaction]? {
+		let response = realm.objects(Transaction.self).sorted(byKeyPath: TransactionKeyPath.date.rawValue, ascending: false).optional
+		guard let response = response else { return nil }
+		let result = Array(response)
+		return result
+	}
+
 	static func getAllExpenseTransactionsInMonth(date: Date = Date()) -> [Transaction]? {
 		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}", date.customStart(of: .month) ?? Date(), date.customEnd(of: .month) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
 		guard let response = response else { return nil }

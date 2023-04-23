@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CreateGroupManagerDelegate: AnyObject {
-	func handleSucessCreateGroup(_ createGroupManager: CreateGroupManager)
+	func handleSuccessCreateGroup(_ createGroupManager: CreateGroupManager)
 	func handleFailedCreateGroup(_ createGroupManager: CreateGroupManager)
 }
 
@@ -34,7 +34,7 @@ class CreateGroupManager {
 	func createNewGroup() {
 		let result = RealmManager.create(object: newGroup)
 		if result {
-			delegate?.handleSucessCreateGroup(self)
+			delegate?.handleSuccessCreateGroup(self)
 		} else {
 			delegate?.handleFailedCreateGroup(self)
 		}
