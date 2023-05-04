@@ -79,7 +79,8 @@ public class Resource {
 		public static let note = "Ghi chú"
 		public static let descriptionIgnoreReport = "Giao dịch của bạn sẽ không nằm trong số liệu phân tích và báo cáo. Bạn vẫn có thể theo dõi giao dịch bị bỏ qua trong lịch sử giao dịch."
 		public static let titleIgnoreReport = "Điều gì sẽ xảy ra?"
-		public static let idChangeAmount = "FD48BC61-4298-4641-A0A4-DC7527B2CF92"
+		public static let totalThisWeekExpenses = "Tổng đã chi tuần này"
+		public static let totalThisMonthExpenses = "Tổng đã chi tháng này"
 
     class Onboarding {
       public static let appName = "MoneyLover"

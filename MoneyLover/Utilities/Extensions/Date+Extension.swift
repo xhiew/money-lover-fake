@@ -91,8 +91,8 @@ extension Date {
 		return calendar.date(from: calendar.dateComponents(components, from: self))
 	}
 
-	func startOfWeek(date: Date = Date()) -> Date? {
-		return date.customStart(of: .weekOfMonth)?.adding(.day, value: 1)
+	func startOfWeek() -> Date? {
+		return self.customStart(of: .weekOfMonth)?.adding(.day, value: 1)
 	}
 
 	func customEnd(of component: Calendar.Component) -> Date? {

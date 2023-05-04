@@ -79,15 +79,41 @@ extension RealmManager {
 		return result
 	}
 
-	static func getAllExpenseTransactionsInMonth(date: Date = Date()) -> [Transaction]? {
-		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}", date.customStart(of: .month) ?? Date(), date.customEnd(of: .month) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
+	static func getAllExpenseTransactionsInThisMonth(date: Date = Date()) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}",
+																													date.customStart(of: .month) ?? Date(),
+																													Date()).sorted(byKeyPath: "group.name",
+																																				 ascending: false).optional
 		guard let response = response else { return nil }
 		let result = Array(response)
 		return result
 	}
 
-	static func getAllExpenseTransactionsInWeek(date: Date = Date()) -> [Transaction]? {
-		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}", date.customStart(of: .weekOfMonth) ?? Date(), date.customEnd(of: .weekOfMonth) ?? Date()).sorted(byKeyPath: TransactionKeyPath.amount.rawValue, ascending: false).optional
+	static func getAllExpenseTransactionsInThisWeek(date: Date = Date()) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}",
+																													date.startOfWeek() ?? Date(),
+																													Date()).sorted(byKeyPath: "group.name",
+																																				 ascending: false).optional
+		guard let response = response else { return nil }
+		let result = Array(response)
+		return result
+	}
+
+	static func getAllExpenseTransactionsInLastMonth(date: Date = Date().adding(.month, value: -1)) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}",
+																													date.customStart(of: .month) ?? Date(),
+																													date.customEnd(of: .month) ?? Date()).sorted(byKeyPath: "group.name",
+																																																			 ascending: false).optional
+		guard let response = response else { return nil }
+		let result = Array(response)
+		return result
+	}
+
+	static func getAllExpenseTransactionsInLastWeek(date: Date = Date().adding(.weekOfMonth, value: -1)) -> [Transaction]? {
+		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}",
+																													date.startOfWeek() ?? Date(),
+																													date.customEnd(of: .weekOfMonth) ?? Date()).sorted(byKeyPath: "group.name",
+																																				 ascending: false).optional
 		guard let response = response else { return nil }
 		let result = Array(response)
 		return result

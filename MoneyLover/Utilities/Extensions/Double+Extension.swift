@@ -14,6 +14,11 @@ enum ShortCurrencyType {
 
 extension Double {
 
+	func toPercent() -> String {
+		let per = Int(self*100)
+		return String(describing: per) + "%"
+	}
+
 	func shortCurrency(shortType: ShortCurrencyType = .short) -> String {
 		var types: [String] = []
 		var last = ""

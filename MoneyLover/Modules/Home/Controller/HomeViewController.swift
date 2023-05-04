@@ -103,16 +103,31 @@ extension HomeViewController: UITableViewDataSource {
     case .expenseReport:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: ExpenseReportCell.identifier, for: indexPath) as? ExpenseReportCell
       guard let cell = cell else { return UITableViewCell() }
-      cell.maxMonthlyExpenses = nil //
-      cell.performChart() //
-      cell.showMaxExpenses(maxExpenses: nil) //
 
+			cell.maxWeeklyExpenses = homeManager.maxWeeklyExpenses
+			cell.maxMonthlyExpenses = homeManager.maxMonthlyExpenses
+			cell.totalThisMonthExpenses = homeManager.totalThisMonthExpenses
+			cell.totalThisWeekExpenses = homeManager.totalThisWeekExpenses
+			cell.totalLastMonthExpenses = homeManager.totalLastMonthExpenses
+			cell.totalLastWeekExpenses = homeManager.totalLastWeekExpenses
+
+			cell.showMaxExpenses(maxExpenses: homeManager.maxMonthlyExpenses, totalExpense: homeManager.totalThisMonthExpenses)
+			cell.showtotalExpenses(amount: homeManager.totalThisMonthExpenses)
+			cell.performChart(firstYValue: homeManager.totalLastMonthExpenses, secondYValue: homeManager.totalThisMonthExpenses)
+
+			cell.showPieChart = { [weak self] in
+				guard let self = self else { return }
+				let vc = DetailReportViewController()
+				self.present(vc, animated: true, completion: nil)
+			}
       return cell
     case .recentTransaction:
       let cell = homeTableView.dequeueReusableCell(withIdentifier: RecentTransactionCell.identifier, for: indexPath) as? RecentTransactionCell
       guard let cell = cell else { return UITableViewCell() }
 			cell.showItems(transactions: homeManager.recentTransactions)
-
+			cell.tapOnCell = { [weak self] in
+				self?.tabBarController?.selectedIndex = 2
+			}
       return cell
 		case .theEnd:
 			let cell = homeTableView.dequeueReusableCell(withIdentifier: TheEndCell.identifier, for: indexPath) as? TheEndCell

@@ -13,6 +13,8 @@ class RecentTransactionCell: BaseTableViewCell {
   @IBOutlet weak var stackView: UIStackView!
   @IBOutlet weak var heightConstraint: NSLayoutConstraint!
 
+	var tapOnCell: (() -> Void)?
+
   override func awakeFromNib() {
     super.awakeFromNib()
   }
@@ -22,6 +24,7 @@ class RecentTransactionCell: BaseTableViewCell {
   }
 
   func showItems(transactions: [Transaction]?) {
+		clearStack()
     guard let transactions = transactions else { return }
 		if transactions.isEmpty {
 			stateLabel.isHidden = false
@@ -29,7 +32,6 @@ class RecentTransactionCell: BaseTableViewCell {
 		} else {
 			stateLabel.isHidden = true
 		}
-		clearStack()
     for transaction in transactions {
       let itemView = TransactionItemView()
 			itemView.setupRecentTransactionUI(transaction: transaction)
@@ -45,6 +47,13 @@ class RecentTransactionCell: BaseTableViewCell {
 
 	private func clearStack() {
 		stackView.arrangedSubviews.forEach({$0.removeFromSuperview()})
+	}
+
+
+	@IBAction func tapOnCell(_ sender: Any) {
+		if stateLabel.isHidden {
+			tapOnCell?()
+		}
 	}
 
 }

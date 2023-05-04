@@ -42,6 +42,8 @@
 		522C19B129C0552E00BD7168 /* Demension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B029C0552E00BD7168 /* Demension.swift */; };
 		522C19B329C0582200BD7168 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B229C0582200BD7168 /* Category.swift */; };
 		522C19B729C152D600BD7168 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B629C152D600BD7168 /* Banner.swift */; };
+		52A218B729FA9CBD00B47A75 /* DetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A218B529FA9CBD00B47A75 /* DetailReportViewController.swift */; };
+		52A218B829FA9CBD00B47A75 /* DetailReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A218B629FA9CBD00B47A75 /* DetailReportViewController.xib */; };
 		52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */; };
 		52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C2F329DD49F10079627E /* CreateTransactionController.swift */; };
 		52A8C2F629DD49F10079627E /* CreateTransactionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2F429DD49F10079627E /* CreateTransactionController.xib */; };
@@ -152,6 +154,8 @@
 		522C19B029C0552E00BD7168 /* Demension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demension.swift; sourceTree = "<group>"; };
 		522C19B229C0582200BD7168 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		522C19B629C152D600BD7168 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		52A218B529FA9CBD00B47A75 /* DetailReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportViewController.swift; sourceTree = "<group>"; };
+		52A218B629FA9CBD00B47A75 /* DetailReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailReportViewController.xib; sourceTree = "<group>"; };
 		52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryController.xib; sourceTree = "<group>"; };
 		52A8C2F329DD49F10079627E /* CreateTransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionController.swift; sourceTree = "<group>"; };
 		52A8C2F429DD49F10079627E /* CreateTransactionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTransactionController.xib; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				522C198829BEF5D200BD7168 /* HomeViewController.swift */,
+				52A218B529FA9CBD00B47A75 /* DetailReportViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			children = (
 				5222F43529C45A4400A51A8F /* Cell */,
 				522C198929BEF5D200BD7168 /* HomeViewController.xib */,
+				52A218B629FA9CBD00B47A75 /* DetailReportViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -712,6 +718,7 @@
 				52078DF229C993F8001B56CD /* PersonalPlanCell.xib in Resources */,
 				52F55F6129E5544500E06633 /* GroupIconViewCell.xib in Resources */,
 				52A8C31829E02FB80079627E /* TheEndCell.xib in Resources */,
+				52A218B829FA9CBD00B47A75 /* DetailReportViewController.xib in Resources */,
 				52F55F5129E5371900E06633 /* CreateGroupViewController.xib in Resources */,
 				52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */,
 				52F55F7F29E872F100E06633 /* DayHeaderCell.xib in Resources */,
@@ -792,6 +799,7 @@
 				5222F43829C45ADB00A51A8F /* AccountBalanceCell.swift in Sources */,
 				522C199A29C009D500BD7168 /* LabelViewCell.swift in Sources */,
 				52078DFF29C9C728001B56CD /* RecentTransactionCell.swift in Sources */,
+				52A218B729FA9CBD00B47A75 /* DetailReportViewController.swift in Sources */,
 				52A8C30B29DF21800079627E /* NumberFormatter+Extension.swift in Sources */,
 				52C6AAB729F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift in Sources */,
 				52F55F6E29E80DBB00E06633 /* TransactionsInMonthVC.swift in Sources */,

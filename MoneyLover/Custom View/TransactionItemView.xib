@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -64,6 +63,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="WXL-0r-CTP" secondAttribute="trailing" id="bMv-ih-OiD"/>
                                 <constraint firstItem="SnY-Sx-6H3" firstAttribute="leading" secondItem="Hwh-Wi-0m3" secondAttribute="leading" constant="16" id="glJ-LX-l4q"/>
@@ -72,7 +72,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="3EI-80-IKS" firstAttribute="leading" secondItem="6oY-Hv-ksZ" secondAttribute="leading" id="3MA-49-evm"/>
                         <constraint firstItem="Hwh-Wi-0m3" firstAttribute="top" secondItem="6oY-Hv-ksZ" secondAttribute="top" id="JvO-79-Sdn"/>
@@ -87,7 +87,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="6oY-Hv-ksZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1OU-bA-Tdr"/>
                 <constraint firstItem="6oY-Hv-ksZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZFK-Lg-LMc"/>
@@ -99,8 +99,5 @@
     </objects>
     <resources>
         <image name="ic_education" width="44" height="44"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

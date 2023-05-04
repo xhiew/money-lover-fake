@@ -27,7 +27,8 @@ class TransactionItemView: UIView {
 
   private func configView() {
     let bundle = Bundle.init(for: TransactionItemView.self)
-    if let viewToAdd = bundle.loadNibNamed(TransactionItemView.identifier, owner: self, options: nil), let contentView = viewToAdd.first as? UIView {
+    if let viewToAdd = bundle.loadNibNamed(TransactionItemView.identifier, owner: self, options: nil),
+			 let contentView = viewToAdd.first as? UIView {
       addSubview(contentView)
       contentView.frame = self.bounds
       contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -48,8 +49,11 @@ class TransactionItemView: UIView {
 		}
   }
 
-	func setupReportTransactionUI(transaction: Transaction) {
-
+	func setupReportTransactionUI(image: String?, name: String?, amount: Double?, percent: String?) {
+		imageItem.image = UIImage(named: image ?? "")
+		titleItem.text = name
+		subTitle.text = amount?.formatMoneyNumber() ?? "0" + Resource.Title.vnd
+		rightTitle.text = percent
 	}
 
 }

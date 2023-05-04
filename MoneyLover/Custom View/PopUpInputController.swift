@@ -50,6 +50,9 @@ class PopUpInputController: BaseViewController {
 
 	func createChangeAmountTransaction(newAmount: Double) -> Bool {
 		let amountDiff = newAmount - currentAmount
+		if amountDiff == 0 {
+			return false
+		}
 		let group = RealmManager.getChangeAmountGroup()
 		let newTransaction = Transaction(amount: amountDiff, group: group, note: Resource.ActionTitle.fineTuneAmount)
 		let result = RealmManager.create(object: newTransaction)
