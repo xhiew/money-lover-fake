@@ -28,21 +28,31 @@ pod install
 
 <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/onboarding.gif" width="300" height="auto">
 
+
+
 ### Overview
 
 <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
+
+
 
 ### Transaction History
 
 <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/transactionhistory.gif" width="300" height="auto">
 
+
+
 ### Create Transaction
 
 <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/newtransaction.gif" width="300" height="auto">
 
+
+
 ### Create Transaction Group
 
 <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/newtransaction_group.gif" width="300" height="auto">
+
+
 
 ## Third-Party Libraries
 
