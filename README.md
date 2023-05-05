@@ -24,10 +24,24 @@ pod install
 ```
 ## ScreenShot
 
-- **Home**
-<br>
-<br>
-<img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
+### Tổng Quan
+
+<style>
+.gif-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<div class="gif-container">
+  <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
+</div>
+
+### Sổ giao dịch
+
+<div class="gif-container">
+  <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
+</div>
 
 ## References
 
