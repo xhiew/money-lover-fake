@@ -24,8 +24,10 @@ pod install
 ```
 ## ScreenShot
 
-- **Home** <br>
-![image](https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif)
+- **Home**
+<br>
+<br>
+<img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
 
 ## References
 
