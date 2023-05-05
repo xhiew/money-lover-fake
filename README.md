@@ -22,7 +22,7 @@ git clone https://github.com/xhiew/money-lover-c.git
 cd money-lover-c
 pod install
 ```
-## ScreenShot
+## ScreenShot 📸
 
 ### Onboarding
 
