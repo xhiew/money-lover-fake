@@ -8,13 +8,13 @@ Mục đích của tôi khi xây dựng dự án này là để nâng cao kiến
 
 ### Công cụ & phiên bản 🛠
 
-- Xcode 13.2.1
-- Swift 5.5.2
-- iOS 15.2
+- **Xcode 13.2.1**
+- **Swift 5.5.2**
+- **iOS 15.2**
 
 ### Cài đặt (< 1min) 📲
 
--- Open Terminal
+-- **Open Terminal**
 
 ```swift
 cd Desktop
@@ -24,12 +24,3 @@ pod install
 ```
 ## ScreenShot
 
-<style> 
-.grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px; } img { width: 100%; height: auto; }
-</style>
-	<div class="grid">
-		<img src="image1.gif">
-		<img src="image2.gif">
-		<img src="image3.gif">
-		<img src="image4.gif">
-	</div>
