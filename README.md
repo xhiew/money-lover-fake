@@ -26,6 +26,9 @@ pod install
 
 ### Tổng Quan
 
+<div class="gif-container">
+  <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
+</div>
 <style>
 .gif-container {
   display: block;
@@ -33,9 +36,6 @@ pod install
   margin-right: auto;
 }
 </style>
-<div class="gif-container">
-  <img src="https://github.com/xhiew/money-lover-c/blob/master/MoneyLoverGif/home.gif" width="300" height="auto">
-</div>
 
 ### Sổ giao dịch
 
