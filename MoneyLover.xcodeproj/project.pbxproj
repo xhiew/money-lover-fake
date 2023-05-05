@@ -42,6 +42,10 @@
 		522C19B129C0552E00BD7168 /* Demension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B029C0552E00BD7168 /* Demension.swift */; };
 		522C19B329C0582200BD7168 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B229C0582200BD7168 /* Category.swift */; };
 		522C19B729C152D600BD7168 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C19B629C152D600BD7168 /* Banner.swift */; };
+		5256D0862A039B0900CBDDF7 /* DetailReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256D0842A039B0900CBDDF7 /* DetailReportCell.swift */; };
+		5256D0872A039B0900CBDDF7 /* DetailReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5256D0852A039B0900CBDDF7 /* DetailReportCell.xib */; };
+		5256D0892A039EE300CBDDF7 /* DetailReportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256D0882A039EE300CBDDF7 /* DetailReportManager.swift */; };
+		5256D08B2A041C3D00CBDDF7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5256D08A2A041C3D00CBDDF7 /* UIImage+Extension.swift */; };
 		52A218B729FA9CBD00B47A75 /* DetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A218B529FA9CBD00B47A75 /* DetailReportViewController.swift */; };
 		52A218B829FA9CBD00B47A75 /* DetailReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A218B629FA9CBD00B47A75 /* DetailReportViewController.xib */; };
 		52A8C2EC29DD3B470079627E /* TransactionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */; };
@@ -76,7 +80,7 @@
 		52A8C33B29E3CB150079627E /* HeaderGroupViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A8C33A29E3CB150079627E /* HeaderGroupViewCell.xib */; };
 		52A8C34129E3EEF10079627E /* GroupViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8C34029E3EEF10079627E /* GroupViewManager.swift */; };
 		52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0129D153E30001DDD8 /* HomeManager.swift */; };
-		52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */; };
+		52BDDD0429D1A36E0001DDD8 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0329D1A36E0001DDD8 /* BaseTableViewCell.swift */; };
 		52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */; };
 		52BDDD0829D56B220001DDD8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0729D56B220001DDD8 /* BaseViewController.swift */; };
 		52BDDD0B29D57EFB0001DDD8 /* TransactionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */; };
@@ -154,6 +158,10 @@
 		522C19B029C0552E00BD7168 /* Demension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demension.swift; sourceTree = "<group>"; };
 		522C19B229C0582200BD7168 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		522C19B629C152D600BD7168 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		5256D0842A039B0900CBDDF7 /* DetailReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportCell.swift; sourceTree = "<group>"; };
+		5256D0852A039B0900CBDDF7 /* DetailReportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailReportCell.xib; sourceTree = "<group>"; };
+		5256D0882A039EE300CBDDF7 /* DetailReportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportManager.swift; sourceTree = "<group>"; };
+		5256D08A2A041C3D00CBDDF7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		52A218B529FA9CBD00B47A75 /* DetailReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportViewController.swift; sourceTree = "<group>"; };
 		52A218B629FA9CBD00B47A75 /* DetailReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailReportViewController.xib; sourceTree = "<group>"; };
 		52A8C2EA29DD3B470079627E /* TransactionHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryController.xib; sourceTree = "<group>"; };
@@ -188,7 +196,7 @@
 		52A8C33A29E3CB150079627E /* HeaderGroupViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderGroupViewCell.xib; sourceTree = "<group>"; };
 		52A8C34029E3EEF10079627E /* GroupViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewManager.swift; sourceTree = "<group>"; };
 		52BDDD0129D153E30001DDD8 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
-		52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabelViewCell.swift; sourceTree = "<group>"; };
+		52BDDD0329D1A36E0001DDD8 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		52BDDD0529D54C190001DDD8 /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
 		52BDDD0729D56B220001DDD8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52BDDD0A29D57EFB0001DDD8 /* TransactionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionGroup.swift; sourceTree = "<group>"; };
@@ -265,6 +273,8 @@
 				52078DFE29C9C728001B56CD /* RecentTransactionCell.xib */,
 				52A8C31529E02FB80079627E /* TheEndCell.swift */,
 				52A8C31629E02FB80079627E /* TheEndCell.xib */,
+				5256D0842A039B0900CBDDF7 /* DetailReportCell.swift */,
+				5256D0852A039B0900CBDDF7 /* DetailReportCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -325,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				52BDDD0129D153E30001DDD8 /* HomeManager.swift */,
+				5256D0882A039EE300CBDDF7 /* DetailReportManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -361,6 +372,7 @@
 				52A8C30C29DF26E50079627E /* String+Extension.swift */,
 				52A8C31929E045A60079627E /* UserDefaults+Extension.swift */,
 				52F55F6A29E7F3D200E06633 /* Date+Extension.swift */,
+				5256D08A2A041C3D00CBDDF7 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,7 +432,7 @@
 		522C19A729C041B700BD7168 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				52BDDD0329D1A36E0001DDD8 /* BaseTabelViewCell.swift */,
+				52BDDD0329D1A36E0001DDD8 /* BaseTableViewCell.swift */,
 				52BDDD0729D56B220001DDD8 /* BaseViewController.swift */,
 			);
 			path = Base;
@@ -721,6 +733,7 @@
 				52A218B829FA9CBD00B47A75 /* DetailReportViewController.xib in Resources */,
 				52F55F5129E5371900E06633 /* CreateGroupViewController.xib in Resources */,
 				52A8C2FF29DE68850079627E /* GroupViewCell.xib in Resources */,
+				5256D0872A039B0900CBDDF7 /* DetailReportCell.xib in Resources */,
 				52F55F7F29E872F100E06633 /* DayHeaderCell.xib in Resources */,
 				522C19A029C00A1E00BD7168 /* ImageViewCell.xib in Resources */,
 				52C6AAB529F2906E00C2C1BE /* DetailTransactionVC.xib in Resources */,
@@ -792,19 +805,21 @@
 				52BDDD0829D56B220001DDD8 /* BaseViewController.swift in Sources */,
 				52A8C34129E3EEF10079627E /* GroupViewManager.swift in Sources */,
 				52F55F5029E5371900E06633 /* CreateGroupViewController.swift in Sources */,
-				52BDDD0429D1A36E0001DDD8 /* BaseTabelViewCell.swift in Sources */,
+				52BDDD0429D1A36E0001DDD8 /* BaseTableViewCell.swift in Sources */,
 				522C19AE29C045AB00BD7168 /* Resource.swift in Sources */,
 				522C19AC29C0434E00BD7168 /* UIColor+Extension.swift in Sources */,
 				522C19B729C152D600BD7168 /* Banner.swift in Sources */,
 				5222F43829C45ADB00A51A8F /* AccountBalanceCell.swift in Sources */,
 				522C199A29C009D500BD7168 /* LabelViewCell.swift in Sources */,
 				52078DFF29C9C728001B56CD /* RecentTransactionCell.swift in Sources */,
+				5256D0892A039EE300CBDDF7 /* DetailReportManager.swift in Sources */,
 				52A218B729FA9CBD00B47A75 /* DetailReportViewController.swift in Sources */,
 				52A8C30B29DF21800079627E /* NumberFormatter+Extension.swift in Sources */,
 				52C6AAB729F4DA3D00C2C1BE /* SearchTransactionHistoryManager.swift in Sources */,
 				52F55F6E29E80DBB00E06633 /* TransactionsInMonthVC.swift in Sources */,
 				52078DF829C9ABDB001B56CD /* TransactionItemView.swift in Sources */,
 				52A8C2F529DD49F10079627E /* CreateTransactionController.swift in Sources */,
+				5256D0862A039B0900CBDDF7 /* DetailReportCell.swift in Sources */,
 				52BDDD0629D54C190001DDD8 /* NotificationCenter+Extension.swift in Sources */,
 				52F55F6029E5544500E06633 /* GroupIconViewCell.swift in Sources */,
 				52F55F6729E7B7CD00E06633 /* TransactionHistoryController.swift in Sources */,
@@ -826,6 +841,7 @@
 				52A8C32129E127900079627E /* DateViewController.swift in Sources */,
 				52F55F5329E54A5800E06633 /* CreateGroupManager.swift in Sources */,
 				522C19B129C0552E00BD7168 /* Demension.swift in Sources */,
+				5256D08B2A041C3D00CBDDF7 /* UIImage+Extension.swift in Sources */,
 				522C199F29C00A1E00BD7168 /* ImageViewCell.swift in Sources */,
 				52078DF429C99EB6001B56CD /* Commons.swift in Sources */,
 				52BDDD0229D153E30001DDD8 /* HomeManager.swift in Sources */,

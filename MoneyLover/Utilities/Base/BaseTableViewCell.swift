@@ -1,5 +1,5 @@
 //
-//  BaseTabelViewCell.swift
+//  BaseTableViewCell.swift
 //  MoneyLover
 //
 //  Created by xhieu21 on 27/03/2023.

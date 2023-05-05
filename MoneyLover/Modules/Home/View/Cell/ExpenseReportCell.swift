@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-enum segCtrlType {
+enum SegCtrlType {
 	case week
 	case month
 }
@@ -23,7 +23,7 @@ class ExpenseReportCell: BaseTableViewCell {
   @IBOutlet weak var stateLabel: UILabel!
 	@IBOutlet weak var subTitle: UILabel!
 
-	var showPieChart: (() -> Void)?
+	var showPieChart: ((SegCtrlType) -> Void)?
 	let numberFormatter = NumberFormatter()
 
 	var maxWeeklyExpenses: [Transaction]?
@@ -32,7 +32,7 @@ class ExpenseReportCell: BaseTableViewCell {
 	var totalThisMonthExpenses = 0.0
 	var totalLastWeekExpenses = 0.0
 	var totalLastMonthExpenses = 0.0
-	let segCtrlTypes: [segCtrlType] = [.week, .month]
+	let segCtrlTypes: [SegCtrlType] = [.week, .month]
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -133,7 +133,7 @@ class ExpenseReportCell: BaseTableViewCell {
 
 	@IBAction func didTapOnStack(_ sender: Any) {
 		if stateLabel.isHidden {
-			showPieChart?()
+			showPieChart?(segCtrlTypes[segmentedControl.selectedSegmentIndex])
 		}
 	}
 

@@ -115,10 +115,20 @@ extension HomeViewController: UITableViewDataSource {
 			cell.showtotalExpenses(amount: homeManager.totalThisMonthExpenses)
 			cell.performChart(firstYValue: homeManager.totalLastMonthExpenses, secondYValue: homeManager.totalThisMonthExpenses)
 
-			cell.showPieChart = { [weak self] in
+			cell.showPieChart = { [weak self] segCtrlType in
 				guard let self = self else { return }
-				let vc = DetailReportViewController()
-				self.present(vc, animated: true, completion: nil)
+				switch segCtrlType {
+				case .week:
+					let vc = DetailReportViewController()
+					vc.detailReportManager.totalExpense = self.homeManager.totalThisWeekExpenses
+					vc.detailReportManager.expenseTransactions = self.homeManager.maxWeeklyExpenses ?? []
+					self.present(vc, animated: true, completion: nil)
+				case .month:
+					let vc = DetailReportViewController()
+					vc.detailReportManager.totalExpense = self.homeManager.totalThisMonthExpenses
+					vc.detailReportManager.expenseTransactions = self.homeManager.maxMonthlyExpenses ?? []
+					self.present(vc, animated: true, completion: nil)
+				}
 			}
       return cell
     case .recentTransaction:
