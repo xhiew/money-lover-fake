@@ -103,7 +103,6 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rP2-dx-I9x" secondAttribute="bottom" constant="24" id="Bx4-Gc-kvD"/>
                         <constraint firstItem="rP2-dx-I9x" firstAttribute="top" secondItem="Dn8-YB-pXL" secondAttribute="bottom" constant="24" id="DNM-ld-GUk"/>
                         <constraint firstAttribute="trailing" secondItem="rP2-dx-I9x" secondAttribute="trailing" constant="16" id="EY3-Zg-1Sb"/>
                         <constraint firstAttribute="trailing" secondItem="Dn8-YB-pXL" secondAttribute="trailing" id="Irl-3H-FxE"/>

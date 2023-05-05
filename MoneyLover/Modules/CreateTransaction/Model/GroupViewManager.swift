@@ -46,6 +46,11 @@ extension GroupViewManager {
 
 	func handleDeleteTransactionGroup(group: TransactionGroup) -> Bool {
 		guard (group.canDelete ?? false) else { return false}
+		/// nếu đã có giao dịch sử dụng group này thì group sẽ trở thành group mặc định
+		let isExist = RealmManager.getAllTransactionWithGroup(group: group)
+		if isExist {
+			return false
+		}
 		let result = RealmManager.delete(object: group)
 		return result
 	}

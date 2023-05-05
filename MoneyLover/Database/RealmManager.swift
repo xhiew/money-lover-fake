@@ -145,6 +145,11 @@ extension RealmManager {
 		let result = Array(response)
 		return result
 	}
+
+	static func getAllTransactionWithGroup(group: TransactionGroup) -> Bool {
+		let response = realm.objects(Transaction.self).filter("group == %@", group)
+		return Array(response).count > 0
+	}
 }
 
 //MARK: - Filter Transaction Groups

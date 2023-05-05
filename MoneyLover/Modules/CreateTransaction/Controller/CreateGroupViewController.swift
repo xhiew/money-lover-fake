@@ -17,7 +17,7 @@ class CreateGroupViewController: BaseViewController {
 	@IBOutlet weak var groupTypeLabel: UILabel!
 
 	let createGroupManager = CreateGroupManager()
-	var successDeleteGroup: (() -> Void)?
+	var successCreateGroup: (() -> Void)?
 
 	private var isActive: Bool = false {
 		didSet {
@@ -155,7 +155,8 @@ class CreateGroupViewController: BaseViewController {
 extension CreateGroupViewController: CreateGroupManagerDelegate {
 	func handleSuccessCreateGroup(_ createGroupManager: CreateGroupManager) {
 		navigationController?.popViewController(animated: true)
-		successDeleteGroup?()
+		Commons.shared.showToast(image: Resource.Image.systemSuccess?.withTintColor(Theme.shared.greenButtonColor, renderingMode: .alwaysOriginal), title: Resource.NotiTitle.successTitle, subtitle: Resource.NotiTitle.successSubtitle)
+		successCreateGroup?()
 	}
 
 	func handleFailedCreateGroup(_ createGroupManager: CreateGroupManager) {

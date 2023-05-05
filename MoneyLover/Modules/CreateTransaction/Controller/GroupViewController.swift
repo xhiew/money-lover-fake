@@ -44,7 +44,7 @@ class GroupViewController: BaseViewController {
 
 	@IBAction func addButtonAction(_ sender: Any) {
 		let createGroupVC = CreateGroupViewController()
-		createGroupVC.successDeleteGroup = { [weak self] in
+		createGroupVC.successCreateGroup = { [weak self] in
 			self?.groupViewManager.updateData()
 			self?.tableView.reloadData()
 		}

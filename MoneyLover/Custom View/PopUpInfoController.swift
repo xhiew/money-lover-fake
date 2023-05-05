@@ -47,7 +47,7 @@ extension PopUpInfoController: PanModalPresentable {
 	}
 
 	var longFormHeight: PanModalHeight {
-		return .intrinsicHeight
+		return .contentHeight(200)
 	}
 
 }
