@@ -76,10 +76,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-A1-If9">
-                                <rect key="frame" x="16" y="329.5" width="319" height="82.5"/>
+                                <rect key="frame" x="16" y="329.5" width="319" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pfh-qI-iem">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="82.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
@@ -93,13 +93,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhóm chi tiêu nhiều nhất sẽ hiện ở đây 🙌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3P-zW-9iO">
-                                <rect key="frame" x="47" y="363" width="257.5" height="16"/>
+                                <rect key="frame" x="47" y="356.5" width="257.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydP-qg-WUH">
-                                <rect key="frame" x="16" y="329.5" width="319" height="82.5"/>
+                                <rect key="frame" x="16" y="329.5" width="319" height="70"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
@@ -110,6 +110,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="J3P-zW-9iO" firstAttribute="centerY" secondItem="cNU-A1-If9" secondAttribute="centerY" id="1ne-dQ-KaB"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="428" id="3O6-A2-Ph8"/>
                             <constraint firstAttribute="trailing" secondItem="0ZH-LS-13B" secondAttribute="trailing" id="3V1-00-E8C"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NIW-Fz-hFY" secondAttribute="trailing" id="3YV-vi-95K"/>
                             <constraint firstItem="hXq-zo-1BO" firstAttribute="top" secondItem="XZd-Er-rQ7" secondAttribute="top" constant="16" id="6Ta-aZ-Chc"/>
@@ -126,7 +127,7 @@
                             <constraint firstItem="ydP-qg-WUH" firstAttribute="top" secondItem="cNU-A1-If9" secondAttribute="top" id="hVl-VU-7km"/>
                             <constraint firstItem="ydP-qg-WUH" firstAttribute="bottom" secondItem="cNU-A1-If9" secondAttribute="bottom" id="klO-Gz-YFi"/>
                             <constraint firstItem="NIW-Fz-hFY" firstAttribute="top" secondItem="0Hz-rb-6lb" secondAttribute="bottom" constant="16" id="mxe-8w-S61"/>
-                            <constraint firstAttribute="bottom" secondItem="cNU-A1-If9" secondAttribute="bottom" constant="16" id="orW-em-u61"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cNU-A1-If9" secondAttribute="bottom" priority="800" constant="16" id="orW-em-u61"/>
                             <constraint firstItem="hXq-zo-1BO" firstAttribute="centerX" secondItem="XZd-Er-rQ7" secondAttribute="centerX" id="t6f-ex-7eV"/>
                             <constraint firstItem="NIW-Fz-hFY" firstAttribute="leading" secondItem="XZd-Er-rQ7" secondAttribute="leading" constant="16" id="u1g-br-PNI"/>
                             <constraint firstItem="J3P-zW-9iO" firstAttribute="centerX" secondItem="cNU-A1-If9" secondAttribute="centerX" id="uT4-zW-FEt"/>

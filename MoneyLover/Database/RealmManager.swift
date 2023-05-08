@@ -91,7 +91,7 @@ extension RealmManager {
 
 	static func getAllExpenseTransactionsInThisWeek(date: Date = Date()) -> [Transaction]? {
 		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}",
-																													date.startOfWeek() ?? Date(),
+																													date.customStart(of: .weekOfMonth) ?? Date(),
 																													Date()).sorted(byKeyPath: "group.name",
 																																				 ascending: false).optional
 		guard let response = response else { return nil }
@@ -111,7 +111,7 @@ extension RealmManager {
 
 	static func getAllExpenseTransactionsInLastWeek(date: Date = Date().adding(.weekOfMonth, value: -1)) -> [Transaction]? {
 		let response = realm.objects(Transaction.self).filter("group.isExpense == true AND isIgnore == false AND date BETWEEN {%@,%@}",
-																													date.startOfWeek() ?? Date(),
+																													date.customStart(of: .weekOfMonth) ?? Date(),
 																													date.customEnd(of: .weekOfMonth) ?? Date()).sorted(byKeyPath: "group.name",
 																																				 ascending: false).optional
 		guard let response = response else { return nil }
