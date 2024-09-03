@@ -18,7 +18,7 @@ Mục đích của tôi khi xây dựng dự án này là để nâng cao kiến
 
 ```swift
 cd Desktop
-git clone https://github.com/xhiew/money-lover-c.git
+git clone https://github.com/xhiew/money-lover-fake.git
 cd money-lover-c
 pod install
 ```
